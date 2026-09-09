@@ -47,6 +47,8 @@ li{margin-bottom:16px}
 table.tally{width:100%;border-collapse:collapse;margin-top:14px;font-size:36px}
 table.tally th,table.tally td{border:3px solid var(--line);padding:16px 24px;text-align:left;background:var(--paper)}
 table.tally th{background:var(--sage);font-family:var(--serif);font-size:34px}
+.book{background:var(--dark);color:#f0e7d8;border-radius:22px;padding:30px 40px;font-family:ui-monospace,Menlo,monospace;font-size:34px;line-height:1.62;letter-spacing:1px}
+code{font-family:ui-monospace,Menlo,monospace;background:#efe4d2;padding:2px 10px;border-radius:8px;font-size:.92em}
 .marks{font-family:ui-monospace,Menlo,monospace;letter-spacing:3px;color:var(--clay-dark)}
 .stem{background:var(--paper);border-left:14px solid var(--olive);border-radius:0 22px 22px 0;padding:38px 48px;margin-top:14px}
 .stem p{font-family:var(--serif);font-size:44px;line-height:1.5;margin:0}
@@ -70,7 +72,7 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 <div id="shell"><div id="canvas">
 
   <section class="slide center" data-label="Title"
-    data-notes="Fully unplugged. Laptops stay closed the entire period. Materials per group: a printed passage, a cup, slips of paper, a pencil, and optionally a d20. Say up front that today is tedious on purpose — the tedium is the content.">
+    data-notes="Fully unplugged. Laptops stay closed the entire period. Materials per group: a printed copy of the tiny book, a cup, slips of paper, a pencil, and optionally a d20. Say up front that today is tedious on purpose — the tedium is the content.">
     <div class="eyebrow">Working with Gen AI · Unit 1 · Lesson 3</div>
     <h1>BookBot</h1>
     <p class="lede">ELIZA had rules and no data.<br>
@@ -79,16 +81,16 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
   </section>
 
   <section class="slide" data-label="Warm-up: the room's distribution"
-    data-notes="8 minutes. Everyone writes ONE word, no conferring, then tally on the board fast. Two things to draw out: the winner, and the outlier nobody else picked. Then ask where their word came from — nobody followed a rule, they drew on everything they have read. That is exactly what BookBot will do, from one book instead of a lifetime.">
+    data-notes="8 minutes. Everyone writes ONE word, no conferring, then tally on the board fast. Two things to draw out: the winner, and the outlier nobody else picked. Then ask where their word came from — nobody followed a rule, they drew on everything they have read. That is exactly what BookBot will do, from one tiny book instead of a lifetime. Their words come from everything they have read; the toy gets six lines.">
     <div class="eyebrow">Warm-up · 8 minutes · one word each</div>
-    <h2 style="font-size:96px">The cat sat on the ______</h2>
+    <h2 style="font-size:88px">the robot paints a ______</h2>
     <p class="lede">Write one word. No conferring. Then we tally the room.</p>
     <table class="tally">
       <tr><th>Word</th><th>Tally</th><th>Count</th></tr>
-      <tr><td>mat</td><td class="marks">||||&nbsp;||||</td><td>9</td></tr>
-      <tr><td>floor</td><td class="marks">||||</td><td>4</td></tr>
-      <tr><td>couch</td><td class="marks">||</td><td>2</td></tr>
-      <tr><td>roof</td><td class="marks">|</td><td>1</td></tr>
+      <tr><td>moon</td><td class="marks">||||&nbsp;||||</td><td>9</td></tr>
+      <tr><td>star</td><td class="marks">||||</td><td>4</td></tr>
+      <tr><td>map</td><td class="marks">||</td><td>2</td></tr>
+      <tr><td>sign</td><td class="marks">|</td><td>1</td></tr>
     </table>
     <p class="muted" style="font-size:29px;margin-top:20px">Example only — yours goes on the board.</p>
     <footer><span>Lesson 3 · Warm-up</span><span>Handout Part A</span></footer>
@@ -104,23 +106,50 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
   </section>
 
   <section class="slide" data-label="Build the table"
-    data-notes="20 minutes. Groups pick a starting word appearing at least four times. The critical instruction is DO NOT SKIP REPEATS — repeats carry the whole distribution. Circulate for students who tally each distinct word once; that is the most common error and it silently flattens everything.">
-    <div class="eyebrow">Build · 20 minutes</div>
-    <h2>Count what actually follows.</h2>
-    <p class="lede">Pick a starting word that appears at least four times in your passage.</p>
-    <div class="cols" style="margin-top:20px">
-      <div class="card clay">
-        <h3>The method</h3>
-        <p>Find <em>every</em> place your word appears. Write down the word that comes
-        next. One tally mark each.</p>
+    data-notes="20 minutes. Everyone uses the SAME six lines so every table can be checked and groups can compare. ANSWER KEY — one word of context: a -> moon 3/6, map 2/6, star 1/6. Two words: paints a -> moon 3/4, star 1/4. The three counting rules matter: students who join line-ends together, or drop the repeat in line 6, get wrong tallies. Circulate for exactly those two errors.">
+    <div class="eyebrow">Build · 20 minutes · everyone uses the same book</div>
+    <h2>Our tiny book</h2>
+    <div class="book">
+      <div>the robot paints a moon .</div>
+      <div>the robot paints a star .</div>
+      <div>the robot folds&nbsp; a map .</div>
+      <div>the fox&nbsp;&nbsp; paints a moon .</div>
+      <div>the fox&nbsp;&nbsp; folds&nbsp; a map .</div>
+      <div>the robot paints a moon .</div>
+    </div>
+    <div class="cols" style="margin-top:26px">
+      <div class="card clay"><h3>Three counting rules</h3>
+        <ul style="font-size:29px;padding-left:30px;margin:0">
+          <li><strong>Count only inside a line.</strong> Never join one line to the next.</li>
+          <li><strong>The period is its own word.</strong> It can be drawn.</li>
+          <li><strong>Do not skip repeats.</strong> Line 6 repeating line 1 <em>is</em> the distribution.</li>
+        </ul>
       </div>
-      <div class="card olive">
-        <h3>The one rule</h3>
-        <p><strong>Do not skip repeats.</strong> If "the" is followed by "cat" five times,
-        that is five marks. The repeats <em>are</em> the distribution.</p>
+      <div class="card olive"><h3>Build two tables</h3>
+        <p style="font-size:31px;margin:0 0 10px"><strong>Table 1:</strong> what follows <code>a</code>?</p>
+        <p style="font-size:31px;margin:0"><strong>Table 2:</strong> what follows <code>paints a</code>?</p>
       </div>
     </div>
     <footer><span>Lesson 3 · Part B</span><span>Handout Part B</span></footer>
+  </section>
+
+  <section class="slide" data-label="What context buys"
+    data-notes="Reveal only after both tables are built. One word of context gives moon 3/6 = 50%. Two words gives moon 3/4 = 75%. Same book, same counting — one extra word of context sharpened the prediction. That is the context-window idea, and they built it by hand. Do not say transformer or attention; the point is that more context narrows the distribution and costs another whole table.">
+    <div class="eyebrow">Compare your two tables</div>
+    <h2>What one more word buys</h2>
+    <div class="cols">
+      <div class="card clay"><h3>One word: <code>a</code></h3>
+        <p style="font-size:34px;margin:0">moon <strong>3/6</strong> · map 2/6 · star 1/6</p>
+        <p class="muted" style="font-size:29px;margin:10px 0 0">moon wins half the time</p>
+      </div>
+      <div class="card olive"><h3>Two words: <code>paints a</code></h3>
+        <p style="font-size:34px;margin:0">moon <strong>3/4</strong> · star 1/4</p>
+        <p class="muted" style="font-size:29px;margin:10px 0 0">moon now wins three times in four</p>
+      </div>
+    </div>
+    <p class="big" style="margin-top:34px">More context, sharper prediction —<br>
+    and it costs you a whole new table every time.</p>
+    <footer><span>Lesson 3 · Part B</span><span>Same book. Same counting.</span></footer>
   </section>
 
   <section class="slide" data-label="Sampling — the honest way"
@@ -153,10 +182,10 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
     <div class="eyebrow">The Rolling Rule</div>
     <h2>Now do it again. And again.</h2>
     <p class="lede">The word you drew becomes your <strong>new current word.</strong>
-    Go back to the passage. Build a <em>new</em> table for that word. Draw again.</p>
+    Go back to the tiny book. Build a <em>new</em> table for that word. Draw again.</p>
     <div class="warn">
-      <p>A new table for <strong>every single word.</strong> Generate 8–12 words and
-      count how many tables you built.</p>
+      <p>A new table for <strong>every single word.</strong> Start at <code>the</code> and generate
+      until you draw a period. Count how many tables it took.</p>
     </div>
     <p style="margin-top:26px">Notice what one word costs you. A chatbot does this — a much larger
     version of this — for every word it produces, every time.</p>
