@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 1 — Who Writes the Rules?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas-w:1920; --canvas-h:1080; --scale:1;
+  --cream:#f5ead8; --paper:#f9f4ed; --ink:#201e1d; --dark:#2e2b25;
+  --clay:#c67139; --clay-dark:#8c491a; --olive:#7a8a5e; --sage:#e1eecc;
+  --peach:#ffe1d0; --line:#d5cab9; --muted:#645c50;
+  --sans:"Figtree",Avenir,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%;background:var(--dark);overflow:hidden}
+body{font-family:var(--sans);color:var(--ink)}
+#shell{position:fixed;inset:0;overflow:hidden}
+#canvas{
+  width:calc(var(--canvas-w)*1px); height:calc(var(--canvas-h)*1px);
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%) scale(var(--scale)); transform-origin:center center;
+  background:var(--cream);
+  box-shadow:0 0 80px rgba(0,0,0,.5);
+}
+.slide{
+  position:absolute; inset:0; padding:88px 110px;
+  display:none; flex-direction:column; background:var(--cream);
+}
+.slide.is-active{display:flex}
+.eyebrow{
+  font-size:26px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--clay-dark); font-weight:700; margin-bottom:26px;
+}
+h1{font-family:var(--serif);font-size:132px;line-height:1.02;margin:0 0 28px;font-weight:700;letter-spacing:-.02em}
+h2{font-family:var(--serif);font-size:82px;line-height:1.08;margin:0 0 34px;font-weight:700;letter-spacing:-.01em}
+h3{font-family:var(--serif);font-size:46px;margin:0 0 16px;font-weight:600}
+p{font-size:38px;line-height:1.45;margin:0 0 24px;max-width:1500px}
+.lede{font-size:52px;line-height:1.32;color:var(--dark)}
+.big{font-size:62px;line-height:1.25;font-family:var(--serif);font-weight:600}
+.muted{color:var(--muted)}
+.center{justify-content:center}
+ul{font-size:38px;line-height:1.5;margin:0 0 24px;padding-left:44px}
+li{margin-bottom:18px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:12px}
+.card{
+  background:var(--paper);border:3px solid var(--line);border-radius:26px;
+  padding:38px 42px;
+}
+.card.clay{border-color:var(--clay);background:#fdf2e8}
+.card.olive{border-color:var(--olive);background:#f2f6e8}
+.card h3{color:var(--clay-dark)}
+.card.olive h3{color:#4d5c33}
+.card p,.card li{font-size:33px;line-height:1.4}
+.chipgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:20px}
+.chip{
+  background:var(--paper);border:3px solid var(--line);border-radius:18px;
+  padding:26px 22px;font-size:29px;line-height:1.3;text-align:center;
+}
+.chip.arg{border-color:var(--clay);border-style:dashed;background:#fdf2e8}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:26px 46px;margin-top:8px}
+.rule{display:flex;gap:22px;align-items:flex-start}
+.num{
+  flex:0 0 auto;width:58px;height:58px;border-radius:50%;
+  background:var(--clay);color:#fff;font-weight:700;font-size:30px;
+  display:grid;place-items:center;margin-top:4px;
+}
+.rule div p{font-size:30px;line-height:1.36;margin:0}
+.rule strong{font-size:32px}
+.stem{
+  background:var(--paper);border-left:14px solid var(--olive);
+  border-radius:0 22px 22px 0;padding:40px 50px;margin-top:14px;
+}
+.stem p{font-family:var(--serif);font-size:46px;line-height:1.5;margin:0}
+.blank{display:inline-block;min-width:280px;border-bottom:4px solid var(--clay);}
+.warn{
+  background:#fdf2e8;border:4px solid var(--clay);border-radius:24px;
+  padding:34px 42px;margin-top:20px;
+}
+.warn p{font-size:34px;margin:0}
+.submit{display:flex;gap:34px;margin-top:26px;align-items:stretch}
+.submit .card{flex:1}
+.filename{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--dark);color:var(--cream);padding:8px 20px;border-radius:12px;
+  font-size:32px;display:inline-block;
+}
+.next{
+  position:absolute;left:110px;right:110px;bottom:96px;
+  border-top:5px solid var(--clay);padding-top:34px;
+}
+footer{
+  position:absolute;left:110px;right:110px;bottom:38px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:22px;color:var(--muted);letter-spacing:.06em;
+}
+#notes{
+  position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;
+  background:rgba(32,30,29,.97);color:#f0e7d8;padding:26px 34px;
+  font-size:17px;line-height:1.55;display:none;z-index:20;
+  border-top:4px solid var(--clay);
+}
+#notes.show{display:block}
+#notes b{color:var(--peach);display:block;margin-bottom:8px;letter-spacing:.1em;font-size:13px;text-transform:uppercase}
+#hud{
+  position:fixed;top:14px;right:18px;z-index:20;color:#cfc6b6;
+  font-size:14px;letter-spacing:.1em;background:rgba(32,30,29,.75);
+  padding:7px 14px;border-radius:20px;
+}
+@media print{#hud,#notes{display:none}}
+</style>
+</head>
+<body>
+<div id="shell"><div id="canvas">
+
+  <section class="slide is-active center" data-label="Title"
+    data-notes="Journals out, laptops closed — say this before the first slide is read. No AI tool is used today at all, and that is deliberate: we establish what a rule is before we meet anything that learned its own. Do not preview ELIZA yet.">
+    <div class="eyebrow">Working with Gen AI · Unit 1 · Lesson 1</div>
+    <h1>Who writes<br>the rules?</h1>
+    <p class="lede">Two ways to build a machine that does something clever —<br>and how to tell which one you are looking at.</p>
+    <footer><span>Lesson 1 of 5</span><span>70 minutes</span></footer>
+  </section>
+
+  <section class="slide" data-label="Warm-up"
+    data-notes="8 minutes. Journals only. Do not help. The struggle IS the lesson — students must feel that explicit rules for 'cat' are unwritable. Circulate but only repeat the constraint: the computer cannot see, cannot guess, does not know what a cat is. If someone writes 'detect fur texture', ask how. Then how again.">
+    <div class="eyebrow">Warm-up · 8 minutes · journals only</div>
+    <h2>Write instructions for finding a cat.</h2>
+    <p class="lede">A computer will follow your steps <em>exactly</em>. It cannot see.
+    It cannot guess. It does not know what a cat is.</p>
+    <div class="cols">
+      <div class="card clay">
+        <h3>Five steps</h3>
+        <p>Specific enough that a machine could run them. "Look for a cat" is not a step.</p>
+      </div>
+      <div class="card olive">
+        <h3>Then break it</h3>
+        <p>Describe one cat photo your own instructions would get wrong.</p>
+      </div>
+    </div>
+    <footer><span>Lesson 1 · Warm-up</span><span>Handout Part A</span></footer>
+  </section>
+
+  <section class="slide" data-label="Warm-up debrief"
+    data-notes="Take 3–4 read-alouds, then the counter-example. Ask specifically for the breaking photo — a black cat in shadow, a cat from behind, a toy cat, a lion. The point to land: you did not fail. The task is not writable as rules. Nobody has ever written those rules. Transition on the last line.">
+    <div class="eyebrow">What happened</div>
+    <h2>Nobody has ever written those rules.</h2>
+    <ul>
+      <li>Every rule you wrote needs another rule underneath it.</li>
+      <li>Every rule you wrote has a photo that breaks it.</li>
+      <li>Face unlock, spam filters, autocomplete — none were built this way.</li>
+    </ul>
+    <div class="stem"><p>So how <em>were</em> they built?</p></div>
+    <footer><span>Lesson 1 · Debrief</span><span></span></footer>
+  </section>
+
+  <section class="slide" data-label="Two ways to build"
+    data-notes="The central distinction of the unit. Keep it concrete. In rule-written code a person can read the logic and predict the output. In a learned model nobody wrote the rules — they were fitted to examples, and no one can read them directly. Do not say 'the machine teaches itself'; say the rules were fitted from examples.">
+    <div class="eyebrow">The distinction</div>
+    <h2>Two ways to build</h2>
+    <div class="cols">
+      <div class="card clay">
+        <h3>Rule-written</h3>
+        <ul style="font-size:32px;padding-left:32px">
+          <li>A person writes every rule</li>
+          <li>Builder supplies <strong>the logic</strong></li>
+          <li>You can read it afterward</li>
+          <li>Weird input → breaks, or refuses</li>
+        </ul>
+      </div>
+      <div class="card olive">
+        <h3>Learned</h3>
+        <ul style="font-size:32px;padding-left:32px">
+          <li>Nobody writes the rules</li>
+          <li>Builder supplies <strong>examples</strong></li>
+          <li>You mostly cannot read it</li>
+          <li>Weird input → confident nonsense</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted" style="font-size:31px;margin-top:30px">That last row is the one that will matter all semester.</p>
+    <footer><span>Lesson 1 · Part B</span><span>Handout Part B</span></footer>
+  </section>
+
+  <section class="slide" data-label="Sort the eight"
+    data-notes="7–8 minutes, pairs. R or L on the handout. Do not confirm answers while they work. Two are genuinely arguable — the chess program (opening book is rules, modern engines learn) and the voice assistant (older ones were rule-based). Reward a defended wrong answer over an undefended right one; say that out loud.">
+    <div class="eyebrow">Sort them · pairs · 7 minutes</div>
+    <h2>R or L?</h2>
+    <div class="chipgrid">
+      <div class="chip">calculator adding 47 + 6</div>
+      <div class="chip">phone unlocking at your face</div>
+      <div class="chip">thermostat at 68°</div>
+      <div class="chip">autocomplete finishing a sentence</div>
+      <div class="chip arg">chess opening book</div>
+      <div class="chip">spam filter</div>
+      <div class="chip">vending machine change</div>
+      <div class="chip arg">voice assistant transcribing</div>
+    </div>
+    <p style="margin-top:34px">Two are genuinely arguable. Find them. Defend your call.</p>
+    <footer><span>Lesson 1 · Part B</span><span>Dashed = arguable</span></footer>
+  </section>
+
+  <section class="slide" data-label="Conventions"
+    data-notes="17 minutes, but move briskly — students copy these into the handout. Rules 1 and 2 get enforced from Lesson 2 onward. Rule 6 must be said warmly and meant: nobody is ever required to type into an AI tool, and declining is full participation, not opting out.">
+    <div class="eyebrow">Class conventions · all semester</div>
+    <h2>How we will work</h2>
+    <div class="rules">
+      <div class="rule"><div class="num">1</div><div><strong>Log the exact thing.</strong><p>Prompt and output verbatim. A retyped output is not evidence.</p></div></div>
+      <div class="rule"><div class="num">2</div><div><strong>Observation before interpretation.</strong><p>"One sentence was false" ≠ "it lied." Say which you mean.</p></div></div>
+      <div class="rule"><div class="num">3</div><div><strong>One variable at a time.</strong><p>Two changes at once tells you nothing about either.</p></div></div>
+      <div class="rule"><div class="num">4</div><div><strong>Name the authorship.</strong><p>What you decided, what it produced. Every time.</p></div></div>
+      <div class="rule"><div class="num">5</div><div><strong>Consent and privacy.</strong><p>No real names, faces, or private details into any tool. Ever.</p></div></div>
+      <div class="rule"><div class="num">6</div><div><strong>Participation is not obligation.</strong><p>Observing, recording, questioning, declining — all full participation.</p></div></div>
+    </div>
+    <footer><span>Lesson 1 · Part C</span><span>Copy these down</span></footer>
+  </section>
+
+  <section class="slide" data-label="Reflection"
+    data-notes="12 minutes, in class, before anyone leaves. Never homework. Model one aloud using the cat exercise, then get out of the way. The fourth clause is the hard one and the one that matters — press anyone who leaves it vague. They will use this stem all five lessons.">
+    <div class="eyebrow">Reflection · 12 minutes · before you leave</div>
+    <h2>One bounded claim</h2>
+    <div class="stem">
+      <p>I observed <span class="blank"></span><br>
+      My evidence is <span class="blank"></span><br>
+      This suggests <span class="blank"></span><br>
+      but it does not establish <span class="blank"></span></p>
+    </div>
+    <div class="warn"><p><strong>The fourth clause is the whole point.</strong> Anyone can make a claim. Naming its limit is what makes it honest.</p></div>
+    <footer><span>Lesson 1 · Part D</span><span>Handout Part D</span></footer>
+  </section>
+
+  <section class="slide" data-label="Submission"
+    data-notes="Check the filename convention on at least three phones before students leave the room. 58% of last year's submissions arrived with no name attached. Fixing that costs ten seconds now and hours later.">
+    <div class="eyebrow">Submit before you go</div>
+    <h2>Google Classroom</h2>
+    <div class="submit">
+      <div class="card clay"><h3>What</h3><p>Photo of your handout with Parts A and D visible.</p></div>
+      <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-Lesson1.jpg</span></p></div>
+    </div>
+    <p style="margin-top:34px">Also answer, in one line: <strong>name one decision you made today that a machine could not have made for you.</strong></p>
+    <footer><span>Lesson 1 · Submission</span><span>In class, not homework</span></footer>
+  </section>
+
+  <section class="slide center" data-label="Preview"
+    data-notes="5 minutes. Sell the puzzle, do not explain ELIZA. Say 1966, no learning, no data, no memory — and that people who knew it was a program still asked to be left alone with it. Students should arrive wanting to know how. Do not use the word 'pattern matching' yet.">
+    <div class="eyebrow">Next time</div>
+    <h1 style="font-size:104px">ELIZA</h1>
+    <p class="big">In 1966 a program convinced people it understood them.</p>
+    <p class="lede">No learning. No training data. No memory.<br>
+    Rules all the way down — the kind you just tried to write.</p>
+    <div class="next">
+      <p style="margin:0"><strong>You will work out its rules before anyone tells you them. Then you will break it.</strong></p>
+    </div>
+    <footer><span>Lesson 2 of 5</span><span>Bring: handout, journal, a partner</span></footer>
+  </section>
+
+</div></div>
+
+<div id="hud">← → navigate · N notes · F fullscreen</div>
+<div id="notes"><b id="notes-label"></b><span id="notes-body"></span></div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=slides.findIndex(function(s){return s.classList.contains('is-active')});
+  if(i<0)i=0;
+  var canvas=document.getElementById('canvas');
+  var notes=document.getElementById('notes');
+  var nLabel=document.getElementById('notes-label');
+  var nBody=document.getElementById('notes-body');
+  var hud=document.getElementById('hud');
+
+  function fit(){
+    var s=Math.min(window.innerWidth/1920, window.innerHeight/1080);
+    canvas.style.setProperty('--scale', s);
+  }
+  function show(n){
+    if(n<0||n>=slides.length)return;
+    slides[i].classList.remove('is-active');
+    i=n;
+    slides[i].classList.add('is-active');
+    nLabel.textContent=(slides[i].dataset.label||'')+'  ·  slide '+(i+1)+' of '+slides.length;
+    nBody.textContent=slides[i].dataset.notes||'(no notes)';
+    hud.textContent=(i+1)+' / '+slides.length+'  ·  ← → · N · F';
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home'){e.preventDefault();show(0)}
+    else if(e.key==='End'){e.preventDefault();show(slides.length-1)}
+    else if(e.key==='n'||e.key==='N'){notes.classList.toggle('show')}
+    else if(e.key==='f'||e.key==='F'){
+      if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+      else{document.exitFullscreen&&document.exitFullscreen()}
+    }
+  });
+  canvas.addEventListener('click',function(e){
+    show(e.clientX < window.innerWidth/2 ? i-1 : i+1);
+  });
+  window.addEventListener('resize',fit);
+  fit(); show(i);
+})();
+</script>
+</body>
+</html>
