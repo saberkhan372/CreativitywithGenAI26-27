@@ -175,6 +175,25 @@ meaningful, who supplied the meaning?
 
 ---
 
+## Back to the cat question
+
+Why does `moon` win? Not because it is a better word — because it appears **three
+times out of six.** That is the whole reason.
+
+In week 1 some of you said you would train a cat detector on *"the same cat a million
+times with different backgrounds"*, and others said *"keep the cat in the middle"* of
+every photo.
+
+| That choice | What the machine actually learns |
+|---|---|
+| The same cat, a million times | **That cat.** Not cats. |
+| Every cat centred in frame | Cats are in the middle. A cat at the edge? Unknown. |
+
+Your six-line book is the same problem, small enough to see all of it.
+**What goes in decides what comes out.**
+
+---
+
 ## The sentence to carry out of this room
 
 > **Fluency is not accuracy.**

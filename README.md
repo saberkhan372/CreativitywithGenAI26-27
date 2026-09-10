@@ -9,14 +9,21 @@ Five 70-minute blocks. Rebuilt 2026-09-09.
 
 Each lesson hands the next one its question.
 
-> **Lesson 1 is written as taught** (2026-09-09): the cat problem, then Bletchley
-> Park and Turing, then a first look at ELIZA, then Teachable Machine. No worksheet
-> was used and none is needed.
+> **Lessons 1 and 2 are written from what actually happened** (first taught
+> 2026-09-09). Lesson 1: the cat problem, Bletchley Park and Turing, a first look at
+> ELIZA, then Teachable Machine — no worksheet used or needed.
+>
+> **Lesson 2 was rewritten after reading the cohort's ELIZA responses.** The original
+> asked students to record replies that "felt human." Not one of eight reported
+> feeling understood — they diagnosed the mechanism and several called it pointless.
+> The lesson now asks the better question: why did it fool people in 1966 when it
+> plainly does not fool you? That leads straight to sycophancy in modern systems,
+> which is where the caution actually bites.
 
 | # | Lesson | Mechanism on the table | The question it leaves open |
 |---|---|---|---|
 | 1 | **Who writes the rules?** | Cat problem · Bletchley Park · ELIZA · Teachable Machine | If rules can look like understanding, what counts as evidence? |
-| 2 | **Breaking ELIZA** | Rules only — no learning | Rules feel like understanding. What would counts do instead? |
+| 2 | **Why did ELIZA ever work?** | Rules only — no learning | If rules fool people but not you, what fools *you*? |
 | 3 | **BookBot** | Counts → probability, sampled | This is tiny. What happens at scale? |
 | 4 | **Explore LLMs** | Learned prediction at scale | Which differences are real, and how would we know? |
 | 5 | **Project + Poster** | Student-designed investigation | — |

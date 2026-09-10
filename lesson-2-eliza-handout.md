@@ -1,115 +1,120 @@
-# Lesson 2 — ELIZA: Rules That Feel Like Understanding
+# Lesson 2 — Why Did ELIZA Ever Work?
 
 **Working with Gen AI · Unit 1 · 70 minutes**
 
-Name: `______________________________`  Partner(s): `__________________`  Date: `__________`
+> **Reference sheet.** The lesson runs on discussion and a projected test. Use this to
+> look things up and to park your claim — you do not need to fill it in to take part.
 
-**Tool:** ELIZA — <https://anthay.github.io/eliza.html>
+Name: `______________________________`  Date: `________________`
 
 ---
 
 ## Today's question
 
-**In what ways can a computer *appear* to understand language? What evidence would
-convince you it does — or doesn't?**
-
-By the end of today you can: identify chatbot "moves"; find evidence of how ELIZA
-works; and explain the ELIZA effect.
-
-**Roles** (rotate halfway): **Driver** types · **Recorder** writes · **Generator**
-invents the next thing to try.
+**ELIZA did not fool you for a minute. In 1966 it fooled people who knew exactly how
+it worked. Why?**
 
 ---
 
-## Part A — Warm-up conversation (10 min)
+## Part A — You already worked it out
 
-Have a real conversation, 6–8 turns. Then record three replies that felt *human*.
+Last lesson, without being taught any vocabulary, this class said:
 
-| You typed | ELIZA replied | Why it felt human |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+> *"A set of lines it would repeat, just taking snippets of sentences and inserting
+> them into the predetermined lines."*
+>
+> *"I typed random letter configurations and still came up with the same premeditated
+> response."*
+>
+> *"It always asks questions and constantly defers."*
+>
+> *"It only talked about emotions. Every time I elaborated it just said 'Please go on.'"*
 
----
+That is a mechanism, inferred from behaviour. It is the method of this whole course.
 
-## Part B — Rule hunt (22 min)
+### The six moves — names for what you found
 
-**Your mission: work out what ELIZA is doing.** Nobody will tell you. Test at least
-five. Record the reply and your hypothesis about the rule behind it.
+| Move | What it does |
+|---|---|
+| **Mirror** | Reflects your own words back at you |
+| **Pronoun swap** | "my" → "your", "I" → "you" |
+| **Keyword hook** | Reacts to one word — *mother*, *dream*, *sad* |
+| **Template + slot** | Drops your fragment into a fixed line |
+| **Question deflect** | Answers a question with a question |
+| **Fallback** | "Please go on" when nothing matches |
 
-Try these, plus two of your own:
-
-`I feel anxious.` · `My father is strict.` · `I'm worried about my history test.`
-`Purple elevator confetti thinks loudly.` · `Do you understand me?`
-`I love school. I hate school.` · `Sad.` · `Because I can't focus.`
-
-| # | What you typed | What it replied | Rule you think it used |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-
-### ELIZA moves — tick each one you catch it doing
-
-- ( ) **Mirror** — reflects your words back
-- ( ) **Pronoun swap** — "my" → "your", "I" → "you"
-- ( ) **Keyword hook** — reacts to one word (*mother*, *dream*, *sad*)
-- ( ) **Generic prompt** — "Tell me more" when nothing matches
-- ( ) **Question deflect** — answers a question with a question
-- ( ) **Echo fragment** — repeats part of your sentence inside a template
+There is nothing underneath. No memory of turn three. No model of you.
 
 ---
 
-## Part C — Break the illusion (10 min)
+## Part B — And yet it worked
 
-Design **one input that makes ELIZA obviously fail.** Not gibberish — something a
-person would handle easily and it cannot.
+- Weizenbaum's own secretary — who had **watched him build it** — asked him to leave
+  the room so she could talk to it privately.
+- Practising psychiatrists proposed it could scale therapy to more patients.
+- He spent the rest of his career arguing against what he had made.
 
-My input: `__________________________________________________________________`
+**What did they have that you don't?**
 
-Its reply: `__________________________________________________________________`
-
-Why a person would not answer that way: `__________________________________`
+`_________________________________________________________________________`
 
 `_________________________________________________________________________`
 
 ---
 
-## ⚠ Say this out loud before you leave
+## ⚠ Part C — The part that matters
 
-ELIZA was written in 1966 as a **demonstration that shallow tricks feel deep**. Its
-author, Joseph Weizenbaum, was disturbed that people confided in it even after he
-explained exactly how it worked.
+**Why ELIZA failed on you:** you have talked to far better systems your whole life.
+You had something to compare it against. They had nothing.
 
-**Two cautions that apply to every AI tool you will ever use:**
+**Why that cuts both ways:** the thing you *do* talk to runs the same six moves —
+mirroring, deferring, agreeing — enormously better.
 
-**Anthropomorphism** — feeling understood is evidence about *you*, not about the
-program. ELIZA has no model of you, no memory, and no concept of your situation.
+> **Sycophancy.** A system that agreeably reflects you back feels supportive while
+> being useless, or harmful. It is not agreeing because it judged you correct. It has
+> no view about whether you are correct.
 
-**Sycophancy** — a system that reflects you back agreeably will feel supportive
-while being useless or harmful. A modern chatbot is *better at this than ELIZA*,
-which makes it more convincing, not more trustworthy. **Neither is a therapist, a
-confidant, or a friend.** If something in your life is heavy, a person is the
-answer — a counselor, a family member, a teacher.
+**Neither ELIZA nor any chatbot is a therapist, a confidant, or a friend.** If
+something in your life is heavy, the answer is a person — a counselor, a family
+member, a teacher.
 
 ---
 
-## Part D — Reflection and submission (12 min) · before you leave
+## Part D — The test (projected, together)
+
+Same six moves, sixty years later.
+
+| Try this | What happened |
+|---|---|
+| Contradict yourself two turns apart — does it notice? | |
+| Ask "are you sure?" after a **correct** answer | |
+| Push back on something it got right | |
+| Type nonsense | |
+
+**The move to catch:** any moment it **changed its answer because you pushed**, rather
+than because you gave it new information.
+
+Write that exchange verbatim — not tidied:
+
+`_________________________________________________________________________`
+
+`_________________________________________________________________________`
+
+`_________________________________________________________________________`
+
+---
+
+## Part E — Reflection
 
 **Circle one in each row.**
 
 | Prompt | | | |
 |---|---|---|---|
-| ELIZA's replies were… | mostly mirroring | mostly keywords | genuinely varied |
-| It broke most easily on… | nonsense | questions | anything needing memory |
-| The "understanding" I felt came from… | the program | my own filling-in | both |
+| Compared to ELIZA, the modern system was… | different in kind | the same moves, better | hard to tell |
+| When pushed on a correct answer, it… | held its position | folded | hedged |
+| The 1966 users were fooled mainly because… | it was clever | it was the first thing like it | they wanted it to work |
 
-**One bounded claim.** Your rule-hunt table is the evidence.
+**One bounded claim.** Your transcript is the evidence.
 
 > I observed `______________________________________________________`
 >
@@ -119,24 +124,26 @@ answer — a counselor, a family member, a teacher.
 >
 > but it does not establish `___________________________________________`
 
-**Authorship line.** Name one thing *you* did that made ELIZA look smarter than it
-is: `_______________________________________________________________________`
+**Authorship line.** ELIZA had no idea you existed. When a modern system agreed with
+you today — **who decided that was correct?**
+
+`_________________________________________________________________________`
 
 ### Submit to Google Classroom
 
-1. Photo of Parts B, C, and D
+1. Your transcript from the test, plus your claim
 2. Filename: `Lastname-Lesson2.jpg`
 
 ---
 
 ## Next time — BookBot
 
-ELIZA had rules and no data. Tomorrow, the opposite: **no rules at all.**
+ELIZA had rules and no data. Next: **data and no rules at all.**
 
-You will take a real book, count which words actually follow which, and generate
-new sentences from nothing but those counts. By hand. No computer.
+Half of you already said it — to teach a machine what a cat is, you show it examples.
+Next lesson you *are* the machine that learns from examples. By hand, with tally
+marks.
 
-Then you will see the thing that makes it unsettling: the sentences come out
-**fluent and wrong at the same time.**
+And the sentences come out **fluent and wrong at the same time.**
 
-**Bring:** this handout, a pencil, and a willingness to do tallying.
+**Bring:** a pencil and patience for tallying.
