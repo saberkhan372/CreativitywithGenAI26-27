@@ -49,6 +49,12 @@ table.tally th,table.tally td{border:3px solid var(--line);padding:16px 24px;tex
 table.tally th{background:var(--sage);font-family:var(--serif);font-size:34px}
 .book{background:var(--dark);color:#f0e7d8;border-radius:20px;padding:22px 36px;font-family:ui-monospace,Menlo,monospace;font-size:29px;line-height:1.45;letter-spacing:1px}
 code{font-family:ui-monospace,Menlo,monospace;background:#efe4d2;padding:2px 10px;border-radius:8px;font-size:.92em}
+.walk{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:20px}
+.walk span{background:var(--paper);border:3px solid var(--line);border-radius:16px;padding:18px 30px;
+  font-family:ui-monospace,Menlo,monospace;font-size:38px;min-width:120px;text-align:center}
+.walk span:first-child{border-color:var(--olive);background:#f2f6e8}
+.walk span.stop{border-color:var(--clay);background:#fdf2e8}
+.walk b{font-size:34px;color:var(--clay)}
 .marks{font-family:ui-monospace,Menlo,monospace;letter-spacing:3px;color:var(--clay-dark)}
 .stem{background:var(--paper);border-left:14px solid var(--olive);border-radius:0 22px 22px 0;padding:38px 48px;margin-top:14px}
 .stem p{font-family:var(--serif);font-size:44px;line-height:1.5;margin:0}
@@ -72,43 +78,34 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 <div id="shell"><div id="canvas">
 
   <section class="slide center" data-label="Title"
-    data-notes="Fully unplugged. Laptops stay closed the entire period. Materials per group: a printed copy of the tiny book, a cup, slips of paper, a pencil, and optionally a d20. Say up front that today is tedious on purpose — the tedium is the content.">
+    data-notes="Materials: one printed copy of the tiny book per pair, paper, pencil. Nothing else — no cup, no slips, no dice. Laptops closed the whole period. Four numbered steps, on the board the whole time. Say up front that the counting is tedious on purpose: the tedium is the content.">
     <div class="eyebrow">Working with Gen AI · Unit 1 · Lesson 3</div>
     <h1>BookBot</h1>
     <p class="lede">ELIZA had rules and no data.<br>
     Today: <strong>data and no rules at all.</strong></p>
-    <footer><span>Lesson 3 of 5</span><span>70 minutes · unplugged</span></footer>
+    <footer><span>Lesson 3 of 5</span><span>Paper · pencil · book</span></footer>
   </section>
 
-  <section class="slide" data-label="Warm-up: the room's distribution"
-    data-notes="8 minutes. Everyone writes ONE word, no conferring, then tally on the board fast. Note this class already arrived at learning-from-examples on their own — five of ten said it unprompted in week 1 — so you can move faster here than with a cold room. Two things to draw out: the winner, and the outlier nobody else picked. Then ask where their word came from — nobody followed a rule, they drew on everything they have read. That is exactly what BookBot will do, from one tiny book instead of a lifetime. Their words come from everything they have read; the toy gets six lines.">
-    <div class="eyebrow">Warm-up · 8 minutes · one word each</div>
-    <h2 style="font-size:88px">the robot paints a ______</h2>
-    <p class="lede">Write one word. No conferring. Then we tally the room.</p>
+  <section class="slide" data-label="Warm-up · Step 1"
+    data-notes="8 minutes. Everyone writes ONE word, no conferring, then tally on the board fast. Draw out the winner and the outlier nobody else chose. Then ask where their word came from — nobody followed a rule, they drew on everything they have ever read. That is the whole idea, and this class already got there in week 1: five of ten said you would teach a machine about cats by showing it examples.">
+    <div class="eyebrow">Step 1 · warm-up · 8 minutes</div>
+    <h2 style="font-size:86px">the robot paints a ______</h2>
+    <p class="lede">One word each. No conferring. Then we tally the room.</p>
     <table class="tally">
       <tr><th>Word</th><th>Tally</th><th>Count</th></tr>
       <tr><td>moon</td><td class="marks">||||&nbsp;||||</td><td>9</td></tr>
       <tr><td>star</td><td class="marks">||||</td><td>4</td></tr>
       <tr><td>map</td><td class="marks">||</td><td>2</td></tr>
-      <tr><td>sign</td><td class="marks">|</td><td>1</td></tr>
     </table>
-    <p class="muted" style="font-size:29px;margin-top:20px">Example only — yours goes on the board.</p>
-    <footer><span>Lesson 3 · Warm-up</span><span>Handout Part A</span></footer>
+    <p style="margin-top:22px"><strong>That tally is a distribution.</strong> Nobody wrote a rule —
+    you counted what people actually said.</p>
+    <footer><span>Lesson 3 · Step 1</span><span>Example only — yours goes on the board</span></footer>
   </section>
 
-  <section class="slide center" data-label="That was a distribution"
-    data-notes="Short beat, 60 seconds. Do not elaborate. The move is: you just built a probability distribution out of a room, without anyone writing a rule. BookBot builds one out of a book. Then straight into Part B.">
-    <div class="eyebrow">What you just did</div>
-    <h2 style="font-size:92px">That tally is a<br>probability distribution.</h2>
-    <p class="lede">Nobody wrote a rule. You counted what people actually said.</p>
-    <p class="big" style="margin-top:20px">BookBot does that to a book.</p>
-    <footer><span>Lesson 3</span><span></span></footer>
-  </section>
-
-  <section class="slide" data-label="Build the table"
-    data-notes="20 minutes. Everyone uses the SAME six lines so every table can be checked and groups can compare. ANSWER KEY — one word of context: a -> moon 3/6, map 2/6, star 1/6. Two words: paints a -> moon 3/4, star 1/4. The three counting rules matter: students who join line-ends together, or drop the repeat in line 6, get wrong tallies. Circulate for exactly those two errors.">
-    <div class="eyebrow" style="margin-bottom:16px">Build · 20 minutes · everyone uses the same book</div>
-    <h2 style="font-size:68px;margin-bottom:20px">Our tiny book</h2>
+  <section class="slide" data-label="The book"
+    data-notes="Hand out the printed six lines. Two rules only. The repeat rule is the one that matters — students who tally each distinct word once silently flatten every distribution, and it is the most common error in the room. The period being a word is what tells them when to stop later.">
+    <div class="eyebrow">Our whole book</div>
+    <h2>Six lines. That is the entire library.</h2>
     <div class="book">
       <div>the robot paints a moon .</div>
       <div>the robot paints a star .</div>
@@ -117,116 +114,92 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
       <div>the fox&nbsp;&nbsp; folds&nbsp; a map .</div>
       <div>the robot paints a moon .</div>
     </div>
-    <div class="cols" style="margin-top:20px">
-      <div class="card clay" style="padding:24px 30px"><h3 style="font-size:36px;margin-bottom:12px">Three counting rules</h3>
-        <ul style="font-size:26px;padding-left:28px;margin:0;line-height:1.35">
-          <li style="margin-bottom:10px"><strong>Count only inside a line.</strong> Never join one line to the next.</li>
-          <li style="margin-bottom:10px"><strong>The period is its own word.</strong> It can be drawn.</li>
-          <li><strong>Do not skip repeats.</strong> Line 6 repeating line 1 <em>is</em> the distribution.</li>
-        </ul>
-      </div>
-      <div class="card olive" style="padding:24px 30px"><h3 style="font-size:36px;margin-bottom:12px">Build two tables</h3>
-        <p style="font-size:28px;margin:0 0 10px"><strong>Table 1:</strong> what follows <code>a</code>?</p>
-        <p style="font-size:28px;margin:0"><strong>Table 2:</strong> what follows <code>paints a</code>?</p>
-      </div>
+    <div class="cols" style="margin-top:22px">
+      <div class="card clay"><h3>Rule 1</h3>
+        <p><strong>Count every time, including repeats.</strong> Line 6 repeats line 1.
+        That repeat is not a mistake to tidy up — it <em>is</em> the pattern.</p></div>
+      <div class="card olive"><h3>Rule 2</h3>
+        <p><strong>The period counts as a word.</strong> It is how you will know when
+        to stop.</p></div>
     </div>
-    <footer><span>Lesson 3 · Part B</span><span>Handout Part B</span></footer>
+    <footer><span>Lesson 3</span><span>One copy per pair</span></footer>
   </section>
 
-  <section class="slide" data-label="What context buys"
-    data-notes="Reveal only after both tables are built. One word of context gives moon 3/6 = 50%. Two words gives moon 3/4 = 75%. Same book, same counting — one extra word of context sharpened the prediction. That is the context-window idea, and they built it by hand. Do not say transformer or attention; the point is that more context narrows the distribution and costs another whole table.">
-    <div class="eyebrow">Compare your two tables</div>
-    <h2>What one more word buys</h2>
-    <div class="cols">
-      <div class="card clay"><h3>One word: <code>a</code></h3>
-        <p style="font-size:34px;margin:0">moon <strong>3/6</strong> · map 2/6 · star 1/6</p>
-        <p class="muted" style="font-size:29px;margin:10px 0 0">moon wins half the time</p>
-      </div>
-      <div class="card olive"><h3>Two words: <code>paints a</code></h3>
-        <p style="font-size:34px;margin:0">moon <strong>3/4</strong> · star 1/4</p>
-        <p class="muted" style="font-size:29px;margin:10px 0 0">moon now wins three times in four</p>
-      </div>
-    </div>
-    <p class="big" style="margin-top:34px">More context, sharper prediction —<br>
-    and it costs you a whole new table every time.</p>
-    <footer><span>Lesson 3 · Part B</span><span>Same book. Same counting.</span></footer>
+  <section class="slide" data-label="Step 2 · count"
+    data-notes="10 minutes. ONE table, not several. Ask only about the word a, which is the interesting case — three different words follow it. Answer key: moon 3, map 2, star 1, total 6. Circulate for the two errors: joining the end of one line to the start of the next, and tallying each distinct word once instead of every occurrence.">
+    <div class="eyebrow">Step 2 · count · 10 minutes</div>
+    <h2>What comes after <code>a</code>?</h2>
+    <p class="lede">Find every <code>a</code> in the book. Tally the word that comes next.
+    <strong>One table. That is all the counting you do today.</strong></p>
+    <table class="tally" style="max-width:1000px">
+      <tr><th>Word after <code>a</code></th><th>Tally</th><th>Count</th></tr>
+      <tr><td>&nbsp;</td><td></td><td></td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td></tr>
+      <tr><td>&nbsp;</td><td></td><td></td></tr>
+    </table>
+    <footer><span>Lesson 3 · Step 2</span><span>Six lines. Never across a line break.</span></footer>
   </section>
 
-  <section class="slide" data-label="Sampling — the honest way"
-    data-notes="THIS SLIDE REPLACES LAST YEAR'S DICE RULE, which told students to give the top word 2–3 numbers and adjust to total 6. That substitutes an invented distribution for the counted one and quietly destroys the concept. The word jar is exact and tactile. The d20 re-roll is exact too — the re-roll is what preserves proportions. Do not let anyone 'round'.">
-    <div class="eyebrow">Sampling · pick in proportion to count</div>
-    <h2>Two honest methods</h2>
-    <div class="cols">
-      <div class="card clay">
-        <h3>1 · The word jar</h3>
-        <p><strong>One slip per tally mark.</strong> Tallied five times → five slips.
-        Fold, drop in the cup, draw without looking, <strong>put it back.</strong></p>
-        <p class="muted" style="font-size:27px">Exact. No arithmetic. Start here.</p>
-      </div>
-      <div class="card olive">
-        <h3>2 · d20 with re-roll</h3>
-        <p>Number your marks 1 to N. Roll. <strong>If it lands above N, roll again.</strong>
-        Do not adjust. Do not round.</p>
-        <p class="muted" style="font-size:27px">Faster, once you trust it.</p>
-      </div>
+  <section class="slide" data-label="Step 3 · walk it"
+    data-notes="12 minutes. The rule is one sentence long: always take the word that appears most often. No dice, no slips, no choosing. Students walk it on paper. Answer: the robot paints a moon . Most steps can be read straight off the book without formal tallying; only a needed a table, which is why they built exactly one. Everyone gets the same answer — that is the point, and it makes it checkable in ten seconds.">
+    <div class="eyebrow">Step 3 · walk it · 12 minutes</div>
+    <h2>Always take the most common word.</h2>
+    <p class="lede">Start at <code>the</code>. Look at the book. Whichever word follows it
+    most often — write that down. Then do it again from <em>that</em> word.
+    <strong>Stop when you write the period.</strong></p>
+    <div class="walk">
+      <span>the</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span class="stop">.</span>
     </div>
-    <div class="strike">
-      <p><strong>✗ Never:</strong> "give the top word two numbers, everyone else one, make it total 6."
-      That throws away the counts — and the counting was the entire exercise.</p>
-    </div>
-    <footer><span>Lesson 3 · Part C</span><span>Proportion or nothing</span></footer>
+    <p style="margin-top:24px">No dice. No choosing. <strong>The counts decide every word.</strong></p>
+    <footer><span>Lesson 3 · Step 3</span><span>Five steps and you are done</span></footer>
   </section>
 
-  <section class="slide" data-label="The Rolling Rule"
-    data-notes="The cost is the lesson. A new table for every single word. Let them feel it — do not rescue them at word four. When someone complains, that is the moment: ask how many words are in a chatbot reply, and how many tables that would be. Then note the machine does this for every token, every time.">
-    <div class="eyebrow">The Rolling Rule</div>
-    <h2>Now do it again. And again.</h2>
-    <p class="lede">The word you drew becomes your <strong>new current word.</strong>
-    Go back to the tiny book. Build a <em>new</em> table for that word. Draw again.</p>
-    <div class="warn">
-      <p>A new table for <strong>every single word.</strong> Start at <code>the</code> and generate
-      until you draw a period. Count how many tables it took.</p>
+  <section class="slide" data-label="Step 4 · the catch"
+    data-notes="The payoff, about 8 minutes. Reveal only after every pair has walked it. The output is line 1 of the book verbatim — and line 1 is also line 6, the sentence the book repeats. The most likely sentence is the most repeated sentence. Then the killer question: run it again and you get the same sentence, forever. It can produce exactly one. Take answers on what is missing; steer toward some way of sometimes taking the second-place word. Name that as the thing real systems add, and say we come back to it.">
+    <div class="eyebrow">Step 4 · the catch</div>
+    <h2>You all wrote the same sentence.</h2>
+    <div class="book" style="font-size:38px;padding:26px 40px;text-align:center">
+      the robot paints a moon .
     </div>
-    <p style="margin-top:26px">Notice what one word costs you. A chatbot does this — a much larger
-    version of this — for every word it produces, every time.</p>
-    <footer><span>Lesson 3 · Part C</span><span>Count your tables</span></footer>
+    <div class="cols" style="margin-top:22px">
+      <div class="card clay"><h3>That is line 1</h3>
+        <p>It is also line 6. The most likely sentence turned out to be the one the
+        book repeats.</p></div>
+      <div class="card olive"><h3>Run it again</h3>
+        <p>You get the same sentence. And again. <strong>It can only ever make one.</strong></p></div>
+    </div>
+    <div class="stem" style="margin-top:20px"><p>What would it need to write a different one?</p></div>
+    <footer><span>Lesson 3 · Step 4</span><span>Hold that answer — Unit 2</span></footer>
   </section>
 
   <section class="slide" data-label="Where the skew came from"
-    data-notes="Callback to the cat question, and the highest-value 90 seconds in this lesson. moon wins because it appears three times in six lines — nothing more. One student said they would train a cat detector on the same cat a million times with different backgrounds; another said keep the cat in the middle of every photo. This slide is what those choices do, made small enough to see. Ask what a detector trained on one cat actually learns: that cat, not cats. Ask what one trained on centred photos does with a cat at the edge.">
+    data-notes="Callback to the cat question, 90 seconds and worth every one. moon wins because it is in three of six lines. Nothing else. One student would train a cat detector on the same cat a million times; another would centre the cat in every photo. This is what those choices do, small enough to see whole.">
     <div class="eyebrow">Back to the cat question</div>
     <h2>Why does <code>moon</code> win?</h2>
     <p class="lede">Not because it is a better word. Because it is in the book
-    <strong>three times out of six.</strong> That is the entire reason.</p>
+    <strong>three times out of six.</strong></p>
     <div class="cols" style="margin-top:16px">
-      <div class="card clay">
-        <h3>"The same cat a million times"</h3>
-        <p>One of you would train a cat detector that way. What does it learn?
-        <strong>That cat.</strong> Not cats.</p>
-      </div>
-      <div class="card olive">
-        <h3>"Keep the cat in the middle"</h3>
-        <p>Another would centre every photo. Then what happens to a cat
-        <strong>at the edge of the frame?</strong></p>
-      </div>
+      <div class="card clay"><h3>"The same cat a million times"</h3>
+        <p>What does that detector learn? <strong>That cat.</strong> Not cats.</p></div>
+      <div class="card olive"><h3>"Keep the cat in the middle"</h3>
+        <p>Then what happens to a cat <strong>at the edge of the frame?</strong></p></div>
     </div>
-    <p class="big" style="margin-top:24px">What goes in decides what comes out —
-    and you can see all six lines of it.</p>
+    <p class="big" style="margin-top:22px">What goes in decides what comes out.</p>
     <footer><span>Lesson 3</span><span>Your answers, week 1</span></footer>
   </section>
 
   <section class="slide center" data-label="Fluency ≠ accuracy"
-    data-notes="The load-bearing idea of the entire course. Read two or three generated sentences aloud first — they will be funny and sentence-shaped and wrong. Then this slide. BookBot cannot be right or wrong because it makes no claims; it draws slips from a cup. It sounds like language because the counts came from language.">
+    data-notes="The load-bearing idea of the course. BookBot cannot be right or wrong because it makes no claims — it counts and picks. It sounds like language because the counts came from language. Say the last line and stop talking.">
     <div class="eyebrow">The sentence to carry out of this room</div>
     <h1 class="huge">Fluency is<br>not accuracy.</h1>
     <p class="lede">BookBot cannot be right or wrong. It is not making claims —
-    it is drawing slips out of a cup.</p>
+    it is counting and picking.</p>
     <p class="big">It sounds like language because the counts came from language.</p>
     <footer><span>Lesson 3</span><span>This returns every lesson from here</span></footer>
   </section>
 
   <section class="slide" data-label="Reflection"
-    data-notes="12 minutes, in class. The authorship line is the sharpest one in the unit — when the sentence sounded meaningful, the student supplied the meaning, exactly as they supplied ELIZA's understanding last lesson. Connect those two out loud if nobody does.">
+    data-notes="12 minutes, in class. Three circles and one claim — no more. The authorship line is the sharpest in the unit and connects straight back to ELIZA: when the sentence sounded meaningful, the student supplied the meaning, exactly as they supplied ELIZA's understanding. Say that out loud if nobody does.">
     <div class="eyebrow">Reflection · 12 minutes · before you leave</div>
     <h2>One bounded claim</h2>
     <div class="stem">
@@ -235,32 +208,32 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
       This suggests <span class="blank"></span><br>
       but it does not establish <span class="blank"></span></p>
     </div>
-    <p style="margin-top:28px"><strong>Authorship line:</strong> BookBot has no author and no intent.
+    <p style="margin-top:22px"><strong>Authorship line:</strong> BookBot has no author and no intent.
     When your sentence sounded meaningful, <em>who supplied the meaning?</em></p>
-    <footer><span>Lesson 3 · Part D</span><span>Same question as ELIZA. Notice that.</span></footer>
+    <footer><span>Lesson 3</span><span>Same question as ELIZA. Notice that.</span></footer>
   </section>
 
   <section class="slide" data-label="Submission"
-    data-notes="The photo must show the table AND the sentence — the table is the evidence for any claim about the sentence. Check filenames at the door.">
+    data-notes="One photo: the table and the sentence on the same page. The table is the evidence for any claim about the sentence. Check filenames at the door.">
     <div class="eyebrow">Submit before you go</div>
     <h2>Google Classroom</h2>
     <div class="submit">
-      <div class="card clay"><h3>What</h3><p>Photo showing your <strong>Part B table</strong> and your <strong>generated sentence.</strong></p></div>
+      <div class="card clay"><h3>What</h3><p>One photo of your paper — <strong>the table and the sentence</strong>.</p></div>
       <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-Lesson3.jpg</span></p></div>
     </div>
     <footer><span>Lesson 3 · Submission</span><span>In class, not homework</span></footer>
   </section>
 
   <section class="slide center" data-label="Preview"
-    data-notes="5 minutes. They have now built the toy by hand, which is what makes the real thing legible rather than magic. Tell them to arrive with a task they actually care about — the lesson is much better when the task is real. Laptops needed next time.">
+    data-notes="5 minutes. They built the toy by hand, so the real thing is legible rather than magic. Tell them to arrive with a task they actually care about — the lesson is much better when the task is real. Laptops needed.">
     <div class="eyebrow">Next time</div>
     <h1 style="font-size:104px">Explore LLMs</h1>
-    <p class="big">You built the toy version by hand.<br>Next: the real thing — several of them.</p>
-    <p class="lede">Same task. Different models. Every output logged verbatim.</p>
+    <p class="big">You built the toy by hand.<br>Next: the real thing — several of them.</p>
+    <p class="lede">Same task. Different models. Every output logged word for word.</p>
     <div class="next">
       <p style="margin:0"><strong>Then the hard part: which differences are real, and which are you imagining?</strong></p>
     </div>
-    <footer><span>Lesson 4 of 5</span><span>Bring: laptop + a task you actually care about</span></footer>
+    <footer><span>Lesson 4 of 5</span><span>Bring: laptop + a task you care about</span></footer>
   </section>
 
 </div></div>
