@@ -71,6 +71,12 @@ li{margin-bottom:18px}
 }
 .rule div p{font-size:30px;line-height:1.36;margin:0}
 .rule strong{font-size:32px}
+.chat{background:var(--paper);border:3px solid var(--line);border-radius:24px;padding:26px 34px;margin-top:6px}
+.turn{display:flex;gap:18px;margin-bottom:14px;align-items:flex-start}
+.turn:last-child{margin-bottom:0}
+.who{flex:0 0 auto;font-weight:700;font-size:24px;letter-spacing:.08em;text-transform:uppercase;width:130px;padding-top:5px}
+.who.u{color:var(--clay-dark)} .who.e{color:#4d5c33}
+.said{font-size:32px;line-height:1.3;font-family:var(--serif)}
 .stem{
   background:var(--paper);border-left:14px solid var(--olive);
   border-radius:0 22px 22px 0;padding:40px 50px;margin-top:14px;
@@ -118,10 +124,10 @@ footer{
 <div id="shell"><div id="canvas">
 
   <section class="slide is-active center" data-label="Title"
-    data-notes="Journals out, laptops closed — say this before the first slide is read. No AI tool is used today at all, and that is deliberate: we establish what a rule is before we meet anything that learned its own. Do not preview ELIZA yet.">
+    data-notes="Journals out to start; laptops open only for Teachable Machine near the end. Arc: the cat question they cannot answer, then Bletchley Park where rules DID work, then ELIZA where rules only look like understanding, then Teachable Machine where nobody writes rules at all. Voluntary participation applies to the webcam — nobody has to use their own face.">
     <div class="eyebrow">Working with Gen AI · Unit 1 · Lesson 1</div>
     <h1>Who writes<br>the rules?</h1>
-    <p class="lede">Two ways to build a machine that does something clever —<br>and how to tell which one you are looking at.</p>
+    <p class="lede">From Bletchley Park to a model you train in three minutes —<br>and who is writing the rules in each case.</p>
     <footer><span>Lesson 1 of 5</span><span>70 minutes</span></footer>
   </section>
 
@@ -157,50 +163,95 @@ footer{
     <footer><span>Lesson 1 · Debrief</span><span></span></footer>
   </section>
 
+  <section class="slide" data-label="Bletchley Park"
+    data-notes="The historical anchor. Bletchley Park, 1939-45: Turing and colleagues built the Bombe, a machine that broke Enigma. Every step it took was a rule a person worked out and wired in. Nothing was learned from examples. This is the purest possible case of the thing students just failed to do for cats — and it worked, because the problem had rules. Keep it to about 6 minutes; the point is contrast, not a history unit.">
+    <div class="eyebrow">Where this comes from · Bletchley Park, 1939–45</div>
+    <h2>People wrote every rule.</h2>
+    <p class="lede">Alan Turing and the team at Bletchley Park built machines to break
+    the Enigma cipher. Every step those machines took was a rule a person had worked
+    out and wired in.</p>
+    <div class="cols" style="margin-top:22px">
+      <div class="card clay">
+        <h3>Why it worked</h3>
+        <p>Enigma <em>had</em> rules. Hard ones, but findable. Once you know the rules,
+        a machine can apply them faster than any person.</p>
+      </div>
+      <div class="card olive">
+        <h3>Turing's other question</h3>
+        <p>In 1950 he asked whether a machine could ever be said to <em>think</em> —
+        and proposed judging it by conversation rather than by looking inside.</p>
+      </div>
+    </div>
+    <p class="muted" style="font-size:30px;margin-top:26px">Hold that idea. Someone is about to take him up on it.</p>
+    <footer><span>Lesson 1 · History</span><span>Turing, 1912–1954</span></footer>
+  </section>
+
+  <section class="slide" data-label="ELIZA"
+    data-notes="First look only — the full rule hunt is its own lesson. Run 4 or 5 exchanges live and let the room react. Say 1966, no learning, no data, no memory. Then the caution, out loud: Weizenbaum's own secretary asked him to leave the room. Feeling understood is evidence about the person, not the program. A modern chatbot is better at agreeable reflection than ELIZA, which makes it more convincing, not more trustworthy. Neither is a therapist or a friend — name real people at school.">
+    <div class="eyebrow">1966 · taking Turing up on it</div>
+    <h2>ELIZA</h2>
+    <p class="lede">A program with <strong>no learning, no data, and no memory</strong> —
+    rules all the way down — that people confided in anyway.</p>
+    <div class="chat">
+      <div class="turn"><div class="who u">Person</div><div class="said">My boyfriend made me come here.</div></div>
+      <div class="turn"><div class="who e">ELIZA</div><div class="said">Your boyfriend made you come here?</div></div>
+    </div>
+    <div class="warn">
+      <p><strong>Say this out loud.</strong> Feeling understood is evidence about <em>you</em>,
+      not about the program. A modern chatbot is better at this than ELIZA — more convincing,
+      not more trustworthy. Neither is a therapist, a confidant, or a friend.</p>
+    </div>
+    <footer><span>Lesson 1 · First look</span><span>We take it apart properly next time</span></footer>
+  </section>
+
+  <section class="slide" data-label="Teachable Machine"
+    data-notes="The payoff for the cat warm-up. teachablemachine.withgoogle.com — Image Project, two classes, about 30 webcam samples each, train, test. Three minutes. Nobody writes a rule; you supply examples. Deliberately break it afterwards: hold up something it has never seen and watch it answer confidently anyway. That confident-wrong moment is the one to name — it comes back in every lesson of this unit. Privacy: webcam images stay in the browser, but nobody is required to use their own face.">
+    <div class="eyebrow">The answer to the cat question</div>
+    <h2>Nobody writes the rules.</h2>
+    <p class="lede">You could not write rules for "cat." So don't. Show a machine
+    examples instead — and it works in about three minutes.</p>
+    <div class="cols" style="margin-top:20px">
+      <div class="card olive">
+        <h3>What you did</h3>
+        <p>Two classes. Around thirty examples each. Train. Test.
+        <strong>You never wrote a single rule.</strong></p>
+      </div>
+      <div class="card clay">
+        <h3>Then you broke it</h3>
+        <p>Show it something it has never seen. It answers anyway —
+        <strong>confidently, and wrong.</strong></p>
+      </div>
+    </div>
+    <p class="big" style="margin-top:28px">Remember that last part. It comes back every day of this unit.</p>
+    <footer><span>Lesson 1 · Activity</span><span>teachablemachine.withgoogle.com</span></footer>
+  </section>
+
   <section class="slide" data-label="Two ways to build"
-    data-notes="The central distinction of the unit. Keep it concrete. In rule-written code a person can read the logic and predict the output. In a learned model nobody wrote the rules — they were fitted to examples, and no one can read them directly. Do not say 'the machine teaches itself'; say the rules were fitted from examples.">
-    <div class="eyebrow">The distinction</div>
+    data-notes="Now the distinction lands on three things they have actually seen, not on an abstract list. Bombe = rules a person wrote. ELIZA = rules a person wrote. Teachable Machine = rules fitted from examples nobody can read. Do not say the machine teaches itself; say the rules were fitted from examples. The bottom row is the one that carries the whole unit.">
+    <div class="eyebrow">Three machines, two kinds</div>
     <h2>Two ways to build</h2>
     <div class="cols">
       <div class="card clay">
-        <h3>Rule-written</h3>
-        <ul style="font-size:32px;padding-left:32px">
-          <li>A person writes every rule</li>
-          <li>Builder supplies <strong>the logic</strong></li>
+        <h3>Rules a person wrote</h3>
+        <p style="font-size:29px;margin-bottom:14px"><strong>The Bombe · ELIZA</strong></p>
+        <ul style="font-size:29px;padding-left:30px;margin:0">
+          <li>A person specifies every step</li>
           <li>You can read it afterward</li>
-          <li>Weird input → breaks, or refuses</li>
+          <li>Odd input → it breaks, or stalls</li>
         </ul>
       </div>
       <div class="card olive">
-        <h3>Learned</h3>
-        <ul style="font-size:32px;padding-left:32px">
-          <li>Nobody writes the rules</li>
-          <li>Builder supplies <strong>examples</strong></li>
-          <li>You mostly cannot read it</li>
-          <li>Weird input → confident nonsense</li>
+        <h3>Rules fitted from examples</h3>
+        <p style="font-size:29px;margin-bottom:14px"><strong>Teachable Machine</strong></p>
+        <ul style="font-size:29px;padding-left:30px;margin:0">
+          <li>You supply examples, not steps</li>
+          <li>Mostly you cannot read it</li>
+          <li>Odd input → <strong>confident nonsense</strong></li>
         </ul>
       </div>
     </div>
-    <p class="muted" style="font-size:31px;margin-top:30px">That last row is the one that will matter all semester.</p>
-    <footer><span>Lesson 1 · Part B</span><span>Handout Part B</span></footer>
-  </section>
-
-  <section class="slide" data-label="Sort the eight"
-    data-notes="7–8 minutes, pairs. R or L on the handout. Do not confirm answers while they work. Two are genuinely arguable — the chess program (opening book is rules, modern engines learn) and the voice assistant (older ones were rule-based). Reward a defended wrong answer over an undefended right one; say that out loud.">
-    <div class="eyebrow">Sort them · pairs · 7 minutes</div>
-    <h2>R or L?</h2>
-    <div class="chipgrid">
-      <div class="chip">calculator adding 47 + 6</div>
-      <div class="chip">phone unlocking at your face</div>
-      <div class="chip">thermostat at 68°</div>
-      <div class="chip">autocomplete finishing a sentence</div>
-      <div class="chip arg">chess opening book</div>
-      <div class="chip">spam filter</div>
-      <div class="chip">vending machine change</div>
-      <div class="chip arg">voice assistant transcribing</div>
-    </div>
-    <p style="margin-top:34px">Two are genuinely arguable. Find them. Defend your call.</p>
-    <footer><span>Lesson 1 · Part B</span><span>Dashed = arguable</span></footer>
+    <p class="muted" style="font-size:31px;margin-top:26px">That last row is the difference that matters all semester.</p>
+    <footer><span>Lesson 1 · The distinction</span><span></span></footer>
   </section>
 
   <section class="slide" data-label="Conventions"
@@ -245,16 +296,17 @@ footer{
   </section>
 
   <section class="slide center" data-label="Preview"
-    data-notes="5 minutes. Sell the puzzle, do not explain ELIZA. Say 1966, no learning, no data, no memory — and that people who knew it was a program still asked to be left alone with it. Students should arrive wanting to know how. Do not use the word 'pattern matching' yet.">
+    data-notes="5 minutes. They have met ELIZA but not taken it apart. Next lesson they infer its rules before anyone names them, then deliberately break it. Do not use the phrase pattern matching yet — that is theirs to discover. Bring a partner; it runs in pairs or threes.">
     <div class="eyebrow">Next time</div>
-    <h1 style="font-size:104px">ELIZA</h1>
-    <p class="big">In 1966 a program convinced people it understood them.</p>
-    <p class="lede">No learning. No training data. No memory.<br>
-    Rules all the way down — the kind you just tried to write.</p>
+    <h1 style="font-size:104px">Breaking ELIZA</h1>
+    <p class="big">You met it today. Next time you take it apart.</p>
+    <p class="lede">Nobody will tell you its rules. You will work them out from the
+    replies — and then design an input that makes it fail.</p>
     <div class="next">
-      <p style="margin:0"><strong>You will work out its rules before anyone tells you them. Then you will break it.</strong></p>
+      <p style="margin:0"><strong>The question underneath: if rules can look this much like
+      understanding, what would actually count as evidence that something understands?</strong></p>
     </div>
-    <footer><span>Lesson 2 of 5</span><span>Bring: handout, journal, a partner</span></footer>
+    <footer><span>Lesson 2 of 5</span><span>Bring: journal, a partner</span></footer>
   </section>
 
 </div></div>

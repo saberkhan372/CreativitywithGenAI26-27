@@ -9,10 +9,14 @@ Five 70-minute blocks. Rebuilt 2026-09-09.
 
 Each lesson hands the next one its question.
 
+> **Lesson 1 is written as taught** (2026-09-09): the cat problem, then Bletchley
+> Park and Turing, then a first look at ELIZA, then Teachable Machine. No worksheet
+> was used and none is needed.
+
 | # | Lesson | Mechanism on the table | The question it leaves open |
 |---|---|---|---|
-| 1 | **Conventions: CS vs ML** | Humans write rules | What if the rules were *all* there was? |
-| 2 | **ELIZA** | Rules only — no learning | Rules feel like understanding. What would counts do instead? |
+| 1 | **Who writes the rules?** | Cat problem · Bletchley Park · ELIZA · Teachable Machine | If rules can look like understanding, what counts as evidence? |
+| 2 | **Breaking ELIZA** | Rules only — no learning | Rules feel like understanding. What would counts do instead? |
 | 3 | **BookBot** | Counts → probability, sampled | This is tiny. What happens at scale? |
 | 4 | **Explore LLMs** | Learned prediction at scale | Which differences are real, and how would we know? |
 | 5 | **Project + Poster** | Student-designed investigation | — |
@@ -75,7 +79,9 @@ the one that makes a claim honest, and it is the one that does not come naturall
 | 4 | `lesson-4-explore-llms-handout.md` | `lesson-4-explore-llms-slides.html` |
 | 5 | `lesson-5-project-poster-handout.md` | `lesson-5-project-poster-slides.html` |
 
-**Handouts** are Markdown sized to two printed pages. Print at 100%, double-sided.
+**Handouts** are Markdown sized to two printed pages. They are **reference sheets,
+not required worksheets** — the decks carry the lesson and the discussion does the
+work. Print at 100%, double-sided, for students who want somewhere to write.
 
 **Decks** are self-contained HTML — one file each, no build step, no server.
 Double-click to open. Each is a fixed 1920×1080 canvas scaled to the projector,
@@ -114,10 +120,10 @@ distribution students have already built honestly.
 
 ### One caution that must be said aloud, not just known
 
-Lesson 2 compares ELIZA to a modern LLM. A camp participant flagged that this
-comparison can imply an LLM would make a better therapist or confidant. The
-anthropomorphism and sycophancy caution is written onto the slide and into the
-handout. Do not skip it.
+Lessons 1 and 2 both put ELIZA next to a modern chatbot. A camp participant flagged
+that this comparison can imply an LLM would make a better therapist or confidant. The
+anthropomorphism and sycophancy caution is written onto the slide and into the handout
+in **both** lessons. Do not skip it, and name real people at school when you say it.
 
 ---
 

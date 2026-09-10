@@ -2,6 +2,10 @@
 
 **Working with Gen AI · Unit 1 · 70 minutes**
 
+> **Reference sheet.** This lesson runs on discussion and the screen. You do not need
+> to fill this in to take part — it is here so you can look things up later, and so
+> the reflection has somewhere to live if you want it on paper.
+
 Name: `______________________________`  Date: `________________`
 
 ---
@@ -10,90 +14,112 @@ Name: `______________________________`  Date: `________________`
 
 **When does a person write the rules, and when does a machine find them?**
 
-By the end of today you can: state the difference between a rule-written program and
-a learned model; use the class evidence conventions; and write a bounded claim.
+---
+
+## Part A — Warm-up · the cat problem
+
+**How should a machine identify a picture of a cat?**
+
+A computer follows your steps *exactly*. It cannot see, cannot guess, and does not
+already know what a cat is.
+
+Notes from the discussion — the rules we tried, and what broke each one:
+
+`_________________________________________________________________________`
+
+`_________________________________________________________________________`
+
+`_________________________________________________________________________`
+
+**Where it landed:** every rule needs another rule underneath it, and every rule has
+a photo that breaks it. Nobody has ever successfully written those rules.
 
 ---
 
-## Part A — Warm-up (8 min) · journals open, laptops closed
+## Part B — Three machines
 
-Write instructions a computer could follow to decide whether a photo contains a cat.
-The computer cannot see, cannot guess, and does not already know what a cat is. It
-does exactly what you write, nothing more.
+### 1 · Bletchley Park, 1939–45 — rules that worked
 
-Write **five** steps. Be specific — "look for a cat" is not a step.
+Alan Turing and the team at Bletchley Park built machines — the **Bombe** — to break
+the Enigma cipher. Every step those machines took was a rule a person had worked out
+and wired in. Nothing was learned from examples.
 
-1. `_________________________________________________________________`
-2. `_________________________________________________________________`
-3. `_________________________________________________________________`
-4. `_________________________________________________________________`
-5. `_________________________________________________________________`
+**Why it worked:** Enigma *had* rules. Hard ones, but findable. Once you know the
+rules, a machine applies them faster than any person.
 
-**Now break your own rules.** Describe one cat photo your instructions would get
-**wrong**:
+In **1950** Turing asked a different question: could a machine ever be said to
+*think*? He proposed judging it by conversation rather than by looking inside.
+
+### 2 · ELIZA, 1966 — rules that only look like understanding
+
+Someone took Turing up on it. ELIZA had **no learning, no training data, and no
+memory** — and people confided in it anyway.
+
+> **Person:** My boyfriend made me come here.
+> **ELIZA:** Your boyfriend made you come here?
+
+**⚠ Worth saying plainly.** Feeling understood is evidence about *you*, not about the
+program. A modern chatbot is *better* at agreeable reflection than ELIZA — which makes
+it more convincing, not more trustworthy. **Neither is a therapist, a confidant, or a
+friend.** If something in your life is heavy, the answer is a person.
+
+### 3 · Teachable Machine — nobody writes the rules
+
+You could not write rules for "cat." So you didn't. You showed a machine examples
+instead, and it worked in about three minutes.
+
+What we trained it on: `______________________________________________`
+
+**Then we broke it.** Shown something it had never seen, it answered anyway —
+confidently, and wrong.
+
+What it got wrong, and how sure it looked: `________________________________`
 
 `_________________________________________________________________________`
 
 ---
 
-## Part B — Two ways to build (15 min)
+## Part C — The distinction
 
-|  | **Rule-written** (classical CS) | **Learned** (machine learning) |
+| | **Rules a person wrote** | **Rules fitted from examples** |
 |---|---|---|
-| Who writes the rules? |  |  |
-| What does the builder supply? |  |  |
-| Can you read the rules afterward? |  |  |
-| What happens with a weird input? |  |  |
+| Examples | The Bombe · ELIZA | Teachable Machine |
+| The builder supplies | every step | examples, not steps |
+| Can you read it afterward? | yes | mostly no |
+| Odd input | breaks, or stalls | **confident nonsense** |
 
-**Sort these eight.** Write **R** (rule-written) or **L** (learned) beside each.
-
-| | | | |
-|---|---|---|---|
-| ( ) calculator adding 47 + 6 | ( ) phone unlocking at your face | ( ) thermostat at 68° | ( ) autocomplete finishing a sentence |
-| ( ) chess opening book | ( ) spam filter | ( ) vending machine change | ( ) voice assistant transcribing |
-
-Two of these are genuinely **arguable**. Circle them. Be ready to defend why.
+**That last row is the difference that matters all semester.**
 
 ---
 
-## Part C — Class conventions (17 min)
+## Part D — Class conventions
 
-These hold all semester. Copy them; you will be held to them.
+These hold all year.
 
-**1. Log the exact thing.** Prompt and output copied *verbatim* — not paraphrased,
-not tidied. A retyped output is not evidence.
-
-**2. Observation before interpretation.** "It wrote three sentences and one was
-false" is an observation. "It lied" is an interpretation. Say which you mean.
-
-**3. One variable at a time.** Change one thing, hold the rest. Two changes at once
-tells you nothing about either.
-
-**4. Name the authorship.** Wherever AI touched your work, say what *you* decided
-and what *it* produced.
-
-**5. Consent and privacy.** No real names, no photos of people, no private details
-about anyone — including yourself — into any AI tool. Ever.
-
+**1. Log the exact thing.** Prompt and output verbatim. A retyped output is not evidence.
+**2. Observation before interpretation.** "One sentence was false" ≠ "it lied."
+**3. One variable at a time.** Two changes at once tells you nothing about either.
+**4. Name the authorship.** What *you* decided, what *it* produced.
+**5. Consent and privacy.** No real names, faces, or private details into any tool.
 **6. Participation is not obligation.** Observing, recording, questioning, and
-declining are full participation. You never have to type into an AI tool.
+declining are all full participation. You never have to type into an AI tool, and you
+never have to put your own face in front of a camera.
 
-**Filename convention — every submission, no exceptions:**
-`Lastname-Assignment.ext`  → for example, `Hardie-Lesson1.jpg`
+**Filenames, every time:** `Lastname-Assignment.ext`
 
 ---
 
-## Part D — Reflection and submission (12 min) · before you leave
+## Part E — Reflection
 
 **Circle one in each row.**
 
 | Prompt | | | |
 |---|---|---|---|
-| My cat instructions were… | complete | mostly complete | nowhere close |
 | Writing explicit rules for "cat" felt… | easy | hard | impossible |
-| The two arguable items are arguable because… | both apply | neither fits | it depends how it was built |
+| Teachable Machine was wrong because… | too few examples | it never saw that thing | it cannot say "I don't know" |
+| The Bombe and ELIZA are alike in that… | both learned | both ran rules a person wrote | both understood language |
 
-**Write one claim** using the stem. Your cat exercise is the evidence.
+**One bounded claim.**
 
 > I observed `______________________________________________________`
 >
@@ -103,24 +129,19 @@ declining are full participation. You never have to type into an AI tool.
 >
 > but it does not establish `___________________________________________`
 
-**Authorship line.** Nothing today used AI. Name one decision *you* made that a
-machine could not have made for you:
-
-`_________________________________________________________________________`
-
-### Submit to Google Classroom
-
-1. Photo of this page with Parts A and D visible
-2. Filename: `Lastname-Lesson1.jpg`
+**Authorship line.** Name one decision *you* made today that no machine here could
+have made for you: `_____________________________________________________`
 
 ---
 
-## Next time — ELIZA
+## Next time — Breaking ELIZA
 
-In 1966 a program convinced people it understood them. It had **no learning, no
-training data, and no memory**. It was rules all the way down — the kind of rules
-you just tried to write.
+You met it. Next you take it apart.
 
-You will work out its rules before anyone tells you them. Then you will break it.
+Nobody will tell you its rules — you work them out from the replies, then design an
+input that makes it fail.
 
-**Bring:** this handout, your journal, and a partner you can talk to.
+The question underneath: **if rules can look this much like understanding, what would
+actually count as evidence that something understands?**
+
+**Bring:** your journal and a partner.
