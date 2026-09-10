@@ -42,6 +42,12 @@ li{margin-bottom:13px}
 .card.olive{border-color:var(--olive);background:#f2f6e8}
 .card h3{color:var(--clay-dark)} .card.olive h3{color:#4d5c33}
 .card p,.card li{font-size:29px;line-height:1.38}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:16px;border:3px solid var(--line);background:#fff}
+figcaption{font-size:22px;line-height:1.32;color:var(--muted);margin-top:10px}
+figcaption b{color:var(--ink);font-weight:600;display:block;font-size:25px;margin-bottom:3px}
+.credit{font-size:18px;color:var(--muted);margin-top:5px;display:block}
+.split2{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
 .q{background:var(--paper);border-left:10px solid var(--olive);border-radius:0 18px 18px 0;padding:22px 26px}
 .q p{font-family:var(--serif);font-size:29px;line-height:1.34;margin:0}
@@ -116,17 +122,38 @@ footer{position:absolute;left:105px;right:105px;bottom:36px;display:flex;justify
   </section>
 
   <section class="slide" data-label="But it worked"
-    data-notes="The hinge of the lesson. Weizenbaum's own secretary — who had watched him build it — asked him to leave the room so she could talk to it privately. Practising psychiatrists proposed it could scale therapy. He spent the rest of his career arguing against what he had made. Ask the room directly: what did those people have that you do not? Steer toward — it was the first thing of its kind they had ever met, and they had no prior experience to compare it against.">
+    data-notes="The hinge of the lesson. Weizenbaum's own secretary — who had watched him build it — asked him to leave the room so she could talk to it privately. Practising psychiatrists proposed it could scale therapy. He spent the rest of his career arguing against what he had made, and wrote Computer Power and Human Reason in 1976 to do it. Ask the room directly: what did those people have that you do not?">
     <div class="eyebrow">And yet</div>
-    <h2>It worked on them.</h2>
-    <ul>
-      <li>Weizenbaum's own secretary — who had <em>watched him build it</em> — asked him
-        to leave the room so she could talk to it privately.</li>
-      <li>Practising psychiatrists proposed it could scale therapy to more patients.</li>
-      <li>He spent the rest of his career arguing against what he had made.</li>
-    </ul>
-    <div class="stem"><p>What did they have that you don't?</p></div>
-    <footer><span>Lesson 2 · Discussion</span><span>Weizenbaum, 1966 → 1976</span></footer>
+    <div class="split2">
+      <div>
+        <h2 style="font-size:66px">It worked on them.</h2>
+        <ul style="font-size:31px;line-height:1.4">
+          <li>His own secretary — who had <em>watched him build it</em> — asked him to
+            leave the room so she could talk to it privately.</li>
+          <li>Practising psychiatrists proposed it could scale therapy to more patients.</li>
+          <li>He spent the rest of his career arguing against what he had made.</li>
+        </ul>
+        <div class="stem" style="padding:24px 34px"><p style="font-size:38px">What did they have that you don't?</p></div>
+      </div>
+      <figure>
+        <img src="img/weizenbaum.jpg" alt="Joseph Weizenbaum, an older man with a white beard and glasses.">
+        <figcaption><b>Joseph Weizenbaum</b>Wrote ELIZA in 1966. Spent decades warning against it.
+        <span class="credit">Ulrich Hansen · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption>
+      </figure>
+    </div>
+    <footer><span>Lesson 2 · Discussion</span><span>Computer Power and Human Reason, 1976</span></footer>
+  </section>
+
+  <section class="slide" data-label="The real transcript"
+    data-notes="A genuine 1966-era transcript, not a reconstruction. Read it aloud with a student. Ask them to point at each of the six moves as it happens — mirror, pronoun swap, keyword hook, template and slot, deflect, fallback. Every line is one of the six. Then note that this is what convinced people, and it convinced nobody in this room.">
+    <div class="eyebrow">The actual thing · 1966</div>
+    <h2 style="font-size:64px">Find the six moves.</h2>
+    <figure style="max-width:1180px;margin:0 auto">
+      <img src="img/eliza.png" alt="A printed ELIZA conversation transcript in monospace type.">
+      <figcaption><b>A real ELIZA session</b>Every line is one of the six moves. Point at them as we read.
+      <span class="credit">Public domain · Wikimedia Commons</span></figcaption>
+    </figure>
+    <footer><span>Lesson 2</span><span>This is what convinced people</span></footer>
   </section>
 
   <section class="slide" data-label="The turn"
@@ -218,6 +245,19 @@ footer{position:absolute;left:105px;right:105px;bottom:36px;display:flex;justify
       and wrong at the same time.</strong></p>
     </div>
     <footer><span>Lesson 3 of 5</span><span>Bring: a pencil, patience for tallying</span></footer>
+  </section>
+
+  <section class="slide" data-label="Image credits"
+    data-notes="Not for projection during the lesson — present so the deck can be shared publicly and still meet the license terms.">
+    <div class="eyebrow">Image credits</div>
+    <h2 style="font-size:58px">Wikimedia Commons</h2>
+    <ul style="font-size:29px;line-height:1.4">
+      <li><strong>Joseph Weizenbaum</strong> — Ulrich Hansen, CC BY-SA 3.0</li>
+      <li><strong>ELIZA conversation transcript</strong> — public domain</li>
+    </ul>
+    <p class="muted" style="font-size:26px">Resized and recompressed; otherwise unmodified.
+    Full details in <code>img/CREDITS.md</code>.</p>
+    <footer><span>Lesson 2</span><span>CC BY-SA requires attribution and share-alike</span></footer>
   </section>
 
 </div></div>

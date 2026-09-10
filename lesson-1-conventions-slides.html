@@ -71,6 +71,13 @@ li{margin-bottom:18px}
 }
 .rule div p{font-size:30px;line-height:1.36;margin:0}
 .rule strong{font-size:32px}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:18px;border:3px solid var(--line);background:#fff}
+figcaption{font-size:24px;line-height:1.34;color:var(--muted);margin-top:12px}
+figcaption b{color:var(--ink);font-weight:600;display:block;font-size:26px;margin-bottom:4px}
+.credit{font-size:19px;color:var(--muted);margin-top:6px;display:block}
+.imgrow{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:6px}
+.split2{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
 .chat{background:var(--paper);border:3px solid var(--line);border-radius:24px;padding:26px 34px;margin-top:6px}
 .turn{display:flex;gap:18px;margin-bottom:14px;align-items:flex-start}
 .turn:last-child{margin-bottom:0}
@@ -164,26 +171,45 @@ footer{
   </section>
 
   <section class="slide" data-label="Bletchley Park"
-    data-notes="The historical anchor. Bletchley Park, 1939-45: Turing and colleagues built the Bombe, a machine that broke Enigma. Every step it took was a rule a person worked out and wired in. Nothing was learned from examples. This is the purest possible case of the thing students just failed to do for cats — and it worked, because the problem had rules. Keep it to about 6 minutes; the point is contrast, not a history unit.">
-    <div class="eyebrow">Where this comes from · Bletchley Park, 1939–45</div>
+    data-notes="About 6 minutes. The contrast, not a history unit. Enigma changed its settings every day, so the Bombe had to search settings mechanically — every step of that search was worked out by people and wired in. Nothing was learned from examples. This is the purest case of the thing they just failed to do for cats, and it worked, because the problem had rules.">
+    <div class="eyebrow">Bletchley Park · 1939–45</div>
     <h2>People wrote every rule.</h2>
-    <p class="lede">Alan Turing and the team at Bletchley Park built machines to break
-    the Enigma cipher. Every step those machines took was a rule a person had worked
-    out and wired in.</p>
-    <div class="cols" style="margin-top:22px">
-      <div class="card clay">
-        <h3>Why it worked</h3>
-        <p>Enigma <em>had</em> rules. Hard ones, but findable. Once you know the rules,
-        a machine can apply them faster than any person.</p>
-      </div>
-      <div class="card olive">
-        <h3>Turing's other question</h3>
-        <p>In 1950 he asked whether a machine could ever be said to <em>think</em> —
-        and proposed judging it by conversation rather than by looking inside.</p>
-      </div>
+    <div class="imgrow">
+      <figure>
+        <img src="img/enigma.jpg" alt="An Enigma cipher machine with its keyboard and lampboard visible.">
+        <figcaption><b>Enigma</b>The German cipher machine. Its settings changed every day.
+        <span class="credit">Alessandro Nassiri · CC BY-SA 4.0 · Wikimedia Commons</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/bombe.jpg" alt="A rebuilt Turing–Welchman Bombe: a tall cabinet covered in rows of coloured rotating drums.">
+        <figcaption><b>The Bombe</b>Built to search Enigma settings. Every step it took was a rule a person worked out and wired in.
+        <span class="credit">Antoine Taveneaux · CC BY-SA 3.0 · Wikimedia Commons</span></figcaption>
+      </figure>
     </div>
-    <p class="muted" style="font-size:30px;margin-top:26px">Hold that idea. Someone is about to take him up on it.</p>
-    <footer><span>Lesson 1 · History</span><span>Turing, 1912–1954</span></footer>
+    <p style="margin-top:22px"><strong>Why it worked:</strong> Enigma <em>had</em> rules. Hard ones,
+    but findable. Cats do not.</p>
+    <footer><span>Lesson 1 · History</span><span>Bletchley Park, Buckinghamshire</span></footer>
+  </section>
+
+  <section class="slide" data-label="Turing's question"
+    data-notes="Turing died in 1954, at 41, after being prosecuted for being gay and sentenced to chemical castration. Say that plainly — it belongs in the room and students will ask. The 1950 paper matters here because it moved the question from what is going on inside the machine to how it behaves in conversation. That framing is exactly what makes ELIZA possible, and exactly what makes ELIZA a problem.">
+    <div class="eyebrow">1950 · a different question</div>
+    <div class="split2">
+      <div>
+        <h2 style="font-size:68px">Can a machine think?</h2>
+        <p>Turing suggested we stop asking what is going on <em>inside</em> a machine —
+        and judge it instead by <strong>how it behaves in a conversation.</strong></p>
+        <p class="muted" style="font-size:31px">Hold on to that. Someone is about to take
+        him up on it — and it will turn out that behaving convincingly in conversation
+        is much easier than it sounds.</p>
+      </div>
+      <figure>
+        <img src="img/turing.jpg" alt="Alan Turing as a teenager, in a school photograph.">
+        <figcaption><b>Alan Turing, aged 16</b>Died 1954, aged 41, after being prosecuted for being gay.
+        <span class="credit">Public domain · Wikimedia Commons</span></figcaption>
+      </figure>
+    </div>
+    <footer><span>Lesson 1 · History</span><span>“Computing Machinery and Intelligence”, 1950</span></footer>
   </section>
 
   <section class="slide" data-label="ELIZA"
@@ -307,6 +333,20 @@ footer{
       understanding, what would actually count as evidence that something understands?</strong></p>
     </div>
     <footer><span>Lesson 2 of 5</span><span>Bring: journal, a partner</span></footer>
+  </section>
+
+  <section class="slide" data-label="Image credits"
+    data-notes="Not for projection during the lesson — it is here so the deck can be shared publicly and still meet the license terms. CC BY-SA is share-alike: a modified version of these images must carry the same license.">
+    <div class="eyebrow">Image credits</div>
+    <h2 style="font-size:60px">Wikimedia Commons</h2>
+    <ul style="font-size:29px;line-height:1.4">
+      <li><strong>Enigma machine</strong> — Alessandro Nassiri, CC BY-SA 4.0</li>
+      <li><strong>Turing–Welchman Bombe (rebuild)</strong> — Antoine Taveneaux, CC BY-SA 3.0</li>
+      <li><strong>Alan Turing, aged 16</strong> — public domain</li>
+    </ul>
+    <p class="muted" style="font-size:27px">Resized and recompressed; otherwise unmodified.
+    Full details in <code>img/CREDITS.md</code>.</p>
+    <footer><span>Lesson 1</span><span>CC BY-SA requires attribution and share-alike</span></footer>
   </section>
 
 </div></div>

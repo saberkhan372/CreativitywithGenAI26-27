@@ -101,6 +101,11 @@ olive `#7a8a5e`, Fraunces + Figtree).
 Fonts load from Google Fonts when online and fall back to Georgia / system sans
 offline. Nothing else is fetched; no analytics, no storage, no student data.
 
+**Images** live in `img/` and are bundled rather than hot-linked, so the decks work
+with no network in a classroom. All are Wikimedia Commons, public domain or CC BY-SA,
+attributed on the slide that uses them and again on a credits slide at the end of each
+deck. Terms and source links: [`img/CREDITS.md`](img/CREDITS.md).
+
 ---
 
 ## Source material this rebuild draws on
