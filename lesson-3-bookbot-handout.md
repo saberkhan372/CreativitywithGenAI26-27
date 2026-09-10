@@ -125,8 +125,8 @@ person could count — and it will sound far more confident.
 
 **Circle one in each row.**
 
-| Prompt | | | |
-|---|---|---|---|
+| Prompt | | | | |
+|---|---|---|---|---|
 | My sentence read as… | fluent and sensible | fluent but hollow | not fluent |
 | The words were chosen by… | me | the counts | both |
 | A bigger book would make the output… | more fluent | more accurate | both | neither |

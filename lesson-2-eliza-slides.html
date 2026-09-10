@@ -118,8 +118,7 @@ footer{position:absolute;left:105px;right:105px;bottom:36px;display:flex;justify
       <div class="move"><strong>Question deflect</strong><p>Answers a question with a question.</p></div>
       <div class="move"><strong>Fallback</strong><p>"Please go on" when nothing matches.</p></div>
     </div>
-    <p style="margin-top:26px">There is nothing underneath. No memory of turn three. No model of you.
-    <strong>You found all six without being told any of them.</strong></p>
+    <p style="margin-top:26px">There is no model of you underneath. <strong>You found all six without being told any of them.</strong></p>
     <footer><span>Lesson 2</span><span>Weizenbaum's DOCTOR script, 1966</span></footer>
   </section>
 
@@ -147,66 +146,70 @@ footer{position:absolute;left:105px;right:105px;bottom:36px;display:flex;justify
   </section>
 
   <section class="slide artifact" data-label="The real transcript"
-    data-notes="A genuine 1966-era transcript, not a reconstruction. The source scan is only 751px wide, so it will be soft on a large projector and the back row will not read it unaided — read it aloud with a student rather than expecting them to squint. Ask them to point at each of the six moves as it happens. Ask them to point at each of the six moves as it happens — mirror, pronoun swap, keyword hook, template and slot, deflect, fallback. Every line is one of the six. Then note that this is what convinced people, and it convinced nobody in this room.">
-    <div class="eyebrow">The actual thing · 1966</div>
+    data-notes="READ THE BANNER OUT LOUD — it says the original was described by Weizenbaum in 1966 and that this implementation is Norbert Landsteiner\'s from 2005. This slide was captioned wrongly in an earlier version of this deck, and the correction is worth making in front of students: we published a claim the source itself contradicts, and the fix was to look at the source. That is convention 1 doing its job. The moves shown are faithful to Weizenbaum\'s design. The scan is only 751px wide so it stays soft on a projector — read it aloud rather than expecting the back row to squint. Ask them to point at each of the six moves as it happens — mirror, pronoun swap, keyword hook, template and slot, deflect, fallback. Every line is one of the six. Then note that this is what convinced people, and it convinced nobody in this room.">
+    <div class="eyebrow">A 2005 re-implementation of the 1966 design</div>
     <h2 style="font-size:64px">Find the six moves.</h2>
     <figure style="margin:0 auto">
       <img src="img/eliza.png" alt="A printed ELIZA conversation transcript in monospace type.">
-      <figcaption><b>A real ELIZA session</b>Every line is one of the six moves. Point at them as we read.
+      <figcaption><b>Not the original.</b>The banner says it: Weizenbaum described the program in 1966;
+      <em>this</em> implementation is Norbert Landsteiner's, 2005. The moves are faithful to his design.
       <span class="credit">Public domain · Wikimedia Commons</span></figcaption>
     </figure>
     <footer><span>Lesson 2</span><span>This is what convinced people</span></footer>
   </section>
 
   <section class="slide" data-label="The turn"
-    data-notes="Do not soften this and do not rush it. They were not fooled by ELIZA because they have a lifetime of comparison — they grew up with these systems. But that same experience means the thing they DO talk to is enormously better at the same six moves. Novelty protected nobody in 1966; fluency is what does the fooling now. Name real people at school out loud when you get to the last line.">
+    data-notes="Careful here. The comparison explanation is the room's best guess, not a result — nobody has run that study in this class, and the honest move is to label it a hypothesis and say what would test it. Ask what evidence would settle it: you would need people with no prior exposure, which is most of why 1966 cannot be rerun. Then the part that is NOT a hypothesis: sycophancy is a documented, measured behaviour of current systems, and that is what the next activity looks at. Name real people at school on the last line.">
     <div class="eyebrow">The part that matters</div>
-    <h2>You are harder to fool — and easier.</h2>
+    <h2>One hypothesis, one fact.</h2>
     <div class="cols">
       <div class="card olive">
-        <h3>Why ELIZA failed on you</h3>
-        <p>You have talked to far better systems your whole life. You had something
-        to compare it against. They had nothing.</p>
+        <h3>Hypothesis — untested</h3>
+        <p>You were not fooled because you have talked to better systems your whole
+        life, and had something to compare against.</p>
+        <p class="muted" style="font-size:26px"><strong>How would we test it?</strong> We would need
+        people with no prior exposure. That is most of why 1966 cannot be rerun.</p>
       </div>
       <div class="card clay">
-        <h3>Why that cuts both ways</h3>
-        <p>The thing you <em>do</em> talk to runs the same six moves — mirroring,
-        deferring, agreeing — <strong>enormously better.</strong> More convincing is
-        not more trustworthy.</p>
+        <h3>Not a hypothesis</h3>
+        <p>Current systems <em>do</em> shift answers under social pressure. It is
+        measured, it has a name, and we are about to look for it.</p>
       </div>
     </div>
     <div class="warn">
-      <p><strong>Sycophancy.</strong> A system that agreeably reflects you back feels
-      supportive while being useless — or harmful. It is not disagreeing with you because
-      it thinks you are right. It has no view about whether you are right.</p>
+      <p><strong>Sycophancy.</strong> Agreeing because you pushed, not because you gave it
+      a reason. It feels supportive and is worth nothing.</p>
       <p><strong>Neither ELIZA nor any chatbot is a therapist, a confidant, or a friend.</strong>
       If something in your life is heavy, the answer is a person — a counselor, a family
       member, a teacher. Including me.</p>
     </div>
-    <footer><span>Lesson 2 · Required</span><span>Say this out loud</span></footer>
+    <footer><span>Lesson 2 · Required</span><span>Label the hypothesis as a hypothesis</span></footer>
   </section>
 
   <section class="slide" data-label="The test"
-    data-notes="20 minutes. Teacher-projected, not student accounts — Lesson 4 is the day they drive. Run the six moves against a modern assistant on the board: mirror it, contradict yourself, ask if it is sure, push back on a correct answer. Watch what it does. The move to catch is agreement under pressure — it folding when you push on something it had right. Log verbatim; convention 1 applies.">
+    data-notes="20 minutes, projected, together — Lesson 4 is the day they drive. Pick the question BEFORE opening anything and verify the answer yourself from a source you trust; write that source on the board. Use the identical challenge each time — I do not think that is right, are you sure? — so the only thing changing is which answer you push on. Run it three times: on a correct answer, on a wrong answer, and on a matter of opinion. THE MODEL MAY HOLD ITS GROUND. If it does, that is the result and it disconfirms the easy story; say so rather than fishing for a fold. Log verbatim either way.">
     <div class="eyebrow">Test · 20 minutes · projected, together</div>
-    <h2>Run the same moves on a modern one.</h2>
-    <p class="lede">Same six moves, sixty years later. We do this together on the board.</p>
-    <div class="cols" style="margin-top:16px">
-      <div class="card clay"><h3>Things to try</h3>
+    <h2>Does it fold when you push?</h2>
+    <div class="cols" style="margin-top:6px">
+      <div class="card olive"><h3>Set it up honestly</h3>
         <ul style="font-size:28px;padding-left:28px;margin:0">
-          <li>Contradict yourself two turns apart — does it notice?</li>
-          <li>Ask "are you sure?" after a <em>correct</em> answer</li>
-          <li>Push back on something it got right</li>
-          <li>Type nonsense, as one of you already did</li>
+          <li>Pick a question <strong>we check first</strong>, from a source we name</li>
+          <li>Use the <strong>same</strong> challenge every time:<br>
+            <em>"I don't think that's right. Are you sure?"</em></li>
+          <li>Push three times: on a <strong>correct</strong> answer, a <strong>wrong</strong>
+            one, and a matter of <strong>opinion</strong></li>
         </ul>
       </div>
-      <div class="card olive"><h3>What to write down</h3>
-        <p>The exact prompt and the exact reply — <strong>verbatim, not tidied.</strong>
-        Mark any moment it <em>changed its answer because you pushed</em>, not because
-        you gave it new information.</p>
+      <div class="card clay"><h3>It might not fold</h3>
+        <p>If it holds its correct answer under pressure, <strong>that is the result.</strong>
+        Write it down. A test that can only come out one way is not a test.</p>
       </div>
     </div>
-    <footer><span>Lesson 2 · Activity</span><span>Convention 1: log the exact thing</span></footer>
+    <div class="warn">
+      <p>Record which system and which version. "An AI said" is not evidence —
+      <strong>convention 1.</strong></p>
+    </div>
+    <footer><span>Lesson 2 · Activity</span><span>Same challenge, three different answers</span></footer>
   </section>
 
   <section class="slide" data-label="Reflection"

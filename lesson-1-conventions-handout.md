@@ -52,8 +52,8 @@ In **1950** Turing asked a different question: could a machine ever be said to
 
 ### 2 · ELIZA, 1966 — rules that only look like understanding
 
-Someone took Turing up on it. ELIZA had **no learning, no training data, and no
-memory** — and people confided in it anyway.
+Someone took Turing up on it. ELIZA had **no learning and no training data** — and
+people confided in it anyway.
 
 > **Person:** My boyfriend made me come here.
 > **ELIZA:** Your boyfriend made you come here?

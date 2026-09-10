@@ -215,10 +215,10 @@ footer{
   </section>
 
   <section class="slide" data-label="ELIZA"
-    data-notes="First look only — the full rule hunt is its own lesson. Run 4 or 5 exchanges live and let the room react. Say 1966, no learning, no data, no memory. Then the caution, out loud: Weizenbaum's own secretary asked him to leave the room. Feeling understood is evidence about the person, not the program. A modern chatbot is better at agreeable reflection than ELIZA, which makes it more convincing, not more trustworthy. Neither is a therapist or a friend — name real people at school.">
+    data-notes="First look only — the full rule hunt is its own lesson. Run 4 or 5 exchanges live and let the room react. Say 1966, no learning, no training data. Do NOT say no memory: the 1966 paper describes a MEMORY rule that stashed transformed statements containing the word my and could resurface one later as Earlier you said your... A limited memory, but not none. Then the caution, out loud: Weizenbaum's own secretary asked him to leave the room. Feeling understood is evidence about the person, not the program. A modern chatbot is better at agreeable reflection than ELIZA, which makes it more convincing, not more trustworthy. Neither is a therapist or a friend — name real people at school.">
     <div class="eyebrow">1966 · taking Turing up on it</div>
     <h2>ELIZA</h2>
-    <p class="lede">A program with <strong>no learning, no data, and no memory</strong> —
+    <p class="lede">A program with <strong>no learning and no training data</strong> —
     rules all the way down — that people confided in anyway.</p>
     <div class="chat">
       <div class="turn"><div class="who u">Person</div><div class="said">My boyfriend made me come here.</div></div>
@@ -233,25 +233,44 @@ footer{
   </section>
 
   <section class="slide" data-label="Teachable Machine"
-    data-notes="The payoff for the cat warm-up. teachablemachine.withgoogle.com — Image Project, two classes, about 30 webcam samples each, train, test. Three minutes. Nobody writes a rule; you supply examples. Deliberately break it afterwards: hold up something it has never seen and watch it answer confidently anyway. That confident-wrong moment is the one to name — it comes back in every lesson of this unit. Privacy: webcam images stay in the browser, but nobody is required to use their own face.">
+    data-notes="teachablemachine.withgoogle.com, Image Project. Pick TWO objects in the room and name them on the board — a pen and a mug, say. About 30 webcam samples each, train, test. Roughly 12 minutes. Privacy: images stay in the browser, but nobody is required to use their own face or belongings.">
     <div class="eyebrow">The answer to the cat question</div>
     <h2>Nobody writes the rules.</h2>
     <p class="lede">You could not write rules for "cat." So don't. Show a machine
-    examples instead — and it works in about three minutes.</p>
-    <div class="cols" style="margin-top:20px">
-      <div class="card olive">
-        <h3>What you did</h3>
-        <p>Two classes. Around thirty examples each. Train. Test.
-        <strong>You never wrote a single rule.</strong></p>
-      </div>
-      <div class="card clay">
-        <h3>Then you broke it</h3>
-        <p>Show it something it has never seen. It answers anyway —
-        <strong>confidently, and wrong.</strong></p>
-      </div>
+    examples instead.</p>
+    <div class="cols" style="margin-top:18px">
+      <div class="card olive"><h3>Train it</h3>
+        <p>Two objects we pick together. About thirty examples of each. Train. Test.
+        <strong>You never write a single rule.</strong></p></div>
+      <div class="card clay"><h3>Then hold one back</h3>
+        <p>Choose a <strong>third</strong> object it has never seen.
+        Do not train it on this one.</p></div>
     </div>
-    <p class="big" style="margin-top:28px">Remember that last part. It comes back every day of this unit.</p>
     <footer><span>Lesson 1 · Activity</span><span>teachablemachine.withgoogle.com</span></footer>
+  </section>
+
+  <section class="slide" data-label="The held-out test"
+    data-notes="This is the part that must not be asserted in advance. Students write a prediction BEFORE showing the third object, then we run it. The common outcome is a confident label for something it has never seen — but it is not guaranteed, and the deck must not promise it. If it hedges, or splits near 50/50, that is a real result and a better discussion than the one you planned. Collect competing explanations before settling: too few examples? never saw this thing? no way to answer I do not know? Then note which of those today's test can and cannot separate.">
+    <div class="eyebrow">Predict, then test</div>
+    <h2>What will it say about the third object?</h2>
+    <div class="cols">
+      <div class="card clay"><h3>Write this down first</h3>
+        <ul style="font-size:29px;padding-left:30px;margin:0">
+          <li>Which label will it choose?</li>
+          <li>How confident, roughly?</li>
+          <li>What would surprise you?</li>
+        </ul>
+      </div>
+      <div class="card olive"><h3>Then we show it</h3>
+        <p>Whatever happens is the result — including if it hedges, or splits down the
+        middle. <strong>An unexpected outcome is not a failed experiment.</strong></p></div>
+    </div>
+    <div class="warn">
+      <p><strong>If it does answer confidently about something it has never seen —</strong>
+      why? Collect competing explanations before you pick one, and say which ones today's
+      test cannot tell apart.</p>
+    </div>
+    <footer><span>Lesson 1 · Activity</span><span>Prediction before result</span></footer>
   </section>
 
   <section class="slide" data-label="Two ways to build"
@@ -312,11 +331,11 @@ footer{
   </section>
 
   <section class="slide" data-label="Submission"
-    data-notes="Check the filename convention on at least three phones before students leave the room. 58% of last year's submissions arrived with no name attached. Fixing that costs ten seconds now and hours later.">
+    data-notes="Students submit their OWN paper or journal, not the handout — the handout is a reference sheet and some students will not have written on it. What must be visible: their cat rules, their written prediction for the held-out object, and their claim. Check the filename convention on at least three phones before they leave; 58% of last year's submissions arrived with no name attached.">
     <div class="eyebrow">Submit before you go</div>
     <h2>Google Classroom</h2>
     <div class="submit">
-      <div class="card clay"><h3>What</h3><p>Photo of your handout with Parts A and D visible.</p></div>
+      <div class="card clay"><h3>What</h3><p>A photo of <strong>your own paper</strong> — your cat rules, your prediction, and your claim. Handout optional.</p></div>
       <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-Lesson1.jpg</span></p></div>
     </div>
     <p style="margin-top:34px">Also answer, in one line: <strong>name one decision you made today that a machine could not have made for you.</strong></p>

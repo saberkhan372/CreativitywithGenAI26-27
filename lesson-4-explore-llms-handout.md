@@ -93,8 +93,8 @@ that is what an interpretation is.
 
 **Circle one in each row.**
 
-| Prompt | | | |
-|---|---|---|---|
+| Prompt | | | | |
+|---|---|---|---|---|
 | My prediction was… | mostly right | mostly wrong | too vague to score |
 | The biggest real difference was… | style | accuracy | willingness to refuse | length |
 | The differences I noticed are… | clearly real | might be one-off | I'd need more runs |

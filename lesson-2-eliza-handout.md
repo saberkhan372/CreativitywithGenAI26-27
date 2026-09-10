@@ -43,7 +43,13 @@ That is a mechanism, inferred from behaviour. It is the method of this whole cou
 | **Question deflect** | Answers a question with a question |
 | **Fallback** | "Please go on" when nothing matches |
 
-There is nothing underneath. No memory of turn three. No model of you.
+There is no model of you underneath.
+
+> **One correction worth having.** ELIZA is often described as having *no memory*.
+> The 1966 paper says otherwise: a `MEMORY` rule stashed transformed versions of
+> statements containing "my", and could resurface one later as *"Earlier you said
+> your…"* — which is precisely the move that feels most like being remembered.
+> A limited memory, but not none. We checked the paper.
 
 ---
 

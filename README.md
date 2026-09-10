@@ -86,9 +86,13 @@ the one that makes a claim honest, and it is the one that does not come naturall
 | 4 | `lesson-4-explore-llms-handout.md` | `lesson-4-explore-llms-slides.html` |
 | 5 | `lesson-5-project-poster-handout.md` | `lesson-5-project-poster-slides.html` |
 
-**Handouts** are Markdown sized to two printed pages. They are **reference sheets,
-not required worksheets** — the decks carry the lesson and the discussion does the
-work. Print at 100%, double-sided, for students who want somewhere to write.
+**Handouts** are **reference sheets, not required worksheets.** The decks carry the
+lesson and the discussion does the work; nothing in any submission requires the
+handout. Print them for students who want somewhere to write — printed length depends
+on your renderer and margins, so check before running a class set.
+
+**Poster templates** (`poster-templates.html`) hold the blank six-zone layout and the
+two worked examples used in Lesson 5's warm-up.
 
 **Decks** are self-contained HTML — one file each, no build step, no server.
 Double-click to open. Each is a fixed 1920×1080 canvas scaled to the projector,
