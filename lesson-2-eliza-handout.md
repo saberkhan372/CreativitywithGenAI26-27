@@ -135,10 +135,10 @@ you today — **who decided that was correct?**
 
 `_________________________________________________________________________`
 
-### Submit to Google Classroom
+### Classroom — transfer, attach, turn in
 
 1. Your transcript from the test, plus your claim
-2. Filename: `Lastname-Lesson2.jpg`
+2. Filename `Lastname-U1D2`. **Open the attachment to check it is readable, then turn in.**
 
 ---
 

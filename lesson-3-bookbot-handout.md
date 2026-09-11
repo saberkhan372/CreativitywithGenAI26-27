@@ -35,6 +35,24 @@ is not a mistake to tidy up. It *is* the pattern.
 
 **Never count across a line break.** Line 1 does not hand anything to line 2.
 
+### Matching lists — every next word, repeats kept
+
+Built from the six lines above. Repeats are left in on purpose: they *are* the counts.
+
+| Current word | Every word that follows it, in book order |
+|---|---|
+| `the` | robot, robot, robot, fox, fox, robot |
+| `robot` | paints, paints, folds, paints |
+| `fox` | paints, folds |
+| `paints` | a, a, a, a |
+| `folds` | a, a |
+| `a` | **moon, star, map, moon, map, moon** |
+| `moon` | . , . , . |
+| `star` | . |
+| `map` | . , . |
+
+Check the `a` row against your own table in Step 2. They should match.
+
 ---
 
 ## Step 1 — Warm-up
@@ -64,8 +82,9 @@ Find every `a` in the book. Tally the word that comes next.
 
 **The only rule: always take the word that appears most often.**
 
-Start at `the`. Look at the book. Whichever word follows it most often — write that
-down. Then do the same from *that* word. Stop when you write the period.
+Start at `the`. Find its row in the matching lists. Whichever word appears most times
+in that row — write it down. Then jump to *that* word's row and do it again. Stop when
+you write the period.
 
 `the` → `________` → `________` → `________` → `________` → `.`
 
@@ -88,7 +107,16 @@ Run it again and you get the same sentence. And again.
 
 `_________________________________________________________________________`
 
-*(Hold that answer. It is where Unit 2 starts.)*
+Look at the `a` row again: **moon, star, map, moon, map, moon**. Greedy takes `moon`
+every time. But `star` and `map` are sitting right there, in proportion.
+
+*(Hold that thought. Choosing among them instead of always taking the top one is where
+Unit 2 starts.)*
+
+### If you finish early
+
+Tear the six words of the `a` row into six slips. Draw one without looking, then put
+it back. Do that ten times and tally what you get. How close is it to 3 / 2 / 1?
 
 ---
 
@@ -146,10 +174,14 @@ meaningful, **who supplied the meaning?**
 
 `_________________________________________________________________________`
 
-### Submit to Google Classroom
+### Classroom — transfer, attach, turn in
 
-One photo of your paper — **the table and the sentence together.**
-Filename: `Lastname-Lesson3.jpg`
+**Thinking:** copy your three circles and your claim into the Classroom response box.
+
+**Evidence:** attach one photo of **your own paper** showing your table, your sentence,
+and your claim together.
+
+Filename `Lastname-U1D3`. **Open the attachment to check it is readable, then turn in.**
 
 ---
 

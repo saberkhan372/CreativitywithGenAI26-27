@@ -140,12 +140,31 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
     <footer><span>Lesson 3 · Step 2</span><span>Six lines. Never across a line break.</span></footer>
   </section>
 
+  <section class="slide" data-label="Matching lists"
+    data-notes="Hand this out or project it — it is on page 1 of the handout. The repeats are left in deliberately; they ARE the counts. This is what makes the walk fast: students read a row instead of rescanning six lines for every word. Note the one tie: fox splits paints/folds 1-1. The greedy walk never reaches fox, because the beats fox 4 to 2, but a student who starts elsewhere will hit it — tell them a tie means the book does not decide, and they should say so rather than guess.">
+    <div class="eyebrow">Every next word, repeats kept</div>
+    <h2>Matching lists</h2>
+    <table class="tally" style="font-size:30px">
+      <tr><th style="width:24%">Current word</th><th>Every word that follows it, in book order</th></tr>
+      <tr><td><code>the</code></td><td>robot, robot, robot, fox, fox, robot</td></tr>
+      <tr><td><code>robot</code></td><td>paints, paints, folds, paints</td></tr>
+      <tr><td><code>fox</code></td><td>paints, folds</td></tr>
+      <tr><td><code>paints</code></td><td>a, a, a, a</td></tr>
+      <tr><td><code>folds</code></td><td>a, a</td></tr>
+      <tr><td><code>a</code></td><td><strong>moon, star, map, moon, map, moon</strong></td></tr>
+      <tr><td><code>moon</code> · <code>star</code> · <code>map</code></td><td>. &nbsp;(always)</td></tr>
+    </table>
+    <p style="margin-top:18px;font-size:31px">The repeats stay in on purpose — <strong>they are the counts.</strong>
+    Check the <code>a</code> row against the table you just built.</p>
+    <footer><span>Lesson 3</span><span>Handout page 1</span></footer>
+  </section>
+
   <section class="slide" data-label="Step 3 · walk it"
     data-notes="12 minutes. The rule is one sentence long: always take the word that appears most often. No dice, no slips, no choosing. Students walk it on paper. Answer: the robot paints a moon . Most steps can be read straight off the book without formal tallying; only a needed a table, which is why they built exactly one. Everyone gets the same answer — that is the point, and it makes it checkable in ten seconds.">
     <div class="eyebrow">Step 3 · walk it · 12 minutes</div>
     <h2>Always take the most common word.</h2>
-    <p class="lede">Start at <code>the</code>. Look at the book. Whichever word follows it
-    most often — write that down. Then do it again from <em>that</em> word.
+    <p class="lede">Start at <code>the</code>. Find its row above. Whichever word appears
+    most times in that row — write it down, then jump to <em>that</em> word's row.
     <strong>Stop when you write the period.</strong></p>
     <div class="walk">
       <span>the</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span class="stop">.</span>
@@ -168,7 +187,10 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
       <div class="card olive"><h3>Run it again</h3>
         <p>You get the same sentence. And again. <strong>It can only ever make one.</strong></p></div>
     </div>
-    <div class="stem" style="margin-top:20px"><p>What would it need to write a different one?</p></div>
+    <div class="stem" style="margin-top:18px"><p>What would it need to write a different one?</p></div>
+    <p style="font-size:30px;margin-top:14px">Look at the <code>a</code> row:
+    <strong>moon, star, map, moon, map, moon</strong>. Greedy takes <code>moon</code> every time —
+    but <code>star</code> and <code>map</code> are sitting right there, in proportion.</p>
     <footer><span>Lesson 3 · Step 4</span><span>Hold that answer — Unit 2</span></footer>
   </section>
 
@@ -216,11 +238,12 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
   <section class="slide" data-label="Submission"
     data-notes="One photo, three things: table, sentence, and the written claim. All three on the same page — the table is the evidence for the claim, so a photo without it proves nothing. A photo missing the claim is incomplete; say so before they start shooting. Check filenames at the door.">
     <div class="eyebrow">Submit before you go</div>
-    <h2>Google Classroom</h2>
+    <h2>Classroom — transfer, attach, turn in</h2>
     <div class="submit">
       <div class="card clay"><h3>What</h3><p>One photo of your paper showing <strong>all three</strong>: the table, the sentence, and your claim.</p></div>
-      <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-Lesson3.jpg</span></p></div>
+      <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-U1D3</span></p></div>
     </div>
+    <p style="margin-top:22px;font-size:31px"><strong>Thinking:</strong> copy your circled answers and your claim into the Classroom response box. &nbsp;<strong>Evidence:</strong> attach your table, your sentence, and your claim.<br><strong>Open the attachment to check it is readable, then turn in.</strong></p>
     <footer><span>Lesson 3 · Submission</span><span>In class, not homework</span></footer>
   </section>
 

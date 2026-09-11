@@ -105,7 +105,7 @@ These hold all year.
 declining are all full participation. You never have to type into an AI tool, and you
 never have to put your own face in front of a camera.
 
-**Filenames, every time:** `Lastname-Assignment.ext`
+**Filenames, every time:** `Lastname-U1D1`, `Lastname-U1D2`, … — unit and day.
 
 ---
 

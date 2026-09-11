@@ -31,30 +31,29 @@ Two posters are projected. Both make a claim. One you can check; one you cannot.
 
 ---
 
-## Part B — Design your test (10 min)
+## Part B — Carry it forward (10 min)
 
-**Your question.** Something you actually want answered, small enough to test today.
+**You already ran the test.** Last lesson you gave the same prompt to different models
+and logged every output. That is your evidence. Today you make it checkable.
+
+Pull out of your Lesson 4 log:
+
+- **Your exact prompt:** `_______________________________________________`
+- **Two outputs worth putting side by side** — mark them in your log
+- **Your keep / change / reject call**, and the goal it served
+
+**Your question, in one sentence** — something those two outputs can actually answer:
 
 `_________________________________________________________________________`
 
-**The one variable you will change:** `_____________________________________`
-
-**Everything you will hold constant:** `____________________________________`
-
-`_________________________________________________________________________`
-
-**Your prediction, written before you run it:** `___________________________`
-
-`_________________________________________________________________________`
-
-> **Too big?** "Is AI biased?" is not testable today. "Does this model give different
-> job descriptions when I change only the name?" is. Shrink until it fits the period.
+> **Thin log?** Add *one* more run — same prompt, one more model. That is the only new
+> generating today.
 
 ---
 
-## Part C — Run and build (35 min)
+## Part C — Build the page (35 min)
 
-Run your test. Save every prompt and output. Then build **one page.**
+Blank layout and two worked examples: **poster-templates.html**
 
 ### The poster must contain all six zones
 
@@ -64,7 +63,7 @@ Run your test. Save every prompt and output. Then build **one page.**
 | **2 · Method** | What you changed, what you held constant, how many runs |
 | **3 · Evidence** | The actual outputs — screenshots or verbatim text, side by side |
 | **4 · Claim** | The full four-part stem, including the fourth clause |
-| **5 · Limits** | What your test does **not** establish. At least two things. |
+| **5 · Limits** | The fourth clause of your claim, written out — what this does *not* establish |
 | **6 · Authorship** | What you decided vs. what the model produced |
 
 **There is no separate write-up.** If it is not on the page, it was not submitted.
@@ -75,21 +74,11 @@ without scrolling or turning anything over.
 
 ---
 
-## Part D — Gallery walk, reflection, submission (12 min)
+## Part D — Swap, reflect, submit (12 min)
 
-Posters up. You review **two** that are not yours.
+Straight swap with **one partner.**
 
-### Poster I reviewed: `________________________`
-
-| Circle one | | | |
-|---|---|---|---|
-| The claim is… | checkable from the evidence shown | partly checkable | not checkable |
-| The limits section is… | specific | generic | missing |
-| The strongest thing here is… | the method | the evidence | the honesty about limits |
-
-**One question I would ask this person:** `________________________________`
-
-### Poster I reviewed: `________________________`
+### Partner: `________________________`
 
 | Circle one | | | |
 |---|---|---|---|
@@ -97,19 +86,24 @@ Posters up. You review **two** that are not yours.
 | The limits section is… | specific | generic | missing |
 | The strongest thing here is… | the method | the evidence | the honesty about limits |
 
-**One question I would ask this person:** `________________________________`
+**One question I would ask them:** `______________________________________`
 
 ### About my own poster
 
-**After seeing two others, the one thing I would change about mine:**
+**After seeing theirs, the one thing I would change about mine:**
 
 `_________________________________________________________________________`
 
-### Submit to Google Classroom
+### Classroom — transfer, attach, turn in
 
-1. Your poster — image or PDF
-2. This handout
-3. Filenames: `Lastname-Unit1Poster.pdf` and `Lastname-Lesson5.jpg`
+**Thinking:** copy your circled answers and the one thing you would change into the
+Classroom response box.
+
+**Evidence:** attach your poster, plus a photo of **your own paper** with the partner
+review on it.
+
+Filenames `Lastname-U1D5-poster` and `Lastname-U1D5`.
+**Open the attachments to check they are readable, then turn in.**
 
 ---
 

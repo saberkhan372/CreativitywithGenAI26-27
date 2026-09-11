@@ -119,10 +119,10 @@ why: `_________________________________________________________________`
 
 `_________________________________________________________________________`
 
-### Submit to Google Classroom
+### Classroom — transfer, attach, turn in
 
 1. This page, **plus** your screenshots of each output
-2. Filename: `Lastname-Lesson4.pdf` (or `.jpg` if photographing)
+2. Filename `Lastname-U1D4`. **Open the attachment to check it is readable, then turn in.**
 
 ---
 
