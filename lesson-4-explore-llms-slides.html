@@ -48,6 +48,10 @@ table.log{width:100%;border-collapse:collapse;margin-top:14px;font-size:30px}
 table.log th,table.log td{border:3px solid var(--line);padding:14px 20px;text-align:left;background:var(--paper);vertical-align:top}
 table.log th{background:var(--sage);font-family:var(--serif);font-size:30px}
 table.log td.rowlab{background:#fdf2e8;font-weight:600;color:var(--clay-dark)}
+.circles{display:grid;gap:12px;margin:4px 0 8px}
+.circles .row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:baseline;background:var(--paper);border:3px solid var(--line);border-radius:18px;padding:14px 20px}
+.circles .q{font-weight:600;font-size:27px;flex:1 1 340px}
+.circles .o{font-size:25px;border:2px solid var(--clay);border-radius:999px;padding:4px 16px;color:var(--clay-dark)}
 .stem{background:var(--paper);border-left:14px solid var(--olive);border-radius:0 22px 22px 0;padding:38px 48px;margin-top:14px}
 .stem p{font-family:var(--serif);font-size:44px;line-height:1.5;margin:0}
 .blank{display:inline-block;min-width:270px;border-bottom:4px solid var(--clay)}
@@ -68,6 +72,11 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 #notes{position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;background:rgba(32,30,29,.97);color:#f0e7d8;padding:26px 34px;font-size:17px;line-height:1.55;display:none;z-index:20;border-top:4px solid var(--clay)}
 #notes.show{display:block}
 #notes b{color:var(--peach);display:block;margin-bottom:8px;letter-spacing:.1em;font-size:13px;text-transform:uppercase}
+#deckbar{position:fixed;left:0;bottom:0;z-index:21;display:flex;gap:0;font-size:13px;letter-spacing:.06em}
+#deckbar a{display:block;padding:8px 16px;background:rgba(32,30,29,.82);color:#f0e7d8;text-decoration:none;border-top:2px solid #9c5222}
+#deckbar a:hover{background:#9c5222}
+#toosmall{display:none}
+@media (max-width:700px){#toosmall{display:block;position:fixed;inset:0;z-index:40;background:#2e2b25;color:#f0e7d8;padding:28px;font-size:15px;line-height:1.5}#toosmall b{display:block;font-size:19px;margin-bottom:10px;color:#ffd9bd}}
 #hud{position:fixed;top:14px;right:18px;z-index:20;color:#cfc6b6;font-size:14px;letter-spacing:.1em;background:rgba(32,30,29,.75);padding:7px 14px;border-radius:20px}
 </style>
 </head>
@@ -184,8 +193,9 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
     data-notes="12 minutes, in class. Keep it short — the authorship decision on the previous slide is doing the heavy lifting now. Press on the fourth clause: one run per model does not establish that a model is better at anything.">
     <div class="eyebrow">Reflection · 12 minutes · before you leave</div>
     <h2>One bounded claim</h2>
-    <div class="stem">
-      <p>I observed <span class="blank"></span><br>
+    <div class="circles"><div class="row"><span class="q">My prediction was…</span><span class="o">mostly right</span><span class="o">mostly wrong</span><span class="o">too vague to score</span></div><div class="row"><span class="q">The biggest real difference was…</span><span class="o">style</span><span class="o">accuracy</span><span class="o">willingness to refuse</span><span class="o">length</span></div><div class="row"><span class="q">The differences I noticed are…</span><span class="o">clearly real</span><span class="o">might be one-off</span><span class="o">I need more runs</span></div></div>
+    <div class="stem" style="padding:24px 34px">
+      <p style="font-size:34px;line-height:1.4">I observed <span class="blank"></span><br>
       My evidence is <span class="blank"></span><br>
       This suggests <span class="blank"></span><br>
       but it does not establish <span class="blank"></span></p>
@@ -225,6 +235,8 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 
 </div></div>
 
+<div id="deckbar"><a href="index.html">← Unit 1</a><a href="handouts.html">Worksheet</a><a href="poster-templates.html">Poster templates</a></div>
+<div id="toosmall"><b>This deck is built for a projector.</b>Slides are a fixed 1920×1080 canvas, so text is tiny on a phone. Open it on a laptop or the classroom display. The <a href="handouts.html" style="color:#ffd9bd">worksheet</a> reads fine on a phone.</div>
 <div id="hud">← → navigate · N notes · F fullscreen</div>
 <div id="notes"><b id="notes-label"></b><span id="notes-body"></span></div>
 

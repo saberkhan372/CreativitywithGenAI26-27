@@ -86,6 +86,10 @@ figcaption b{color:var(--ink);font-weight:600;display:block;font-size:26px;margi
 .who{flex:0 0 auto;font-weight:700;font-size:24px;letter-spacing:.08em;text-transform:uppercase;width:130px;padding-top:5px}
 .who.u{color:var(--clay-dark)} .who.e{color:#4d5c33}
 .said{font-size:32px;line-height:1.3;font-family:var(--serif)}
+.circles{display:grid;gap:12px;margin:4px 0 8px}
+.circles .row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:baseline;background:var(--paper);border:3px solid var(--line);border-radius:18px;padding:14px 20px}
+.circles .q{font-weight:600;font-size:27px;flex:1 1 340px}
+.circles .o{font-size:25px;border:2px solid var(--clay);border-radius:999px;padding:4px 16px;color:var(--clay-dark)}
 .stem{
   background:var(--paper);border-left:14px solid var(--olive);
   border-radius:0 22px 22px 0;padding:40px 50px;margin-top:14px;
@@ -121,6 +125,11 @@ footer{
 }
 #notes.show{display:block}
 #notes b{color:var(--peach);display:block;margin-bottom:8px;letter-spacing:.1em;font-size:13px;text-transform:uppercase}
+#deckbar{position:fixed;left:0;bottom:0;z-index:21;display:flex;gap:0;font-size:13px;letter-spacing:.06em}
+#deckbar a{display:block;padding:8px 16px;background:rgba(32,30,29,.82);color:#f0e7d8;text-decoration:none;border-top:2px solid #9c5222}
+#deckbar a:hover{background:#9c5222}
+#toosmall{display:none}
+@media (max-width:700px){#toosmall{display:block;position:fixed;inset:0;z-index:40;background:#2e2b25;color:#f0e7d8;padding:28px;font-size:15px;line-height:1.5}#toosmall b{display:block;font-size:19px;margin-bottom:10px;color:#ffd9bd}}
 #hud{
   position:fixed;top:14px;right:18px;z-index:20;color:#cfc6b6;
   font-size:14px;letter-spacing:.1em;background:rgba(32,30,29,.75);
@@ -320,8 +329,9 @@ footer{
     data-notes="12 minutes, in class, before anyone leaves. Never homework. Model one aloud using the cat exercise, then get out of the way. The fourth clause is the hard one and the one that matters — press anyone who leaves it vague. They will use this stem all five lessons.">
     <div class="eyebrow">Reflection · 12 minutes · before you leave</div>
     <h2>One bounded claim</h2>
-    <div class="stem">
-      <p>I observed <span class="blank"></span><br>
+    <div class="circles"><div class="row"><span class="q">Writing explicit rules for "cat" felt…</span><span class="o">easy</span><span class="o">hard</span><span class="o">impossible</span></div><div class="row"><span class="q">Teachable Machine got the third object…</span><span class="o">right</span><span class="o">wrong</span><span class="o">it hedged</span></div><div class="row"><span class="q">The Bombe and ELIZA are alike in that…</span><span class="o">both learned</span><span class="o">both ran rules a person wrote</span><span class="o">both understood</span></div></div>
+    <div class="stem" style="padding:24px 34px">
+      <p style="font-size:34px;line-height:1.4">I observed <span class="blank"></span><br>
       My evidence is <span class="blank"></span><br>
       This suggests <span class="blank"></span><br>
       but it does not establish <span class="blank"></span></p>
@@ -373,6 +383,8 @@ footer{
 
 </div></div>
 
+<div id="deckbar"><a href="index.html">← Unit 1</a><a href="handouts.html">Worksheet</a><a href="poster-templates.html">Poster templates</a></div>
+<div id="toosmall"><b>This deck is built for a projector.</b>Slides are a fixed 1920×1080 canvas, so text is tiny on a phone. Open it on a laptop or the classroom display. The <a href="handouts.html" style="color:#ffd9bd">worksheet</a> reads fine on a phone.</div>
 <div id="hud">← → navigate · N notes · F fullscreen</div>
 <div id="notes"><b id="notes-label"></b><span id="notes-body"></span></div>
 

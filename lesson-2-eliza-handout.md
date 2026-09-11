@@ -144,7 +144,8 @@ you today — **who decided that was correct?**
 
 ## Next time — BookBot
 
-ELIZA had rules and no data. Next: **data and no rules at all.**
+ELIZA ran reply rules a person wrote. Next: **nobody writes the reply rules at all** —
+just counts, and one rule for choosing.
 
 Half of you already said it — to teach a machine what a cat is, you show it examples.
 Next lesson you *are* the machine that learns from examples. By hand, with tally

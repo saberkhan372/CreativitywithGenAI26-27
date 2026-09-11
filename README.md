@@ -23,13 +23,15 @@ Each lesson hands the next one its question.
 | # | Lesson | Mechanism on the table | The question it leaves open |
 |---|---|---|---|
 | 1 | **Who writes the rules?** | Cat problem · Bletchley Park · ELIZA · Teachable Machine | If rules can look like understanding, what counts as evidence? |
-| 2 | **Why did ELIZA ever work?** | Rules only — no learning | If rules fool people but not you, what fools *you*? |
-| 3 | **BookBot** | Counts → probability, sampled | This is tiny. What happens at scale? |
+| 2 | **Why did ELIZA ever work?** | Reply rules a person wrote | If rules fool people but not you, what fools *you*? |
+| 3 | **BookBot** | Counted continuations + one rule for choosing | It can only make one sentence. What is missing? |
 | 4 | **Explore LLMs** | Learned prediction at scale | Which differences are real, and how would we know? |
 | 5 | **Project + Poster** | Student-designed investigation | — |
 
-The spine: **rules → counts → learned prediction**, with *fluency is not accuracy*
-carried across all five.
+The spine, stated precisely: **hand-written reply rules → counted continuations plus a
+selection rule → predictions from learned parameters.** Each step removes a little more
+hand-written instruction about what to say — none of them removes rules altogether.
+*Fluency is not accuracy* runs across all five.
 
 ---
 
@@ -61,8 +63,9 @@ Circling takes 15 seconds and is still analyzable. Exactly one question needs pr
 is fresh — never as homework.
 
 **4. Authorship gets named out loud, every time.** Last year only 25% of students
-articulated that they directed the model. Each lesson ends with a version of
-*"name one thing the machine chose that you overrode."*
+articulated that they directed the model. Every lesson ends with an authorship line,
+and Lesson 4 makes it a judged decision — **keep, change or reject** against a goal the
+student writes down first. All three count as authorship if they can defend the call.
 
 ---
 
@@ -78,7 +81,7 @@ the one that makes a claim honest, and it is the one that does not come naturall
 
 ## Files
 
-| Lesson | Handout | Deck |
+| Lesson | Reference handout (Markdown) | Deck |
 |---|---|---|
 | 1 | `lesson-1-conventions-handout.md` | `lesson-1-conventions-slides.html` |
 | 2 | `lesson-2-eliza-handout.md` | `lesson-2-eliza-slides.html` |
@@ -86,10 +89,14 @@ the one that makes a claim honest, and it is the one that does not come naturall
 | 4 | `lesson-4-explore-llms-handout.md` | `lesson-4-explore-llms-slides.html` |
 | 5 | `lesson-5-project-poster-handout.md` | `lesson-5-project-poster-slides.html` |
 
-**Handouts** are **reference sheets, not required worksheets.** The decks carry the
-lesson and the discussion does the work; nothing in any submission requires the
-handout. Print them for students who want somewhere to write — printed length depends
-on your renderer and margins, so check before running a class set.
+**Printable worksheets** live in `handouts.html` — all five lessons, **two pages each,
+ten pages total.** Fixed 8.5×11in page boxes, so pagination is deterministic rather than
+renderer-dependent. Print at 100%, double-sided, no scaling. Measured in a browser:
+every sheet's content fits inside its box, the tightest with about 30px to spare.
+
+The per-lesson `*-handout.md` files are the **fuller reference version** — the same
+material with the surrounding explanation, readable on GitHub. Students do not need
+either one to take part; nothing in any submission requires a handout.
 
 **Poster templates** (`poster-templates.html`) hold the blank six-zone layout and the
 two worked examples used in Lesson 5's warm-up.
@@ -128,11 +135,14 @@ The 2025–26 course handouts were the starting point, not discarded:
 `FINDINGS-2026-08-12.md` §4.3 flagged that BookBot's dice rule — *"give the most
 common option 2–3 numbers … adjust so it still totals 6"* — substitutes an arbitrary
 distribution for the counted one, quietly destroying the concept the activity exists
-to teach. Lesson 3 replaces it with two methods that preserve the counted weights
-exactly: a **word jar** (one paper slip per tally mark, drawn and replaced) and a
-**d20 with re-roll** (number the marks 1–N; if the roll exceeds N, roll again — never
-adjust or round). Temperature is introduced later as a deliberate distortion of a
-distribution students have already built honestly.
+to teach. Lesson 3 now avoids the problem differently: there is **no randomiser at all.** The rule
+is "always take the word that appears most often," which needs nothing but paper and a
+pencil and is deterministic — every student gets `the robot paints a moon .`, so it is
+checkable in ten seconds. Sampling returns in Unit 2 as temperature, set up by Lesson 3's
+closing question: the machine can produce exactly one sentence, so what is missing?
+
+An optional slips exercise for early finishers turns the `a` row into a real sampling
+demo without adding a required step.
 
 ### One caution that must be said aloud, not just known
 

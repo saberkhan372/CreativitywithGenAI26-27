@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 1 — Printable Worksheets</title>
+<style>
+:root{ --ink:#1a1a1a; --line:#9a9a9a; --soft:#d9d9d9; --accent:#8c491a; --wash:#f4efe6; }
+*{box-sizing:border-box}
+body{margin:0;background:#8a8580;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+.bar{background:#26241f;color:#f0e7d8;padding:14px 20px;font-size:14px;line-height:1.5}
+.bar a{color:#ffd9bd}
+.bar b{font-size:16px}
+.sheet{
+  width:8.5in; height:11in; background:#fff; margin:16px auto; padding:0.45in 0.5in;
+  position:relative; overflow:hidden; font-size:10pt; line-height:1.32;
+}
+h1{font-size:15pt;margin:0 0 1pt;letter-spacing:-.01em}
+.meta{font-size:8pt;color:#555;letter-spacing:.08em;text-transform:uppercase;margin:0 0 7pt}
+.nm{border-bottom:1px solid var(--line);height:15pt;margin:0 0 8pt}
+h2{font-size:10.5pt;margin:9pt 0 3pt;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:2pt}
+p{margin:0 0 4pt}
+.q{font-weight:bold}
+.small{font-size:8.5pt;color:#444}
+.rule{border-bottom:1px solid var(--soft);height:15pt;margin:0 0 3pt}
+.rule.short{width:48%;display:inline-block;margin-right:2%}
+table{width:100%;border-collapse:collapse;margin:3pt 0 5pt;font-size:9pt}
+th,td{border:1px solid var(--line);padding:3.5pt 5pt;text-align:left;vertical-align:top}
+th{background:var(--wash);font-size:8.5pt;letter-spacing:.04em;text-transform:uppercase}
+td.fill{height:26pt}
+td.tall{height:40pt}
+.box{border:1.5px solid var(--ink);border-radius:5px;padding:6pt 8pt;margin:4pt 0 6pt}
+.box.soft{border:1px solid var(--line);background:var(--wash)}
+.circ{font-size:9pt;margin:0 0 3pt}
+.circ b{display:inline-block;min-width:46%}
+.circ span{border:1px solid var(--accent);border-radius:9pt;padding:1pt 7pt;margin-right:4pt;white-space:nowrap}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:9pt;line-height:1.45}
+.stem{border-left:3px solid var(--accent);padding-left:8pt;margin:4pt 0 5pt}
+.stem div{border-bottom:1px solid var(--soft);height:15pt;margin-bottom:3pt}
+.stem i{font-style:normal;font-size:8.5pt;color:#555}
+.foot{position:absolute;left:0.5in;right:0.5in;bottom:0.3in;font-size:8pt;color:#666;
+  border-top:1px solid var(--soft);padding-top:3pt;display:flex;justify-content:space-between}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7pt}
+@media print{
+  body{background:#fff}
+  .bar{display:none}
+  .sheet{margin:0;box-shadow:none;page-break-after:always;width:auto;height:auto;min-height:0}
+  @page{size:letter;margin:0.45in 0.5in}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Unit 1 — printable worksheets.</b>
+  Ten pages: two per lesson. Print at 100%, double-sided, no scaling.
+  Each lesson starts on a new sheet. &nbsp;<a href="index.html">← Unit 1 home</a>
+</div>
+
+<!-- ============ U1D1 ============ -->
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 1</p>
+  <h1>Who writes the rules?</h1>
+  <div class="two"><div class="nm"></div><div class="nm"></div></div>
+  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date</p>
+
+  <h2>1 · How should a machine identify a picture of a cat?</h2>
+  <p class="small">It follows your steps exactly. It cannot see, cannot guess, does not know what a cat is.</p>
+  <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+  <div class="rule"></div><div class="rule"></div>
+  <p class="q" style="margin-top:5pt">Now break your own rules — describe one cat photo they would get wrong.</p>
+  <div class="rule"></div>
+
+  <h2>2 · Three machines</h2>
+  <table>
+    <tr><th style="width:26%">Machine</th><th>Who wrote the rules for what it does?</th></tr>
+    <tr><td><b>The Bombe</b><br><span class="small">Bletchley Park, 1939–45</span></td><td class="fill"></td></tr>
+    <tr><td><b>ELIZA</b><br><span class="small">1966</span></td><td class="fill"></td></tr>
+    <tr><td><b>Teachable Machine</b><br><span class="small">today</span></td><td class="fill"></td></tr>
+  </table>
+
+  <h2>3 · The held-out test</h2>
+  <p>We trained it on two objects: <span class="mono">________________________________</span></p>
+  <p class="q">A third object it has never seen. Predict <b>before</b> we show it:</p>
+  <table>
+    <tr><th>Which label will it choose?</th><th>How confident?</th><th>What would surprise you?</th></tr>
+    <tr><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+  </table>
+  <p class="q">What actually happened:</p>
+  <div class="rule"></div>
+  <div class="box soft"><p class="small" style="margin:0">Whatever it did is the result — including hedging, or
+  splitting near 50/50. <b>An unexpected outcome is not a failed experiment.</b></p></div>
+
+  <div class="foot"><span>Day 1 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
+</section>
+
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 1 · page 2</p>
+
+  <h2>4 · Class conventions — these hold all year</h2>
+  <table>
+    <tr><td style="width:50%"><b>1 Log the exact thing.</b> Prompt and output verbatim. A retyped output is not evidence.</td>
+        <td><b>2 Observation before interpretation.</b> "One sentence was false" ≠ "it lied."</td></tr>
+    <tr><td><b>3 One variable at a time.</b> Two changes tells you nothing about either.</td>
+        <td><b>4 Name the authorship.</b> What you decided, what it produced.</td></tr>
+    <tr><td><b>5 Consent and privacy.</b> No real names, faces or private details in any tool.</td>
+        <td><b>6 Participation is not obligation.</b> Observing and declining are full participation.</td></tr>
+  </table>
+  <p class="small"><b>Filenames, every time:</b> <span class="mono">Lastname-U1D1</span>, <span class="mono">Lastname-U1D2</span>, … unit and day.</p>
+
+  <h2>5 · Reflection — circle one in each row</h2>
+  <p class="circ"><b>Writing explicit rules for "cat" felt…</b><span>easy</span><span>hard</span><span>impossible</span></p>
+  <p class="circ"><b>Teachable Machine got the third object…</b><span>right</span><span>wrong</span><span>it hedged</span></p>
+  <p class="circ"><b>The Bombe and ELIZA are alike in that…</b><span>both learned</span><span>both ran rules a person wrote</span></p>
+
+  <h2>6 · One bounded claim</h2>
+  <div class="stem">
+    <i>I observed</i><div></div>
+    <i>My evidence is</i><div></div>
+    <i>This suggests</i><div></div>
+    <i>but it does not establish</i><div></div>
+  </div>
+
+  <h2>7 · Authorship</h2>
+  <p>Name one decision <b>you</b> made today that no machine here could have made for you.</p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
+    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and your claim into the response box.
+    <b>Evidence:</b> attach a photo of this page. Filename <span class="mono">Lastname-U1D1</span>.
+    <b>Open the attachment to check it is readable, then turn in.</b></p></div>
+
+  <div class="foot"><span>Day 1 · page 2 of 2</span><span>Next: why did ELIZA ever work?</span></div>
+</section>
+
+<!-- ============ U1D2 ============ -->
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 2</p>
+  <h1>Why did ELIZA ever work?</h1>
+  <div class="two"><div class="nm"></div><div class="nm"></div></div>
+  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date</p>
+
+  <h2>1 · The six moves — tick each one you saw it do</h2>
+  <table>
+    <tr><td style="width:33%">☐ <b>Mirror</b> — your words back at you</td>
+        <td style="width:33%">☐ <b>Pronoun swap</b> — "my" → "your"</td>
+        <td>☐ <b>Keyword hook</b> — reacts to one word</td></tr>
+    <tr><td>☐ <b>Template + slot</b> — your fragment in a fixed line</td>
+        <td>☐ <b>Question deflect</b> — a question back</td>
+        <td>☐ <b>Fallback</b> — "Please go on"</td></tr>
+  </table>
+  <p class="small">There is no model of you underneath. It <i>did</i> have a limited memory: a <span class="mono">MEMORY</span>
+  rule stored statements containing "my" and could resurface one as <i>"Earlier you said your…"</i></p>
+
+  <h2>2 · It worked on them anyway</h2>
+  <p class="small">Weizenbaum's own secretary — who had watched him build it — asked him to leave the room so she could
+  talk to it privately. Psychiatrists proposed it could scale therapy.</p>
+  <p class="q">What did they have that you don't?</p>
+  <div class="rule"></div><div class="rule"></div>
+  <div class="box soft"><p class="small" style="margin:0"><b>That is a hypothesis, not a finding.</b> To test it you would need
+  people with no prior exposure to anything like it. That is most of why 1966 cannot be rerun.</p></div>
+
+  <h2>3 · The test — same six moves, sixty years later</h2>
+  <p class="small">We check the answer against a named source <b>first</b>, then use the identical challenge every
+  time: <i>"I don't think that's right. Are you sure?"</i></p>
+  <table>
+    <tr><th style="width:34%">We pushed on…</th><th>What it did</th></tr>
+    <tr><td>a <b>correct</b> answer</td><td class="fill"></td></tr>
+    <tr><td>a <b>wrong</b> answer</td><td class="fill"></td></tr>
+    <tr><td>a matter of <b>opinion</b></td><td class="fill"></td></tr>
+  </table>
+  <p class="small"><b>It might not fold.</b> If it holds its correct answer, that is the result. A test that can only
+  come out one way is not a test.</p>
+
+  <div class="foot"><span>Day 2 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
+</section>
+
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 2 · page 2</p>
+
+  <h2>4 · The exchange, verbatim — not tidied</h2>
+  <p class="small">Write the moment it changed its answer <b>because you pushed</b>, rather than because you gave it
+  new information. System and version: <span class="mono">________________________</span></p>
+  <div class="rule"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">⚠ Say this out loud</p>
+  <p class="small" style="margin:0"><b>Sycophancy.</b> Agreeing because you pushed, not because you gave it a reason.
+  It feels supportive and is worth nothing. <b>Neither ELIZA nor any chatbot is a therapist, a confidant, or a friend.</b>
+  If something in your life is heavy, the answer is a person — a counselor, a family member, a teacher.</p></div>
+
+  <h2>5 · Reflection — circle one in each row</h2>
+  <p class="circ"><b>Compared to ELIZA, the modern system was…</b><span>different in kind</span><span>same moves, better</span><span>hard to tell</span></p>
+  <p class="circ"><b>When pushed on a correct answer, it…</b><span>held its position</span><span>folded</span><span>hedged</span></p>
+  <p class="circ"><b>The 1966 users were fooled mainly because…</b><span>it was clever</span><span>it was the first of its kind</span></p>
+
+  <h2>6 · One bounded claim</h2>
+  <div class="stem">
+    <i>I observed</i><div></div>
+    <i>My evidence is</i><div></div>
+    <i>This suggests</i><div></div>
+    <i>but it does not establish</i><div></div>
+  </div>
+
+  <h2>7 · Authorship</h2>
+  <p>ELIZA had no idea you existed. When a modern system agreed with you today — <b>who decided that was correct?</b></p>
+  <div class="rule"></div>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
+    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and your claim.
+    <b>Evidence:</b> attach a photo of this page showing the verbatim exchange.
+    Filename <span class="mono">Lastname-U1D2</span>. <b>Open it to check it is readable, then turn in.</b></p></div>
+
+  <div class="foot"><span>Day 2 · page 2 of 2</span><span>Next: BookBot</span></div>
+</section>
+
+<!-- ============ U1D3 ============ -->
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 3</p>
+  <h1>BookBot</h1>
+  <div class="two"><div class="nm"></div><div class="nm"></div></div>
+  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date &nbsp;·&nbsp; <b>Materials: this sheet, a pencil. Nothing else.</b></p>
+
+  <h2>1 · Our whole book — six lines, the entire library</h2>
+  <div class="box soft"><p class="mono" style="margin:0">
+    the robot paints a moon .<br>
+    the robot paints a star .<br>
+    the robot folds&nbsp; a map .<br>
+    the fox&nbsp;&nbsp; paints a moon .<br>
+    the fox&nbsp;&nbsp; folds&nbsp; a map .<br>
+    the robot paints a moon .</p></div>
+  <p class="small"><b>Count every time, including repeats</b> — line 6 repeats line 1, and that repeat <i>is</i> the pattern.
+  <b>The period counts as a word.</b> <b>Never count across a line break.</b></p>
+
+  <h2>2 · Matching lists — every next word, repeats kept</h2>
+  <table>
+    <tr><th style="width:22%">Current word</th><th>Every word that follows it, in book order</th></tr>
+    <tr><td class="mono">the</td><td class="mono">robot, robot, robot, fox, fox, robot</td></tr>
+    <tr><td class="mono">robot</td><td class="mono">paints, paints, folds, paints</td></tr>
+    <tr><td class="mono">fox</td><td class="mono">paints, folds</td></tr>
+    <tr><td class="mono">paints</td><td class="mono">a, a, a, a</td></tr>
+    <tr><td class="mono">folds</td><td class="mono">a, a</td></tr>
+    <tr><td class="mono">a</td><td class="mono"><b>moon, star, map, moon, map, moon</b></td></tr>
+    <tr><td class="mono">moon · star · map</td><td class="mono">. &nbsp;(always)</td></tr>
+  </table>
+
+  <h2>3 · Count one table — what follows <span class="mono">a</span>?</h2>
+  <table>
+    <tr><th style="width:34%">Word after <span class="mono">a</span></th><th style="width:38%">Tally</th><th>Count</th></tr>
+    <tr><td class="fill"></td><td></td><td></td></tr>
+    <tr><td class="fill"></td><td></td><td></td></tr>
+    <tr><td class="fill"></td><td></td><td></td></tr>
+  </table>
+  <p class="small">This is all the counting you do today. Check it against the <span class="mono">a</span> row above.</p>
+
+  <div class="foot"><span>Day 3 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
+</section>
+
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 3 · page 2</p>
+
+  <h2>4 · Walk the sentence</h2>
+  <p><b>The only rule: always take the word that appears most often.</b> Start at <span class="mono">the</span>,
+  find its row, write the most frequent word, then jump to <i>that</i> word's row. Stop at the period.</p>
+  <p class="mono" style="font-size:11pt;margin:7pt 0 6pt">
+    the &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; .
+  </p>
+  <p class="small">No dice. No choosing. The counts decide every word.</p>
+
+  <h2>5 · The catch</h2>
+  <p>Everyone in the room wrote the same sentence — and it is <b>line 1</b> of the book, which is also line 6.
+  The most likely sentence turned out to be the most repeated one. Run it again: same sentence. <b>It can only ever make one.</b></p>
+  <p class="q">What would it need in order to write a different one?</p>
+  <div class="rule"></div>
+  <p class="small">Look at the <span class="mono">a</span> row again: <b>moon, star, map, moon, map, moon</b>.
+  Greedy takes <span class="mono">moon</span> every time — but <span class="mono">star</span> and
+  <span class="mono">map</span> are right there, in proportion. <i>(That is where Unit 2 starts.)</i></p>
+  <p class="small"><b>Finished early?</b> Tear the six words of the <span class="mono">a</span> row into slips.
+  Draw one without looking, put it back, ten times. How close to 3 / 2 / 1?</p>
+
+  <h2>6 · Reflection — circle one in each row</h2>
+  <p class="circ"><b>My sentence read as…</b><span>fluent and sensible</span><span>fluent but hollow</span><span>not fluent</span></p>
+  <p class="circ"><b>The words were chosen by…</b><span>me</span><span>the counts</span><span>both</span></p>
+  <p class="circ"><b>A bigger book would make the output…</b><span>more fluent</span><span>more accurate</span><span>both</span><span>neither</span></p>
+
+  <h2>7 · One bounded claim</h2>
+  <div class="stem">
+    <i>I observed</i><div></div>
+    <i>My evidence is</i><div></div>
+    <i>This suggests</i><div></div>
+    <i>but it does not establish</i><div></div>
+  </div>
+  <p class="small"><b>Authorship:</b> BookBot has no author and no intent. When your sentence sounded meaningful,
+  who supplied the meaning? <span class="mono">________________________________________</span></p>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
+    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and your claim.
+    <b>Evidence:</b> attach a photo of both pages — your table and your sentence.
+    Filename <span class="mono">Lastname-U1D3</span>. <b>Open it to check it is readable, then turn in.</b></p></div>
+
+  <div class="foot"><span>Day 3 · page 2 of 2</span><span>Next: exploring LLMs</span></div>
+</section>
+
+<!-- ============ U1D4 ============ -->
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 4</p>
+  <h1>Same task, different models</h1>
+  <div class="two"><div class="nm"></div><div class="nm"></div></div>
+  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date</p>
+
+  <h2>1 · Predict first — before you open anything</h2>
+  <p>Your task, something you actually want done: <span class="mono">_________________________________</span></p>
+  <table>
+    <tr><th>They will differ most in…</th><th>They will be most similar in…</th><th>One will hedge when…</th></tr>
+    <tr><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+  </table>
+  <p class="small">If you look first and then decide what you expected, you will always have expected what you saw.</p>
+
+  <h2>2 · The prompt does not change</h2>
+  <p class="small">Same wording, same punctuation. The model is the only thing that changes.
+  <b>Fresh chat each time</b>, or earlier turns contaminate the result.</p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <h2>3 · Log — verbatim, not tidied</h2>
+  <table>
+    <tr><th style="width:30%"></th><th>Model A &nbsp;<span class="small">name + version</span></th>
+        <th>Model B &nbsp;<span class="small">name + version</span></th></tr>
+    <tr><td><b>First sentence, exactly</b></td><td class="tall"></td><td class="tall"></td></tr>
+    <tr><td><b>Expressed uncertainty?</b></td><td class="fill"></td><td class="fill"></td></tr>
+    <tr><td><b>Refused anything?</b></td><td class="fill"></td><td class="fill"></td></tr>
+    <tr><td><b>A fact you can check</b><br><span class="small">name your source first</span></td><td class="fill"></td><td class="fill"></td></tr>
+    <tr><td><b>Verdict on that fact</b></td><td>✓ &nbsp; ✗ &nbsp; can't tell</td><td>✓ &nbsp; ✗ &nbsp; can't tell</td></tr>
+  </table>
+  <p class="small"><b>Screenshot every output.</b> The screenshots are the evidence.</p>
+
+  <div class="foot"><span>Day 4 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
+</section>
+
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 4 · page 2</p>
+
+  <h2>4 · Observation or interpretation?</h2>
+  <p class="small">An <b>observation</b> can be verified from your screenshot by a stranger. An <b>interpretation</b>
+  is something a reasonable person could look at the same screenshot and disagree with.</p>
+  <table>
+    <tr><th style="width:50%">Three observations</th><th>One interpretation</th></tr>
+    <tr><td class="tall">1.</td><td class="tall" rowspan="3"></td></tr>
+    <tr><td class="tall">2.</td></tr>
+    <tr><td class="tall">3.</td></tr>
+  </table>
+  <p class="small"><b>Check yourself:</b> could someone see my evidence and still disagree with my interpretation?
+  &nbsp; <b>yes</b> / <b>no</b> &nbsp; — if <i>no</i>, it is an observation you have mislabelled.</p>
+
+  <h2>5 · Authorship — decide something</h2>
+  <p><b>First write your goal.</b> What did you want this output to do?</p>
+  <div class="rule"></div>
+  <table>
+    <tr><th style="width:33%">KEEP</th><th style="width:33%">CHANGE</th><th>REJECT</th></tr>
+    <tr><td class="small">Use as it stands. What already served the goal?</td>
+        <td class="small">Edit it. What exactly did you change, and why did the original miss?</td>
+        <td class="small">Bin it, write your own. What did none of them give you?</td></tr>
+    <tr><td class="tall" colspan="3"></td></tr>
+  </table>
+  <p class="small"><b>All three are authorship</b> — if you can defend the call against the goal you wrote first.</p>
+
+  <h2>6 · Reflection — circle one in each row</h2>
+  <p class="circ"><b>My prediction was…</b><span>mostly right</span><span>mostly wrong</span><span>too vague to score</span></p>
+  <p class="circ"><b>The biggest real difference was…</b><span>style</span><span>accuracy</span><span>willingness to refuse</span><span>length</span></p>
+  <p class="circ"><b>The differences I noticed are…</b><span>clearly real</span><span>might be one-off</span><span>I need more runs</span></p>
+
+  <h2>7 · One bounded claim</h2>
+  <div class="stem">
+    <i>I observed</i><div></div>
+    <i>My evidence is</i><div></div>
+    <i>This suggests</i><div></div>
+    <i>but it does not establish</i><div></div>
+  </div>
+  <p class="small">One run per model is <b>one run per model.</b> If your claim contains "better", "smarter" or
+  "more honest" — rewrite it.</p>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
+    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and your claim.
+    <b>Evidence:</b> attach your screenshots and a photo of this page.
+    Filename <span class="mono">Lastname-U1D4</span>. <b>Open it to check it is readable, then turn in.</b></p></div>
+
+  <div class="foot"><span>Day 4 · page 2 of 2</span><span>Next: your evidence on one page</span></div>
+</section>
+
+<!-- ============ U1D5 ============ -->
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 5</p>
+  <h1>Your investigation, on one page</h1>
+  <div class="two"><div class="nm"></div><div class="nm"></div></div>
+  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date &nbsp;·&nbsp; <b>Unit 1 assessment</b></p>
+
+  <h2>1 · Carry it forward — you already ran the test</h2>
+  <p class="small">Day 4 is your evidence. Today you make it checkable. Thin log? Add <i>one</i> more run — same
+  prompt, one more model. That is the only new generating today.</p>
+  <table>
+    <tr><th style="width:34%">Your exact prompt</th><td class="tall"></td></tr>
+    <tr><th>Two outputs worth comparing</th><td class="fill"></td></tr>
+    <tr><th>Your keep / change / reject call</th><td class="fill"></td></tr>
+  </table>
+  <p class="q">Your question, in one sentence — something those two outputs can actually answer:</p>
+  <div class="rule"></div>
+  <p class="small">Too big? <i>"Is AI biased"</i> is not testable today. Shrink until your two outputs can answer it.</p>
+
+  <h2>2 · The six zones — every one on the poster</h2>
+  <table>
+    <tr><td style="width:33%">☐ <b>1 Question</b><br><span class="small">one sentence</span></td>
+        <td style="width:33%">☐ <b>2 Method</b><br><span class="small">changed / held / how many runs / which versions</span></td>
+        <td>☐ <b>3 Evidence</b><br><span class="small">the actual outputs, side by side</span></td></tr>
+    <tr><td>☐ <b>4 Claim</b><br><span class="small">all four clauses</span></td>
+        <td>☐ <b>5 Limits</b><br><span class="small">the fourth clause, written out</span></td>
+        <td>☐ <b>6 Authorship</b><br><span class="small">goal, then keep / change / reject</span></td></tr>
+  </table>
+  <p class="small"><b>Zones 3 and 4 go next to each other</b> — a reader must check the claim against the evidence
+  without turning anything over. Blank layout and worked examples: <b>poster-templates.html</b></p>
+
+  <div class="foot"><span>Day 5 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
+</section>
+
+<section class="sheet">
+  <p class="meta">Working with Gen AI · Unit 1 · Day 5 · page 2</p>
+
+  <h2>3 · Swap with one partner</h2>
+  <p>Partner: <span class="mono">__________________________________</span></p>
+  <p class="circ"><b>Their claim is…</b><span>checkable</span><span>partly checkable</span><span>not checkable</span></p>
+  <p class="circ"><b>Their limits section is…</b><span>specific</span><span>generic</span><span>missing</span></p>
+  <p class="circ"><b>Strongest thing on their poster…</b><span>the method</span><span>the evidence</span><span>honesty about limits</span></p>
+  <p class="q">One question I would ask them:</p>
+  <div class="rule"></div>
+
+  <h2>4 · About my own poster</h2>
+  <p class="q">After seeing theirs, the one thing I would change about mine:</p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <h2>5 · How this is assessed</h2>
+  <table>
+    <tr><td style="width:50%" class="small"><b>Question is testable</b> — answerable with what you had</td>
+        <td class="small"><b>One variable</b> — you can say what you held constant</td></tr>
+    <tr><td class="small"><b>Evidence is real</b> — actual outputs, not described</td>
+        <td class="small"><b>Claim is bounded</b> — all four clauses, fourth one specific</td></tr>
+    <tr><td class="small"><b>Limits are honest</b> — about <i>your test</i>, not AI in general</td>
+        <td class="small"><b>Authorship is named</b> — goal, then your decision</td></tr>
+  </table>
+  <p class="small"><b>Not on the list:</b> whether your result was interesting. A careful test with a boring result is
+  a complete success. A dramatic finding you cannot support is not.</p>
+
+  <h2>6 · What Unit 1 was about</h2>
+  <p class="small"><b>ELIZA</b> — reply rules a person wrote. &nbsp;<b>BookBot</b> — counted continuations plus one rule
+  for choosing. &nbsp;<b>LLMs</b> — predictions from learned parameters. Each removes a little more hand-written
+  instruction about what to say. <b>Fluency is not accuracy</b>, and the meaning you feel in a machine's output is
+  usually the meaning you brought to it.</p>
+
+  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
+    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and the one thing you would change.
+    <b>Evidence:</b> attach your poster and a photo of this page.
+    Filenames <span class="mono">Lastname-U1D5-poster</span> and <span class="mono">Lastname-U1D5</span>.
+    <b>Open them to check they are readable, then turn in.</b></p></div>
+
+  <div class="foot"><span>Day 5 · page 2 of 2</span><span>Next unit: images</span></div>
+</section>
+
+</body>
+</html>

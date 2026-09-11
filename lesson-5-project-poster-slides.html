@@ -51,6 +51,10 @@ li{margin-bottom:14px}
 .zone p{font-size:26px;line-height:1.35;margin:0}
 .zone.pair{border-color:var(--olive);background:#f2f6e8}
 .zone.pair h3{color:#4d5c33}
+.circles{display:grid;gap:11px;margin:6px 0 4px}
+.circles .row{display:flex;flex-wrap:wrap;gap:9px 13px;align-items:baseline;background:var(--paper);border:3px solid var(--line);border-radius:18px;padding:13px 18px}
+.circles .q{font-weight:600;font-size:26px;flex:1 1 320px}
+.circles .o{font-size:24px;border:2px solid var(--clay);border-radius:999px;padding:4px 15px;color:var(--clay-dark)}
 .warn{background:#fdf2e8;border:4px solid var(--clay);border-radius:24px;padding:28px 36px;margin-top:20px}
 .warn p{font-size:31px;margin:0}
 table.rub{width:100%;border-collapse:collapse;margin-top:14px;font-size:29px}
@@ -69,6 +73,11 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 #notes{position:fixed;left:0;right:0;bottom:0;max-height:42vh;overflow:auto;background:rgba(32,30,29,.97);color:#f0e7d8;padding:26px 34px;font-size:17px;line-height:1.55;display:none;z-index:20;border-top:4px solid var(--clay)}
 #notes.show{display:block}
 #notes b{color:var(--peach);display:block;margin-bottom:8px;letter-spacing:.1em;font-size:13px;text-transform:uppercase}
+#deckbar{position:fixed;left:0;bottom:0;z-index:21;display:flex;gap:0;font-size:13px;letter-spacing:.06em}
+#deckbar a{display:block;padding:8px 16px;background:rgba(32,30,29,.82);color:#f0e7d8;text-decoration:none;border-top:2px solid #9c5222}
+#deckbar a:hover{background:#9c5222}
+#toosmall{display:none}
+@media (max-width:700px){#toosmall{display:block;position:fixed;inset:0;z-index:40;background:#2e2b25;color:#f0e7d8;padding:28px;font-size:15px;line-height:1.5}#toosmall b{display:block;font-size:19px;margin-bottom:10px;color:#ffd9bd}}
 #hud{position:fixed;top:14px;right:18px;z-index:20;color:#cfc6b6;font-size:14px;letter-spacing:.1em;background:rgba(32,30,29,.75);padding:7px 14px;border-radius:20px}
 </style>
 </head>
@@ -155,6 +164,7 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
     data-notes="12 minutes. ONE partner, not a full gallery — two reviews plus a reflection does not fit a 70-minute block with any transition time. Straight swap, four questions, then back. The last question — what would you change about your own — is where most of the learning happens, so protect it.">
     <div class="eyebrow">Gallery walk · 12 minutes</div>
     <h2>Swap with one partner.</h2>
+    <div class="circles"><div class="row"><span class="q">My partner’s claim is…</span><span class="o">checkable</span><span class="o">partly checkable</span><span class="o">not checkable</span></div><div class="row"><span class="q">Their limits section is…</span><span class="o">specific</span><span class="o">generic</span><span class="o">missing</span></div><div class="row"><span class="q">Strongest thing on their poster…</span><span class="o">the method</span><span class="o">the evidence</span><span class="o">honesty about limits</span></div></div>
     <div class="cols">
       <div class="card clay"><h3>On your partner's poster</h3>
         <ul style="font-size:29px;padding-left:30px">
@@ -209,9 +219,9 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
     <div class="eyebrow">What these five days were about</div>
     <h2>Three machines</h2>
     <div class="arc">
-      <div class="arcbox"><h3>ELIZA</h3><p>Rules, no data.<br>Felt like understanding.<br>Wasn't.</p></div>
-      <div class="arcbox"><h3>BookBot</h3><p>Data, no rules.<br>Fluent sentences<br>that meant nothing.</p></div>
-      <div class="arcbox"><h3>LLMs</h3><p>Learned prediction, at scale.<br>Fluent, sometimes right,<br>always confident.</p></div>
+      <div class="arcbox"><h3>ELIZA</h3><p>Reply rules a person<br>wrote. Felt like<br>understanding. Wasn't.</p></div>
+      <div class="arcbox"><h3>BookBot</h3><p>Counted continuations<br>plus one rule for<br>choosing.</p></div>
+      <div class="arcbox"><h3>LLMs</h3><p>Prediction from learned<br>parameters. Fluent, sometimes<br>right, and <em>often</em> confident<br>whether or not it should be.</p></div>
     </div>
     <p class="big" style="margin-top:32px">Fluency is not accuracy — and the meaning you feel in a
     machine's output is usually the meaning <em>you</em> brought to it.</p>
@@ -233,6 +243,8 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 
 </div></div>
 
+<div id="deckbar"><a href="index.html">← Unit 1</a><a href="handouts.html">Worksheet</a><a href="poster-templates.html">Poster templates</a></div>
+<div id="toosmall"><b>This deck is built for a projector.</b>Slides are a fixed 1920×1080 canvas, so text is tiny on a phone. Open it on a laptop or the classroom display. The <a href="handouts.html" style="color:#ffd9bd">worksheet</a> reads fine on a phone.</div>
 <div id="hud">← → navigate · N notes · F fullscreen</div>
 <div id="notes"><b id="notes-label"></b><span id="notes-body"></span></div>
 

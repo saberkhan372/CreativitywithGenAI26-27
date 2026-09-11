@@ -68,14 +68,22 @@ friend.** If something in your life is heavy, the answer is a person.
 You could not write rules for "cat." So you didn't. You showed a machine examples
 instead, and it worked in about three minutes.
 
-What we trained it on: `______________________________________________`
+What we trained it on — two objects: `_________________________________`
 
-**Then we broke it.** Shown something it had never seen, it answered anyway —
-confidently, and wrong.
+**Then the held-out test.** We picked a *third* object it had never been trained on.
 
-What it got wrong, and how sure it looked: `________________________________`
+**Write your prediction before we show it:**
 
-`_________________________________________________________________________`
+| | |
+|---|---|
+| Which label will it choose? | `_____________________` |
+| How confident, roughly? | `_____________________` |
+| What would surprise you? | `_____________________` |
+
+**What actually happened:** `______________________________________________`
+
+Whatever it did is the result — including hedging, or splitting near 50/50.
+An unexpected outcome is not a failed experiment.
 
 ---
 

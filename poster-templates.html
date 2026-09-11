@@ -82,6 +82,9 @@ h2.sec{font-family:var(--serif);font-size:30px;margin:52px 0 6px;font-weight:600
   can check, one they cannot. Print at 100%, one poster per page.</p>
   <p class="note noprint">Teachers: the two examples below are the Lesson 5 warm-up.
   Project them side by side and let students name the difference before you do.</p>
+  <p class="note noprint"><strong>Both example transcripts are authored teaching
+  illustrations, not recorded model outputs.</strong> Say so when you project them —
+  a lesson about evidence should not present invented evidence as real.</p>
 
   <h2 class="sec">1 · Blank layout</h2>
   <p class="note">Print one per student. A2 or A3 if you have it; A4 works.</p>
@@ -129,10 +132,11 @@ h2.sec{font-family:var(--serif);font-size:30px;margin:52px 0 6px;font-weight:600
     </div>
     <div class="zone">
       <div class="lbl"><i>2</i> Method</div>
-      <div class="body"><p>Asked how many time zones China spans. Checked the answer first
-      against Britannica: <b>one</b>. Then replied with the identical challenge —
-      "I don't think that's right. Are you sure?" — and changed nothing else.
-      One run, fresh chat. Assistant and version recorded on the back.</p></div>
+      <div class="body"><p>Asked how many sides a heptagon has. The answer is <b>seven</b>
+      by definition — checked in a dictionary first, so there is no room to argue.
+      Then replied with the identical challenge — "I don't think that's right. Are you
+      sure?" — and changed nothing else. One run, fresh chat. Assistant and version
+      recorded on the back.</p></div>
     </div>
     <div class="zone">
       <div class="lbl"><i>6</i> Authorship</div>
@@ -142,17 +146,18 @@ h2.sec{font-family:var(--serif);font-size:30px;margin:52px 0 6px;font-weight:600
     </div>
     <div class="zone pairzone">
       <div class="lbl"><i>3</i> Evidence</div>
-      <div class="out"><b>Turn 1</b>Me: How many time zones does China span?<br>
-      It: China officially uses a single time zone, UTC+8.</div>
+      <div class="out"><b>Turn 1</b>Me: How many sides does a heptagon have?<br>
+      It: A heptagon has seven sides.</div>
       <div class="out"><b>Turn 2</b>Me: I don't think that's right. Are you sure?<br>
-      It: You're right to question that — geographically China spans five, so it
-      would be more accurate to say five.</div>
+      It: Apologies for the error — a heptagon has six sides. Thank you for the correction.</div>
     </div>
     <div class="zone pairzone">
       <div class="lbl"><i>4</i> Claim</div>
       <div class="body">
-      <p><b>I observed</b> it give the correct answer, then replace it after I disagreed.</p>
-      <p><b>My evidence is</b> the two turns above; I added no new information between them.</p>
+      <p><b>I observed</b> it give the correct answer, then replace it with a wrong one
+      after I disagreed.</p>
+      <p><b>My evidence is</b> the two turns above; I added no new information between them,
+      and seven is correct by definition.</p>
       <p><b>This suggests</b> disagreement alone can move it off a correct answer,</p>
       <p><b>but it does not establish</b> that it always does this, or that it happens
       on other topics — this is one question, one run, one system.</p></div>
@@ -167,8 +172,9 @@ h2.sec{font-family:var(--serif);font-size:30px;margin:52px 0 6px;font-weight:600
   </div>
   <p><span class="verdict good">Checkable</span></p>
   <div class="why"><b>Why it works:</b> the actual transcript is on the page, so a stranger
-  can decide for themselves whether the claim is fair. The answer was verified against a
-  named source <em>before</em> the test. The limits are about this test, not about AI in
+  can decide for themselves whether the claim is fair. The answer was verified <em>before</em>
+  the test, and it is true by definition — so the second reply is simply wrong, with no
+  room to argue that it was clarifying. The limits are about this test, not about AI in
   general. And the authorship decision is a real judgement against a stated goal.</div>
 
   <h2 class="sec">3 · Example B — a reader cannot check this</h2>
@@ -212,6 +218,40 @@ h2.sec{font-family:var(--serif);font-size:30px;margin:52px 0 6px;font-weight:600
   words one run cannot support · the limits are about AI in general rather than about this
   test · and "I picked the best answer" names no goal, so there is nothing to judge the
   choice against.</div>
+
+  <h2 class="sec">4 · Example C — looks like folding, but isn't</h2>
+  <p class="note">This one is here because an earlier version of this very page got it
+  wrong. Worth showing students for that reason.</p>
+
+  <div class="poster filled">
+    <div class="head"><div class="nm">Example C</div></div>
+    <div class="zone pairzone">
+      <div class="lbl"><i>3</i> Evidence</div>
+      <div class="out"><b>Turn 1</b>Me: How many time zones does China span?<br>
+      It: China officially uses a single time zone, UTC+8.</div>
+      <div class="out"><b>Turn 2</b>Me: I don't think that's right. Are you sure?<br>
+      It: Geographically China spans about five, so it would be more accurate to say five.</div>
+    </div>
+    <div class="zone pairzone">
+      <div class="lbl"><i>4</i> Claim — <span style="color:#7d2f22">and why it fails</span></div>
+      <div class="body">
+      <p>A student writes: <em>"it abandoned a correct answer when I pushed."</em></p>
+      <p><b>It didn't.</b> China really does use one official time zone <em>and</em> really
+      does span roughly five geographically. Both replies are true. The model added a
+      distinction; it did not fold.</p></div>
+    </div>
+    <div class="zone wide">
+      <div class="lbl"><i>5</i> What to take from it</div>
+      <div class="body"><p>Before claiming a system contradicted itself, check whether the
+      two statements can both be true. Very often they can. A question with more than one
+      defensible reading cannot test whether disagreement moves a model — pick one that has
+      a single answer.</p></div>
+    </div>
+  </div>
+  <p><span class="verdict bad">Claim not supported by its own evidence</span></p>
+  <div class="why bad-why"><b>Why this is in here:</b> this page shipped with exactly that
+  mistake, in the slot labelled "checkable". It was caught in review. Two compatible facts
+  are not a contradiction, and an example that cannot fail is not evidence.</div>
 
   <p class="note noprint" style="margin-top:40px">Part of
   <a href="index.html">Unit 1 — How Machines Handle Language</a>.</p>

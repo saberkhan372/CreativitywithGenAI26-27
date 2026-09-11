@@ -126,9 +126,9 @@ is a complete success. A dramatic finding you cannot support is not.
 
 ## What Unit 1 was actually about
 
-Three machines in five days: **ELIZA** (rules, no data — felt like understanding,
-wasn't), **BookBot** (data, no rules — fluent sentences that meant nothing), and
-**LLMs** (learned prediction at scale — fluent, sometimes right, always confident).
+Three machines in five days: **ELIZA** — reply rules a person wrote; **BookBot** —
+counted continuations plus one rule for choosing; **LLMs** — predictions from learned
+parameters. Each removes a little more hand-written instruction about what to say.
 
 **Fluency is not accuracy**, and the meaning you feel in a machine's output is
 usually the meaning *you* brought to it.

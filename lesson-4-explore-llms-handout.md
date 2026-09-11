@@ -114,10 +114,23 @@ that is what an interpretation is.
 > happened once.* It does not establish that a model is "better," "smarter," or
 > "more honest." If your claim uses one of those words, rewrite it.
 
-**Authorship line.** Name one thing a model produced that you **overrode** — and
-why: `_________________________________________________________________`
+## Authorship — decide something
+
+**First write your goal.** What did you actually want this output to do?
 
 `_________________________________________________________________________`
+
+Now make a call on the best output you got. **Circle one:**
+
+| **KEEP** | **CHANGE** | **REJECT** |
+|---|---|---|
+| Use it as it stands | Edit it | Bin it, write your own |
+| What already served the goal? | What exactly did you change, and why did the original miss? | What did none of them give you? |
+
+`_________________________________________________________________________`
+
+**All three are authorship** — but only if you can defend the call against the goal
+you wrote down first.
 
 ### Classroom — transfer, attach, turn in
 

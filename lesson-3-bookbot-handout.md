@@ -10,8 +10,8 @@
 
 ## Today's question
 
-**If a machine has no rules at all — only a record of which words actually followed
-which — what can it produce?**
+**If nobody writes a single rule about what to say — only a record of which words
+actually followed which — what can a machine produce?**
 
 ---
 
@@ -141,8 +141,9 @@ times"*, and others said *"keep the cat in the middle"* of every photo.
 
 > **Fluency is not accuracy.**
 
-BookBot cannot be right or wrong, because it is not making claims. It counts and
-picks. It sounds like language because the counts came from language.
+BookBot can easily produce a false sentence. What it cannot do is *check* — it has no
+way to compare anything against the world. It counts and picks, and it sounds like
+language because the counts came from language.
 
 Everything you meet from here is doing a version of this with more data than any
 person could count — and it will sound far more confident.
