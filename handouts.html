@@ -215,91 +215,56 @@ td.tall{height:40pt}
 </section>
 
 <!-- ============ U1D3 ============ -->
-<section class="sheet">
-  <p class="meta">Working with Gen AI · Unit 1 · Day 3</p>
-  <h1>BookBot</h1>
-  <div class="two"><div class="nm"></div><div class="nm"></div></div>
-  <p class="small" style="margin-top:-5pt">Name &nbsp;·&nbsp; Date &nbsp;·&nbsp; <b>Materials: this sheet, a pencil. Nothing else.</b></p>
-
-  <h2>1 · Our whole book — six lines, the entire library</h2>
-  <div class="box soft"><p class="mono" style="margin:0">
-    the robot paints a moon .<br>
-    the robot paints a star .<br>
-    the robot folds&nbsp; a map .<br>
-    the fox&nbsp;&nbsp; paints a moon .<br>
-    the fox&nbsp;&nbsp; folds&nbsp; a map .<br>
-    the robot paints a moon .</p></div>
-  <p class="small"><b>Count every time, including repeats</b> — line 6 repeats line 1, and that repeat <i>is</i> the pattern.
-  <b>The period counts as a word.</b> <b>Never count across a line break.</b></p>
-
-  <h2>2 · Matching lists — every next word, repeats kept</h2>
-  <table>
-    <tr><th style="width:22%">Current word</th><th>Every word that follows it, in book order</th></tr>
-    <tr><td class="mono">the</td><td class="mono">robot, robot, robot, fox, fox, robot</td></tr>
-    <tr><td class="mono">robot</td><td class="mono">paints, paints, folds, paints</td></tr>
-    <tr><td class="mono">fox</td><td class="mono">paints, folds</td></tr>
-    <tr><td class="mono">paints</td><td class="mono">a, a, a, a</td></tr>
-    <tr><td class="mono">folds</td><td class="mono">a, a</td></tr>
-    <tr><td class="mono">a</td><td class="mono"><b>moon, star, map, moon, map, moon</b></td></tr>
-    <tr><td class="mono">moon · star · map</td><td class="mono">. &nbsp;(always)</td></tr>
-  </table>
-
-  <h2>3 · Count one table — what follows <span class="mono">a</span>?</h2>
-  <table>
-    <tr><th style="width:34%">Word after <span class="mono">a</span></th><th style="width:38%">Tally</th><th>Count</th></tr>
-    <tr><td class="fill"></td><td></td><td></td></tr>
-    <tr><td class="fill"></td><td></td><td></td></tr>
-    <tr><td class="fill"></td><td></td><td></td></tr>
-  </table>
-  <p class="small">This is all the counting you do today. Check it against the <span class="mono">a</span> row above.</p>
-
-  <div class="foot"><span>Day 3 · page 1 of 2</span><span>Capture in class. Transfer to Classroom.</span></div>
-</section>
-
-<section class="sheet">
-  <p class="meta">Working with Gen AI · Unit 1 · Day 3 · page 2</p>
-
-  <h2>4 · Walk the sentence</h2>
-  <p><b>The only rule: always take the word that appears most often.</b> Start at <span class="mono">the</span>,
-  find its row, write the most frequent word, then jump to <i>that</i> word's row. Stop at the period.</p>
-  <p class="mono" style="font-size:11pt;margin:7pt 0 6pt">
-    the &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; __________ &nbsp;→&nbsp; .
-  </p>
-  <p class="small">No dice. No choosing. The counts decide every word.</p>
-
-  <h2>5 · The catch</h2>
-  <p>Everyone in the room wrote the same sentence — and it is <b>line 1</b> of the book, which is also line 6.
-  The most likely sentence turned out to be the most repeated one. Run it again: same sentence. <b>It can only ever make one.</b></p>
-  <p class="q">What would it need in order to write a different one?</p>
-  <div class="rule"></div>
-  <p class="small">Look at the <span class="mono">a</span> row again: <b>moon, star, map, moon, map, moon</b>.
-  Greedy takes <span class="mono">moon</span> every time — but <span class="mono">star</span> and
-  <span class="mono">map</span> are right there, in proportion. <i>(That is where Unit 2 starts.)</i></p>
-  <p class="small"><b>Finished early?</b> Tear the six words of the <span class="mono">a</span> row into slips.
-  Draw one without looking, put it back, ten times. How close to 3 / 2 / 1?</p>
-
-  <h2>6 · Reflection — circle one in each row</h2>
-  <p class="circ"><b>My sentence read as…</b><span>fluent and sensible</span><span>fluent but hollow</span><span>not fluent</span></p>
-  <p class="circ"><b>The words were chosen by…</b><span>me</span><span>the counts</span><span>both</span></p>
-  <p class="circ"><b>A bigger book would make the output…</b><span>more fluent</span><span>more accurate</span><span>both</span><span>neither</span></p>
-
-  <h2>7 · One bounded claim</h2>
-  <div class="stem">
-    <i>I observed</i><div></div>
-    <i>My evidence is</i><div></div>
-    <i>This suggests</i><div></div>
-    <i>but it does not establish</i><div></div>
-  </div>
-  <p class="small"><b>Authorship:</b> BookBot has no author and no intent. When your sentence sounded meaningful,
-  who supplied the meaning? <span class="mono">________________________________________</span></p>
-
-  <div class="box"><p class="q" style="margin:0 0 2pt">Classroom — transfer, attach, turn in</p>
-    <p class="small" style="margin:0"><b>Thinking:</b> copy your circled answers and your claim.
-    <b>Evidence:</b> attach a photo of both pages — your table and your sentence.
-    Filename <span class="mono">Lastname-U1D3</span>. <b>Open it to check it is readable, then turn in.</b></p></div>
-
-  <div class="foot"><span>Day 3 · page 2 of 2</span><span>Next: exploring LLMs</span></div>
-</section>
+<style>
+.bookbot-sheet{font-size:9pt;line-height:1.27}
+.bookbot-sheet h2{margin-top:7pt}
+.bookbot-sheet table{font-size:8.5pt;margin:3pt 0 5pt}
+.bookbot-sheet th,.bookbot-sheet td{padding:3pt 5pt}
+.bookbot-sheet .mono{font-size:8pt}
+@media print{.sheet.bookbot-sheet{width:7.5in;height:10.1in;min-height:10.1in;padding:0;break-after:page}.bookbot-sheet .foot{left:0;right:0;bottom:0}}
+</style>
+<section class="sheet bookbot-sheet">
+<p class="meta">Working with Gen AI · Unit 1 · Day 3</p><h1>BookBot + the Toy language model</h1>
+<p>Name __________________________  Partner __________________________</p>
+<p class="small">Paper, pencil and a laptop per pair. Record here or in your own document. Observing a partner or teacher demonstration is full participation.</p>
+<h2>1 · BookBot: count, then generate</h2>
+<div class="two"><div class="box soft"><p class="mono">the robot paints a moon .<br>the robot paints a star .<br>the robot folds  a map .<br>the fox   paints a moon .<br>the fox   folds  a map .<br>the robot paints a moon .</p></div><div><p>Count repeats. The period is a token. Never count across lines.</p><table><tr><th>After a</th><th>Tally</th><th>Count</th></tr><tr><td>moon</td><td></td><td></td></tr><tr><td>map</td><td></td><td></td></tr><tr><td>star</td><td></td><td></td></tr></table></div></div>
+<table><tr><th>Current word</th><th>Next words, with repeats</th></tr><tr><td>the</td><td>robot, robot, robot, fox, fox, robot</td></tr><tr><td>robot</td><td>paints, paints, folds, paints</td></tr><tr><td>fox</td><td>paints, folds</td></tr><tr><td>paints</td><td>a, a, a, a</td></tr><tr><td>folds</td><td>a, a</td></tr><tr><td>a</td><td><i>use your tally above</i></td></tr><tr><td>moon · star · map</td><td>. (always)</td></tr></table>
+<p><b>Start at the. Always choose the most common next word. Stop at the period.</b></p>
+<p class="mono">the → __________ → __________ → __________ → __________ → .</p>
+<p>Why does the same run repeat? __________________________________________</p>
+<h2>2 · Prepare the Toy model</h2>
+<p>Open <b>machinelearningforkids.co.uk</b> using the route your teacher gives you (<b>Try it now</b> or the class login). Use a <b>generating text</b> project and choose <b>Toy</b>. Add the shared <b>Robot Garden</b> corpus from the activity page or <a href="bookbot-corpus.txt">bookbot-corpus.txt</a>. Keep the repeated lines.</p>
+<p><b>Smallest context · top-p at the high end · starting text: <span class="mono">the robot</span></b></p>
+<p class="small">This model continues the starting text. If it says the prompt needs more words, return to the smallest context and restore the start. Still stuck? Watch the teacher demonstration and record from that. Use the supplied fictional corpus; no private details.</p>
+<h2>3 · Predict, then change only temperature</h2>
+<p>I predict that higher temperature will ____________________________________</p>
+<p>because ______________________________________________________________</p>
+<p><b>A:</b> toward low, 3 runs. <b>B:</b> toward high, 3 runs. Keep corpus, start, context and top-p fixed. Restore <span class="mono">the robot</span> before <b>every</b> run.</p>
+<p class="small">No numbers on the slider? Slide it about ¼ of the way for A and about ¾ for B. Don’t move it between runs.</p>
+<p>Screenshot both settings. Values or screenshot names: A __________ B __________</p>
+<div class="foot"><span>Day 3 · page 1 of 2</span><span>Next: record outputs and make a creative choice</span></div></section>
+<section class="sheet bookbot-sheet">
+<p class="meta">Working with Gen AI · Unit 1 · Day 3 · page 2</p><h1>Evidence and a creative decision</h1>
+<h2>4 · Save every run</h2>
+<p><b>Screenshot every run.</b> For <b>A1</b> and <b>B1</b>, also copy the first <b>10 generated words</b> exactly (not the starting text). For other runs, write the screenshot name. Identical outputs count. <b>A loop that repeats the same phrase is evidence, not a broken model.</b></p>
+<table><tr><th style="width:12%">Run</th><th>A1 and B1: first 10 words · other runs: screenshot name</th></tr><tr><td>A1</td><td style="height:29pt"></td></tr><tr><td>A2</td><td style="height:29pt"></td></tr><tr><td>A3</td><td style="height:29pt"></td></tr><tr><td>B1</td><td style="height:29pt"></td></tr><tr><td>B2</td><td style="height:29pt"></td></tr><tr><td>B3</td><td style="height:29pt"></td></tr></table>
+<p>One repetition I noticed: __________________________________________________</p>
+<p>One surprising or usable combination: ______________________________________</p>
+<h2>5 · A title for a robot’s nighttime garden</h2>
+<p>Choose a generated phrase as a title for this imaginary artwork. Circle: <b>KEEP / EDIT / REPLACE.</b> You may reject the wording and write your own title.</p>
+<p>Original phrase (run ____): ________________________________________________</p>
+<div class="rule"></div><p>My final title: __________________________________________________________</p>
+<p>My choice serves the artwork because ______________________________________</p><div class="rule"></div>
+<h2>6 · One claim, with a limit</h2>
+<p>I changed ____________________ and kept __________________________ fixed.</p>
+<p>I observed _____________________________________________________________</p><div class="rule"></div>
+<p>My evidence is _________________________________________________________</p><div class="rule"></div>
+<p>This does not establish __________________________________________________</p>
+<h2>7 · Classroom: capture before leaving</h2>
+<p class="small"><b>Turn in:</b> a photo of both pages of this sheet, your A and B settings screenshots, and your run screenshots. In Classroom, type your final title and your claim. Filename <b>Lastname-U1D3</b>.</p>
+<p class="small"><b>If you used the paper fallback:</b> label A “most common” and B “word draws”; record three choices for each. State that you did not test temperature on the website. For an observer, name the route: partner or teacher demonstration.</p>
+<div class="foot"><span>Day 3 · page 2 of 2</span><span>Next: same task, different models</span></div></section>
 
 <!-- ============ U1D4 ============ -->
 <section class="sheet">

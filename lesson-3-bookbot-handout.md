@@ -1,193 +1,125 @@
-# Lesson 3 — BookBot
+# Lesson 3 — BookBot + the Toy language model
 
-**Working with Gen AI · Unit 1 · 70 minutes**
-**Materials: this book, paper, a pencil. Nothing else.**
+**Working with Gen AI · Unit 1 · 70 minutes (planning allocation)**
 
-> **Reference sheet.** The lesson runs on the board and on your own paper. This is
-> here to look things up — not to fill in.
+## Ready for class
 
----
+- [Slides](lesson-3-bookbot-slides.html)
+- [Student activity: two printable pages and copyable corpus](lesson-3-bookbot-activity.html)
+- [Robot Garden corpus](bookbot-corpus.txt)
+- The Day 3 pages of [the combined booklet](handouts.html) contain the same student activity.
 
-## Today's question
+## Learning question
 
-**If nobody writes a single rule about what to say — only a record of which words
-actually followed which — what can a machine produce?**
+How can the same collection of words produce different writing—and what makes an output worth keeping?
 
----
+Students count next-word occurrences, follow a greedy selection rule, compare repeated generations while changing temperature, and explain a creative decision using the output as evidence.
 
-## Our whole book
+## Before class
 
-Six lines. That is the entire library.
+Use a laptop per pair, paper and pencils.
+
+**Decide the access route tonight, on a student device if possible.** Two options on [Machine Learning for Kids](https://machinelearningforkids.co.uk):
+
+- **Try it now** (Get started → Try without registering). No accounts; the site says these projects are deleted after at least four hours. On 2026-09-14 this button stayed greyed out in Claude's embedded browser, so test it in the browser students will use.
+- **Class login** through your teacher account, if student logins already exist. Do not schedule account creation inside this lesson.
+
+Then rehearse: **generating text** project → **Toy** → paste Robot Garden → smallest context → top-p at the high end → starting text `the robot`. Keep the duplicate line. Confirm it generates. No Small/Large model downloads.
+
+If the tool says the prompt needs more words, return to the smallest context and restore the start. If it stays blocked, use a teacher demonstration or the paper route below.
+
+**How students reach the corpus:** the Copy button on the activity page needs the page served over the web. If students open it from a Drive or Classroom preview and Copy does nothing, they open [bookbot-corpus.txt](bookbot-corpus.txt), select all and copy.
+
+**Expect loops.** In Robot Garden, `silver` and `paper` each follow `a` six times. A most-common-word walk from `the robot` loops: *the robot paints a silver moon above the robot paints a silver moon above…* (hand count by word; the Toy may split text slightly differently). Tell students before the experiment that a loop is evidence, not a broken tool.
+
+Prepare one teacher example with the six-line book if useful for the transition. Then switch explicitly to Robot Garden for the shared experiment. The longer corpus is fictional text authored for this activity with AI assistance. No private details or student writing are needed.
+
+## Timing
+
+| Minutes | Activity |
+|---|---|
+| 5 | Warm-up: tally the room's completions |
+| 12 | Six-line book, one tally and greedy walk |
+| 5 | Why did the same sentence repeat? |
+| 8 | Toy model setup and shared corpus |
+| 20 | Temperature comparison and evidence capture |
+| 8 | Artwork title: keep, edit or replace |
+| 7 | Reflection and Classroom submission |
+| 5 | Setup and transition buffer |
+
+Total: 70 minutes. These are proposed allocations, not measured classroom runtimes. The final preview fits inside the closing block.
+
+## 1. BookBot: count and walk
+
+Warm-up: complete **the robot paints a ____**, then tally the actual class answers.
+
+Our whole book:
 
 ```
-1.  the robot paints a moon .
-2.  the robot paints a star .
-3.  the robot folds  a map .
-4.  the fox   paints a moon .
-5.  the fox   folds  a map .
-6.  the robot paints a moon .
+the robot paints a moon .
+the robot paints a star .
+the robot folds  a map .
+the fox   paints a moon .
+the fox   folds  a map .
+the robot paints a moon .
 ```
 
-**Rule 1 — Count every time, including repeats.** Line 6 repeats line 1. That repeat
-is not a mistake to tidy up. It *is* the pattern.
+Count repeats, treat the period as a token, and never count across line breaks. Count what follows `a`: **moon 3, map 2, star 1**. Use the matching lists on the student activity to walk from `the`, always choosing the most common next word. Stop at the period.
 
-**Rule 2 — The period counts as a word.** It is how you know when to stop.
+**Answer:** `the robot paints a moon .`
 
-**Never count across a line break.** Line 1 does not hand anything to line 2.
+With this book, starting word and greedy rule, the result repeats. This does not mean every model can produce only one sentence, or that greedy selection always finds the most probable whole sentence. The unused `fox` row has a tie; our specified start avoids it.
 
-### Matching lists — every next word, repeats kept
+Transition: **We always picked the most common next word. What happens if other words get a chance? The computer will do the counting; we will investigate the choices.**
 
-Built from the six lines above. Repeats are left in on purpose: they *are* the counts.
+## 2. Shared setup
 
-| Current word | Every word that follows it, in book order |
-|---|---|
-| `the` | robot, robot, robot, fox, fox, robot |
-| `robot` | paints, paints, folds, paints |
-| `fox` | paints, folds |
-| `paints` | a, a, a, a |
-| `folds` | a, a |
-| `a` | **moon, star, map, moon, map, moon** |
-| `moon` | . , . , . |
-| `star` | . |
-| `map` | . , . |
+Use Robot Garden in the Toy model. A corpus is the source text. The smallest context uses a short preceding sequence; begin there. The start is **the robot**, without quotes or a final period. This is text continuation, not a chatbot instruction.
 
-Check the `a` row against your own table in Step 2. They should match.
+Keep top-p at the high end throughout the required experiment. Explain briefly that it limits candidate choices; investigating it is for another day. The Toy model counts word sequences. Modern neural language models use learned parameters. This activity illustrates a related prediction-and-selection process, not their exact implementation.
 
----
+## 3. Temperature experiment
 
-## Step 1 — Warm-up
+Pairs predict first. Keep corpus, starting text, context and top-p unchanged.
 
-On the board: **"the robot paints a ______"** — one word each, no conferring.
+- **A:** temperature toward low; three runs at that setting.
+- **B:** temperature toward high; three runs at that setting.
 
-That tally is a **distribution.** Nobody wrote a rule. You counted what people
-actually said.
+No numbers on the slider? About a quarter of the way for A, three-quarters for B. Screenshot both settings. Restore `the robot` before every generation.
 
----
+**Screenshot every run.** For A1 and B1 only, students also copy the first **10 generated words** by hand, excluding the starting text. Other runs get the screenshot name in the table. This keeps the 20 minutes on comparing rather than copying. Keep repeats and label errors as errors.
 
-## Step 2 — Count one table
+Look for repetition, surprising combinations, and phrases that could serve a purpose. Lower temperature generally favors common candidates more strongly; higher temperature gives less-common candidates more chance. It does not guarantee better creativity, factual accuracy, or a different output on each run. Three runs per condition support a small initial comparison, not a general claim about all models.
 
-Find every `a` in the book. Tally the word that comes next.
+## 4. Creative decision
 
-| Word after `a` | Tally | Count |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+Imagine an artwork: **a robot's nighttime garden**. Choose one generated phrase as its title. **Keep, edit, or replace** it. Retain the original phrase, record the final title, and explain how the choice serves the artwork. Every student makes their own decision, including when observing a partner or demonstration.
 
-**This is all the counting you do today.**
+## 5. Reflection and submission
 
----
+> I changed ____ and kept ____ fixed. I observed ____. My evidence is ____. This does not establish ____.
 
-## Step 3 — Walk the sentence
+Ask: **What did you decide that the model did not?** People supplied the corpus and procedure; the student chose settings and selected or revised a title. Do not call the process authorless.
 
-**The only rule: always take the word that appears most often.**
+**Classroom:** a photo of both activity pages, the A/B settings screenshots and run screenshots; type the final title and claim in the submission. Filename `Lastname-U1D3`. Use the existing assignment; nothing is posted by these materials.
 
-Start at `the`. Find its row in the matching lists. Whichever word appears most times
-in that row — write it down. Then jump to *that* word's row and do it again. Stop when
-you write the period.
+## Paper route if access fails
 
-`the` → `________` → `________` → `________` → `________` → `.`
+Use the six entries after `a`: moon, star, map, moon, map, moon. Make six equal-sized slips. Condition A selects the most common word three times; condition B draws a slip without looking, replaces it, mixes, and repeats three times. Record each word in A1–B3 and label the route **paper selection comparison**. Use one result to make a title and complete the same reflection.
 
-No dice. No choosing. The counts decide every word.
+This compares greedy selection with sampling. It does **not** test the website's temperature control, and six choices cannot establish the distribution. No slips available: record a partner or teacher demonstration. An unchanged output is a valid result.
 
----
+## Optional extension
 
-## Step 4 — The catch
+After the required log, change context alone while holding temperature, top-p and corpus fixed. Use the same sufficiently long source phrase in both conditions, for example `the robot paints a silver moon`. Record separately. More exact context can lead to more direct copying with a small corpus; it does not guarantee better original writing.
 
-Everyone in the room wrote the same sentence.
+## Next lesson
 
-It is **line 1** of the book. It is also line 6 — the sentence the book repeats. The
-most likely sentence turned out to be the most repeated sentence.
+Today: one model with different settings. Next: the same task with different models. Bring a task and describe what a useful result would look like.
 
-Run it again and you get the same sentence. And again.
+## Teacher references
 
-**It can only ever make one.**
+- [Dale Lane: Toy model walkthrough](https://dalelane.co.uk/blog/?p=5538)
+- [Dale Lane: classroom sequence and device considerations](https://dalelane.co.uk/blog/?p=5847)
 
-**What would it need in order to write a different one?**
-
-`_________________________________________________________________________`
-
-Look at the `a` row again: **moon, star, map, moon, map, moon**. Greedy takes `moon`
-every time. But `star` and `map` are sitting right there, in proportion.
-
-*(Hold that thought. Choosing among them instead of always taking the top one is where
-Unit 2 starts.)*
-
-### If you finish early
-
-Tear the six words of the `a` row into six slips. Draw one without looking, then put
-it back. Do that ten times and tally what you get. How close is it to 3 / 2 / 1?
-
----
-
-## Where the skew came from
-
-Why does `moon` win? Not because it is a better word — because it is in the book
-**three times out of six.** That is the whole reason.
-
-In week 1 some of you said you would train a cat detector on *"the same cat a million
-times"*, and others said *"keep the cat in the middle"* of every photo.
-
-| That choice | What it actually learns |
-|---|---|
-| The same cat, a million times | **That cat.** Not cats. |
-| Every cat centred | Cats are in the middle. A cat at the edge? Unknown. |
-
-**What goes in decides what comes out.**
-
----
-
-## The sentence to carry out of this room
-
-> **Fluency is not accuracy.**
-
-BookBot can easily produce a false sentence. What it cannot do is *check* — it has no
-way to compare anything against the world. It counts and picks, and it sounds like
-language because the counts came from language.
-
-Everything you meet from here is doing a version of this with more data than any
-person could count — and it will sound far more confident.
-
----
-
-## Reflection — before you leave
-
-**Circle one in each row.**
-
-| Prompt | | | | |
-|---|---|---|---|---|
-| My sentence read as… | fluent and sensible | fluent but hollow | not fluent |
-| The words were chosen by… | me | the counts | both |
-| A bigger book would make the output… | more fluent | more accurate | both | neither |
-
-**One bounded claim.** Your table and your sentence are the evidence.
-
-> I observed `______________________________________________________`
->
-> My evidence is `____________________________________________________`
->
-> This suggests `_____________________________________________________`
->
-> but it does not establish `___________________________________________`
-
-**Authorship line.** BookBot has no author and no intent. When your sentence sounded
-meaningful, **who supplied the meaning?**
-
-`_________________________________________________________________________`
-
-### Classroom — transfer, attach, turn in
-
-**Thinking:** copy your three circles and your claim into the Classroom response box.
-
-**Evidence:** attach one photo of **your own paper** showing your table, your sentence,
-and your claim together.
-
-Filename `Lastname-U1D3`. **Open the attachment to check it is readable, then turn in.**
-
----
-
-## Next time — Explore LLMs
-
-You built the toy by hand. Next: the real thing, several of them, given the same task.
-
-**Bring:** a laptop and a task you actually care about getting done.
+Current access, generation and clipboard behavior need checking in the classroom browser.

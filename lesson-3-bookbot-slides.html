@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson 3 — BookBot</title>
+<title>Lesson 3 — BookBot and the Toy Language Model</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -81,198 +81,118 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
 #toosmall{display:none}
 @media (max-width:700px){#toosmall{display:block;position:fixed;inset:0;z-index:40;background:#2e2b25;color:#f0e7d8;padding:28px;font-size:15px;line-height:1.5}#toosmall b{display:block;font-size:19px;margin-bottom:10px;color:#ffd9bd}}
 #hud{position:fixed;top:14px;right:18px;z-index:20;color:#cfc6b6;font-size:14px;letter-spacing:.1em;background:rgba(32,30,29,.75);padding:7px 14px;border-radius:20px}
+a{color:var(--clay-dark);text-underline-offset:6px}
 </style>
 </head>
 <body>
 <div id="shell"><div id="canvas">
+<section class="slide center" data-label="Title" data-notes="Plan: 5 min warm-up, 12 min book/count/walk, 5 min catch, 8 min setup, 20 min experiment, 8 min creative decision, 7 min reflection/submission, 5 min buffer = 70. These are planning allocations. Before class, rehearse access using the student browser and the supplied corpus. Use generating text / Toy; no Small or Large downloads. Have the activity page and corpus ready. Students can record a partner or teacher demonstration if they prefer not to use the tool. For an access failure use the paper sampling route in the lesson guide and label that evidence as paper.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>BookBot</h2>
+<p class="big">How can the same collection of words<br>produce different writing?</p><p class="lede">And what makes an output worth keeping?</p><p>Paper first. Then a Toy language model.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>1</span></footer>
+</section>
 
-  <section class="slide center" data-label="Title"
-    data-notes="Materials: one printed copy of the tiny book per pair, paper, pencil. Nothing else — no cup, no slips, no dice. Laptops closed the whole period. Four numbered steps, on the board the whole time. Say up front that the counting is tedious on purpose: the tedium is the content.">
-    <div class="eyebrow">Working with Gen AI · Unit 1 · Lesson 3</div>
-    <h1>BookBot</h1>
-    <p class="lede">ELIZA had rules and no data.<br>
-    Today: <strong>no hand-written reply rules at all.</strong><br>
-    Just counts — and one rule for choosing.</p>
-    <footer><span>Lesson 3 of 5</span><span>Paper · pencil · book</span></footer>
-  </section>
+<section class="slide" data-label="Warm-up" data-notes="5 minutes. Use the actual answers on the board; there is no pre-filled example tally. Ask what experiences may have influenced their choice. Human choices involve meaning and experience; this warm-up does not show that people work like the toy.">
+<div class="eyebrow">Warm-up · 5 minutes</div>
+<h2>the robot paints a ______</h2>
+<p class="lede">Write one word. Then we tally the room.</p><p>Which words appeared often? Which appeared once?</p><p class="big">A distribution shows how the choices are spread.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>2</span></footer>
+</section>
 
-  <section class="slide" data-label="Warm-up · Step 1"
-    data-notes="8 minutes. Everyone writes ONE word, no conferring, then tally on the board fast. Draw out the winner and the outlier nobody else chose. Then ask where their word came from — nobody followed a rule, they drew on everything they have ever read. That is the whole idea, and this class already got there in week 1: five of ten said you would teach a machine about cats by showing it examples.">
-    <div class="eyebrow">Step 1 · warm-up · 8 minutes</div>
-    <h2 style="font-size:86px">the robot paints a ______</h2>
-    <p class="lede">One word each. No conferring. Then we tally the room.</p>
-    <table class="tally">
-      <tr><th>Word</th><th>Tally</th><th>Count</th></tr>
-      <tr><td>moon</td><td class="marks">||||&nbsp;||||</td><td>9</td></tr>
-      <tr><td>star</td><td class="marks">||||</td><td>4</td></tr>
-      <tr><td>map</td><td class="marks">||</td><td>2</td></tr>
-    </table>
-    <p style="margin-top:22px"><strong>That tally is a distribution.</strong> Nobody wrote a rule —
-    you counted what people actually said.</p>
-    <footer><span>Lesson 3 · Step 1</span><span>Example only — yours goes on the board</span></footer>
-  </section>
+<section class="slide" data-label="The book" data-notes="Book, count and walk together have 12 minutes. Explain that a token is a unit of text; in this hand activity it is a word or a period. The real tool may tokenize differently. The duplicate line is intentional. This corpus has been authored for the lesson.">
+<div class="eyebrow">BookBot · 12 minutes across the next four slides</div>
+<h2>Six lines. Our whole book.</h2>
+<div class="book">the robot paints a moon .<br>the robot paints a star .<br>the robot folds  a map .<br>the fox   paints a moon .<br>the fox   folds  a map .<br>the robot paints a moon .</div><p style="margin-top:24px">Count repeats. Treat the period as a token.<br>Never count across a line break.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>3</span></footer>
+</section>
 
-  <section class="slide" data-label="The book"
-    data-notes="Hand out the printed six lines. Two rules only. The repeat rule is the one that matters — students who tally each distinct word once silently flatten every distribution, and it is the most common error in the room. The period being a word is what tells them when to stop later.">
-    <div class="eyebrow">Our whole book</div>
-    <h2>Six lines. That is the entire library.</h2>
-    <div class="book">
-      <div>the robot paints a moon .</div>
-      <div>the robot paints a star .</div>
-      <div>the robot folds&nbsp; a map .</div>
-      <div>the fox&nbsp;&nbsp; paints a moon .</div>
-      <div>the fox&nbsp;&nbsp; folds&nbsp; a map .</div>
-      <div>the robot paints a moon .</div>
-    </div>
-    <div class="cols" style="margin-top:22px">
-      <div class="card clay"><h3>Rule 1</h3>
-        <p><strong>Count every time, including repeats.</strong> Line 6 repeats line 1.
-        That repeat is not a mistake to tidy up — it <em>is</em> the pattern.</p></div>
-      <div class="card olive"><h3>Rule 2</h3>
-        <p><strong>The period counts as a word.</strong> It is how you will know when
-        to stop.</p></div>
-    </div>
-    <footer><span>Lesson 3</span><span>One copy per pair</span></footer>
-  </section>
+<section class="slide" data-label="Count" data-notes="Within the 12-minute BookBot block, allow about 4 minutes for pairs to count and compare. Answer: moon 3, map 2, star 1; total 6. Count occurrences, not just distinct options. All students record the table.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>What follows <code>a</code>?</h2>
+<p class="lede">Find every occurrence. Keep the repeats.</p><table class="tally"><tr><th>Next word</th><th>Tally</th><th>Count</th></tr><tr><td>moon</td><td>&nbsp;</td><td></td></tr><tr><td>map</td><td>&nbsp;</td><td></td></tr><tr><td>star</td><td>&nbsp;</td><td></td></tr></table>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>4</span></footer>
+</section>
 
-  <section class="slide" data-label="Step 2 · count"
-    data-notes="10 minutes. ONE table, not several. Ask only about the word a, which is the interesting case — three different words follow it. Answer key: moon 3, map 2, star 1, total 6. Circulate for the two errors: joining the end of one line to the start of the next, and tallying each distinct word once instead of every occurrence.">
-    <div class="eyebrow">Step 2 · count · 10 minutes</div>
-    <h2>What comes after <code>a</code>?</h2>
-    <p class="lede">Find every <code>a</code> in the book. Tally the word that comes next.
-    <strong>One table. That is all the counting you do today.</strong></p>
-    <table class="tally" style="max-width:1000px">
-      <tr><th>Word after <code>a</code></th><th>Tally</th><th>Count</th></tr>
-      <tr><td>&nbsp;</td><td></td><td></td></tr>
-      <tr><td>&nbsp;</td><td></td><td></td></tr>
-      <tr><td>&nbsp;</td><td></td><td></td></tr>
-    </table>
-    <footer><span>Lesson 3 · Step 2</span><span>Six lines. Never across a line break.</span></footer>
-  </section>
+<section class="slide" data-label="Matching lists" data-notes="Use the supplied rows to avoid repeated scanning. In the fox row paints and folds tie; our greedy walk from the never reaches fox. If a student tries a different start, agree a tie rule before comparing runs. We use only the current word as context.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>The counting is ready</h2>
+<table class="tally" style="font-size:30px"><tr><th>Current word</th><th>Every next word, repeats kept</th></tr><tr><td>the</td><td>robot, robot, robot, fox, fox, robot</td></tr><tr><td>robot</td><td>paints, paints, folds, paints</td></tr><tr><td>fox</td><td>paints, folds</td></tr><tr><td>paints</td><td>a, a, a, a</td></tr><tr><td>folds</td><td>a, a</td></tr><tr><td>a</td><td>moon, star, map, moon, map, moon</td></tr><tr><td>moon · star · map</td><td>. (always)</td></tr></table>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>5</span></footer>
+</section>
 
-  <section class="slide" data-label="Matching lists"
-    data-notes="Hand this out or project it — it is on page 1 of the handout. The repeats are left in deliberately; they ARE the counts. This is what makes the walk fast: students read a row instead of rescanning six lines for every word. Note the one tie: fox splits paints/folds 1-1. The greedy walk never reaches fox, because the beats fox 4 to 2, but a student who starts elsewhere will hit it — tell them a tie means the book does not decide, and they should say so rather than guess.">
-    <div class="eyebrow">Every next word, repeats kept</div>
-    <h2>Matching lists</h2>
-    <table class="tally" style="font-size:30px">
-      <tr><th style="width:24%">Current word</th><th>Every word that follows it, in book order</th></tr>
-      <tr><td><code>the</code></td><td>robot, robot, robot, fox, fox, robot</td></tr>
-      <tr><td><code>robot</code></td><td>paints, paints, folds, paints</td></tr>
-      <tr><td><code>fox</code></td><td>paints, folds</td></tr>
-      <tr><td><code>paints</code></td><td>a, a, a, a</td></tr>
-      <tr><td><code>folds</code></td><td>a, a</td></tr>
-      <tr><td><code>a</code></td><td><strong>moon, star, map, moon, map, moon</strong></td></tr>
-      <tr><td><code>moon</code> · <code>star</code> · <code>map</code></td><td>. &nbsp;(always)</td></tr>
-    </table>
-    <p style="margin-top:18px;font-size:31px">The repeats stay in on purpose — <strong>they are the counts.</strong>
-    Check the <code>a</code> row against the table you just built.</p>
-    <footer><span>Lesson 3</span><span>Handout page 1</span></footer>
-  </section>
+<section class="slide" data-label="Walk" data-notes="Finish the 12-minute block. This rule is called greedy selection. Expected answer: the robot paints a moon . Humans chose the corpus and the procedure; the counts alone do not specify how to choose.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>Always take the most common next word</h2>
+<p class="lede">Start at <code>the</code>. Read its row.<br>Write the most common next word. Repeat.</p><div class="walk"><span>the</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>.</span></div><p style="margin-top:30px">Stop at the period. Record your sentence.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>6</span></footer>
+</section>
 
-  <section class="slide" data-label="Step 3 · walk it"
-    data-notes="12 minutes. The rule is one sentence long: always take the word that appears most often. No dice, no slips, no choosing. Students walk it on paper. Answer: the robot paints a moon . Most steps can be read straight off the book without formal tallying; only a needed a table, which is why they built exactly one. Everyone gets the same answer — that is the point, and it makes it checkable in ten seconds.">
-    <div class="eyebrow">Step 3 · walk it · 12 minutes</div>
-    <h2>Always take the most common word.</h2>
-    <p class="lede">Start at <code>the</code>. Find its row above. Whichever word appears
-    most times in that row — write it down, then jump to <em>that</em> word's row.
-    <strong>Stop when you write the period.</strong></p>
-    <div class="walk">
-      <span>the</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span>?</span><b>→</b><span class="stop">.</span>
-    </div>
-    <p style="margin-top:24px">No dice. No choosing. <strong>The counts decide every word.</strong></p>
-    <footer><span>Lesson 3 · Step 3</span><span>Five steps and you are done</span></footer>
-  </section>
+<section class="slide" data-label="The catch" data-notes="5 minutes. With this book, start and greedy rule the result repeats. Do not generalize this to every model or starting word. The most common choice at each step is not guaranteed to find the most probable whole sentence. Name sampling: choosing among candidates using probabilities. The Toy model counts sequences; modern neural LLMs use learned parameters. This is a useful simplified mechanism, not an exact replica of a chatbot.">
+<div class="eyebrow">The catch · 5 minutes</div>
+<h2>Why did we get the same sentence?</h2>
+<div class="book" style="font-size:42px">the robot paints a moon .</div><p style="margin-top:28px">Same book. Same start. Same selection rule.</p><p class="big">What if another next word gets a chance?</p><p>The computer can count the patterns.<br>We can investigate how it chooses among them.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>7</span></footer>
+</section>
 
-  <section class="slide" data-label="Step 4 · the catch"
-    data-notes="The payoff, about 8 minutes. Reveal only after every pair has walked it. The output is line 1 of the book verbatim — and line 1 is also line 6, the sentence the book repeats. The most likely sentence is the most repeated sentence. Then the killer question: run it again and you get the same sentence, forever. It can produce exactly one. Take answers on what is missing; steer toward some way of sometimes taking the second-place word. Name that as the thing real systems add, and say we come back to it.">
-    <div class="eyebrow">Step 4 · the catch</div>
-    <h2>You all wrote the same sentence.</h2>
-    <div class="book" style="font-size:38px;padding:26px 40px;text-align:center">
-      the robot paints a moon .
-    </div>
-    <div class="cols" style="margin-top:22px">
-      <div class="card clay"><h3>That is line 1</h3>
-        <p>It is also line 6. The most likely sentence turned out to be the one the
-        book repeats.</p></div>
-      <div class="card olive"><h3>Run it again</h3>
-        <p>You get the same sentence. And again. <strong>It can only ever make one.</strong></p></div>
-    </div>
-    <div class="stem" style="margin-top:18px"><p>What would it need to write a different one?</p></div>
-    <p style="font-size:30px;margin-top:14px">Look at the <code>a</code> row:
-    <strong>moon, star, map, moon, map, moon</strong>. Greedy takes <code>moon</code> every time —
-    but <code>star</code> and <code>map</code> are sitting right there, in proportion.</p>
-    <footer><span>Lesson 3 · Step 4</span><span>Hold that answer — Unit 2</span></footer>
-  </section>
+<section class="slide" data-label="Toy model setup" data-notes="Start the 8-minute setup block. Briefly show the six-line book in your prepared teacher Toy project if rehearsed; then everyone uses the longer shared corpus. Go to the generating-text project type, choose Toy and add the supplied text. Follow Next and review the tokens. Use the access route you rehearsed: Try it now (projects are deleted after at least four hours) or the class login. Do not create student accounts during the lesson. Source: https://dalelane.co.uk/blog/?p=5538 . The Toy controls illustrate related ideas in neural models, with a different underlying implementation.">
+<div class="eyebrow">Setup · 8 minutes across two slides</div>
+<h2>The Toy model</h2>
+<p class="lede"><a href="https://machinelearningforkids.co.uk" target="_blank" rel="noopener">Machine Learning for Kids</a> · generating text · <strong>Toy</strong></p><table class="tally" style="font-size:32px"><tr><th>BookBot</th><th>On screen</th></tr><tr><td>Our book</td><td>Corpus: the text we supply</td></tr><tr><td>Current word</td><td>Smallest context setting</td></tr><tr><td>Always take the most common</td><td>Temperature: change how strongly common options are favored</td></tr></table>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>8</span></footer>
+</section>
 
-  <section class="slide" data-label="Where the skew came from"
-    data-notes="Callback to the cat question, 90 seconds and worth every one. moon wins because it is in three of six lines. Nothing else. One student would train a cat detector on the same cat a million times; another would centre the cat in every photo. This is what those choices do, small enough to see whole.">
-    <div class="eyebrow">Back to the cat question</div>
-    <h2>Why does <code>moon</code> win?</h2>
-    <p class="lede">Not because it is a better word. Because it is in the book
-    <strong>three times out of six.</strong></p>
-    <div class="cols" style="margin-top:16px">
-      <div class="card clay"><h3>"The same cat a million times"</h3>
-        <p>What does that detector learn? <strong>That cat.</strong> Not cats.</p></div>
-      <div class="card olive"><h3>"Keep the cat in the middle"</h3>
-        <p>Then what happens to a cat <strong>at the edge of the frame?</strong></p></div>
-    </div>
-    <p class="big" style="margin-top:22px">What goes in decides what comes out.</p>
-    <footer><span>Lesson 3</span><span>Your answers, week 1</span></footer>
-  </section>
+<section class="slide" data-label="Shared setup" data-notes="Finish setup. The corpus is a fictional robot-art text written for this activity, not retrieved or student data. Keep its repeats. Start with the robot, without quotes or a final period. If Copy does nothing, students open bookbot-corpus.txt and copy from there. If the tool says the prompt needs more words, return to the smallest context and restore this starting phrase. Check the starting words appear in the corpus. If still blocked use the prepared teacher project or paper route; record which route was used. Keep top-p high throughout the required comparison, and explain that it limits candidate choices; formal top-p investigation is deferred.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>Our shared starting point</h2>
+<p><a href="lesson-3-bookbot-activity.html#corpus" target="_blank" rel="noopener">Open the activity and copy the corpus</a></p><p class="lede">Use the smallest context setting.<br>Keep top-p at the high end.</p><div class="book" style="font-size:42px">Starting text: the robot</div><p style="margin-top:24px">The Toy model continues this text.<br>Restore the same start before every run.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>9</span></footer>
+</section>
 
-  <section class="slide center" data-label="Fluency ≠ accuracy"
-    data-notes="The load-bearing idea of the course. Be precise: BookBot CAN emit a false sentence — it has no mechanism for checking anything against the world, which is not the same as being exempt from truth. Students following it are obeying rules too: count inside the line, keep repeats, take the most common. What it lacks is a hand-written rule for what to SAY. It sounds like language because the counts came from language. Say the last line and stop talking.">
-    <div class="eyebrow">The sentence to carry out of this room</div>
-    <h1 class="huge">Fluency is<br>not accuracy.</h1>
-    <p class="lede">BookBot has no way to check anything against the world.
-    It counts what followed what, and picks.</p>
-    <p class="big">It sounds like language because the counts came from language.</p>
-    <footer><span>Lesson 3</span><span>This returns every lesson from here</span></footer>
-  </section>
+<section class="slide" data-label="Temperature comparison" data-notes="20 minutes across this slide and the next. No numbers on the slider: about a quarter of the way for A, three-quarters for B. Keep each position fixed for its three runs. Warn students before they start: at low temperature the model may loop, e.g. the robot paints a silver moon above the robot paints a silver moon... In this corpus silver and paper tie after a. A loop is evidence, not a broken tool. Save visible values if available, otherwise screenshots. Lower temperature tends to favor common candidates more strongly; higher allows less-common candidates more chance. Do not promise varied output on every run, accuracy at low temperature, or creativity at high temperature. Source: https://dalelane.co.uk/blog/?p=5538 .">
+<div class="eyebrow">Experiment · 20 minutes across two slides</div>
+<h2>One change: temperature</h2>
+<div class="cols"><div class="card clay"><h3>Condition A</h3><p>Temperature toward <strong>low</strong>.<br>Generate <strong>3 times</strong>.</p></div><div class="card olive"><h3>Condition B</h3><p>Temperature toward <strong>high</strong>.<br>Generate <strong>3 times</strong>.</p></div></div><p style="margin-top:28px">Keep corpus, starting text, context and top-p fixed.</p><p>Predict first. Screenshot the settings for A and B.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>10</span></footer>
+</section>
 
-  <section class="slide" data-label="Reflection"
-    data-notes="12 minutes, in class. Three circles and one claim — no more. The authorship line is the sharpest in the unit and connects straight back to ELIZA: when the sentence sounded meaningful, the student supplied the meaning, exactly as they supplied ELIZA's understanding. Say that out loud if nobody does.">
-    <div class="eyebrow">Reflection · 12 minutes · before you leave</div>
-    <h2>One bounded claim</h2>
-    <div class="circles"><div class="row"><span class="q">My sentence read as…</span><span class="o">fluent and sensible</span><span class="o">fluent but hollow</span><span class="o">not fluent</span></div><div class="row"><span class="q">The words were chosen by…</span><span class="o">me</span><span class="o">the counts</span><span class="o">both</span></div><div class="row"><span class="q">A bigger book would make the output…</span><span class="o">more fluent</span><span class="o">more accurate</span><span class="o">both</span><span class="o">neither</span></div></div>
-    <div class="stem" style="padding:24px 34px">
-      <p style="font-size:34px;line-height:1.4">I observed <span class="blank"></span><br>
-      My evidence is <span class="blank"></span><br>
-      This suggests <span class="blank"></span><br>
-      but it does not establish <span class="blank"></span></p>
-    </div>
-    <p style="margin-top:22px"><strong>Authorship line:</strong> BookBot has no author and no intent.
-    When your sentence sounded meaningful, <em>who supplied the meaning?</em></p>
-    <footer><span>Lesson 3</span><span>Same question as ELIZA. Notice that.</span></footer>
-  </section>
+<section class="slide" data-label="Evidence" data-notes="Separate the supplied starting text from the generated continuation. Keep capitalization and wording unchanged in the evidence log. Screenshots keep every run; the 10-word hand excerpts from A1 and B1 make the samples comparable, not statistically conclusive. If a run errors, label the error rather than treating it as generated text. Three runs per setting give an initial comparison; they do not establish a general law. Optional after the required records: change context alone, use a sufficiently long phrase from the corpus, and label this a separate experiment. Do not mix those outputs into A/B.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>What actually changed?</h2>
+<p class="lede">Screenshot every run.<br>Copy the first 10 generated words from A1 and B1.</p><ul><li>Which words or phrases repeat?</li><li>Which combinations surprise you?</li><li>Which phrases could you use—and for what?</li></ul><p>Loops and identical outputs are evidence too.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>11</span></footer>
+</section>
 
-  <section class="slide" data-label="Submission"
-    data-notes="One photo, three things: table, sentence, and the written claim. All three on the same page — the table is the evidence for the claim, so a photo without it proves nothing. A photo missing the claim is incomplete; say so before they start shooting. Check filenames at the door.">
-    <div class="eyebrow">Submit before you go</div>
-    <h2>Classroom — transfer, attach, turn in</h2>
-    <div class="submit">
-      <div class="card clay"><h3>What</h3><p>One photo of your paper showing <strong>all three</strong>: the table, the sentence, and your claim.</p></div>
-      <div class="card olive"><h3>Named how</h3><p><span class="filename">Lastname-U1D3</span></p></div>
-    </div>
-    <p style="margin-top:22px;font-size:31px"><strong>Thinking:</strong> copy your circled answers and your claim into the Classroom response box. &nbsp;<strong>Evidence:</strong> attach your table, your sentence, and your claim.<br><strong>Open the attachment to check it is readable, then turn in.</strong></p>
-    <footer><span>Lesson 3 · Submission</span><span>In class, not homework</span></footer>
-  </section>
+<section class="slide" data-label="Creative decision" data-notes="8 minutes. A short title is an achievable creative artifact. Students can reject the model wording and write their own; they still record the candidate that led to that decision. They need a reason tied to the artwork, such as mood or imagery. Randomness can offer material, but it does not supply a creative purpose or guarantee quality. Students each make and explain their own decision.">
+<div class="eyebrow">Creative decision · 8 minutes</div>
+<h2>A title for an imaginary artwork</h2>
+<p class="lede">Imagine an artwork: a robot’s nighttime garden.</p><p>Choose a phrase you generated.<br><strong>Keep it, edit it, or replace it</strong> as the artwork’s title.</p><div class="stem"><p style="font-size:39px">My final title is ______.<br>I chose / changed ______ because ______.</p></div><p style="margin-top:22px">Keep the original phrase beside your final version.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>12</span></footer>
+</section>
 
-  <section class="slide center" data-label="Preview"
-    data-notes="5 minutes. They built the toy by hand, so the real thing is legible rather than magic. Tell them to arrive with a task they actually care about — the lesson is much better when the task is real. Laptops needed.">
-    <div class="eyebrow">Next time</div>
-    <h1 style="font-size:104px">Explore LLMs</h1>
-    <p class="big">You built the toy by hand.<br>Next: the real thing — several of them.</p>
-    <p class="lede">Same task. Different models. Every output logged word for word.</p>
-    <div class="next">
-      <p style="margin:0"><strong>Then the hard part: which differences are real, and which are you imagining?</strong></p>
-    </div>
-    <footer><span>Lesson 4 of 5</span><span>Bring: laptop + a task you care about</span></footer>
-  </section>
+<section class="slide" data-label="Reflection" data-notes="Reflection and submission share 7 minutes. A valid result can be no clear difference. Ask for a specific run or phrase, not simply high was better. Possible limitation: this corpus, these slider settings, and a small number of runs. Do not call the process authorless: people authored the sources and algorithm, and students chose the settings and final title. A fluent phrase does not establish factual accuracy; this fictional activity is not a factual accuracy test.">
+<div class="eyebrow">Reflection + submission · 7 minutes</div>
+<h2>A claim your evidence supports</h2>
+<div class="stem"><p style="font-size:39px">I changed ______ and kept ______ fixed.<br>I observed ______.<br>My evidence is ______.<br>This does not establish ______.</p></div><p style="margin-top:30px">What did you decide that the model did not?</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>13</span></footer>
+</section>
 
+<section class="slide" data-label="Submission" data-notes="Complete within the same 7-minute block. Use the existing Classroom assignment; this adaptation does not create or post anything. Filename Lastname-U1D3. Save work before closing the tool. Photos of the paper record plus settings screenshots are acceptable. An observer records the same evidence from the partner or demonstration. The paper fallback records six word draws, clearly labeled, rather than claiming a temperature test. Ensure students retain their own creative decision.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>Your experiment and your title</h2>
+<ul><li>A photo of both pages of your activity sheet</li><li>Your A/B settings and run screenshots</li><li>Your final title and claim, typed in Classroom</li></ul><p><strong>Filename:</strong> Lastname-U1D3</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>14</span></footer>
+</section>
+
+<section class="slide center" data-label="Next lesson" data-notes="Brief closing within the reflection block. Preserve the 5-minute buffer rather than adding another timed segment. Next lesson retains its model-comparison focus. Summarize: ELIZA used hand-written reply rules; BookBot uses counted continuations plus a selection rule; neural language models use learned parameters. The current activity introduces sampling before Unit 2, where it can be revisited more formally.">
+<div class="eyebrow">BookBot · language and creative choices</div>
+<h2>What changes with a different model?</h2>
+<p class="big">Today: one model, different settings.<br>Next: the same task, different models.</p><p class="lede">Bring a task you care about.<br>Decide what a useful result would look like.</p>
+<footer><span>Working with Gen AI · Unit 1 · Lesson 3</span><span>15</span></footer>
+</section>
 </div></div>
 
-<div id="deckbar"><a href="index.html">← Unit 1</a><a href="handouts.html">Worksheet</a><a href="poster-templates.html">Poster templates</a></div>
+<div id="deckbar"><a href="index.html">← Unit 1</a><a href="lesson-3-bookbot-activity.html">Activity + corpus</a><a href="poster-templates.html">Poster templates</a></div>
 <div id="toosmall"><b>This deck is built for a projector.</b>Slides are a fixed 1920×1080 canvas, so text is tiny on a phone. Open it on a laptop or the classroom display. The <a href="handouts.html" style="color:#ffd9bd">worksheet</a> reads fine on a phone.</div>
 <div id="hud">← → navigate · N notes · F fullscreen</div>
 <div id="notes"><b id="notes-label"></b><span id="notes-body"></span></div>
@@ -302,7 +222,7 @@ footer{position:absolute;left:110px;right:110px;bottom:38px;display:flex;justify
       if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
       else{document.exitFullscreen&&document.exitFullscreen()}}
   });
-  canvas.addEventListener('click',function(e){show(e.clientX<window.innerWidth/2?i-1:i+1)});
+  canvas.addEventListener('click',function(e){if(e.target.closest('a,button,input,textarea,select'))return;show(e.clientX<window.innerWidth/2?i-1:i+1)});
   window.addEventListener('resize',fit); fit(); show(i);
 })();
 </script>

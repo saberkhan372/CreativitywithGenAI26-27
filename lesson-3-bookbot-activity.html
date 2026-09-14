@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BookBot + Toy model — student activity</title><style>
+:root{ --ink:#1a1a1a; --line:#9a9a9a; --soft:#d9d9d9; --accent:#8c491a; --wash:#f4efe6; }
+*{box-sizing:border-box}
+body{margin:0;background:#8a8580;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+.bar{background:#26241f;color:#f0e7d8;padding:14px 20px;font-size:14px;line-height:1.5}
+.bar a{color:#ffd9bd}
+.bar b{font-size:16px}
+.sheet{
+  width:8.5in; height:11in; background:#fff; margin:16px auto; padding:0.45in 0.5in;
+  position:relative; overflow:hidden; font-size:10pt; line-height:1.32;
+}
+h1{font-size:15pt;margin:0 0 1pt;letter-spacing:-.01em}
+.meta{font-size:8pt;color:#555;letter-spacing:.08em;text-transform:uppercase;margin:0 0 7pt}
+.nm{border-bottom:1px solid var(--line);height:15pt;margin:0 0 8pt}
+h2{font-size:10.5pt;margin:9pt 0 3pt;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:2pt}
+p{margin:0 0 4pt}
+.q{font-weight:bold}
+.small{font-size:8.5pt;color:#444}
+.rule{border-bottom:1px solid var(--soft);height:15pt;margin:0 0 3pt}
+.rule.short{width:48%;display:inline-block;margin-right:2%}
+table{width:100%;border-collapse:collapse;margin:3pt 0 5pt;font-size:9pt}
+th,td{border:1px solid var(--line);padding:3.5pt 5pt;text-align:left;vertical-align:top}
+th{background:var(--wash);font-size:8.5pt;letter-spacing:.04em;text-transform:uppercase}
+td.fill{height:26pt}
+td.tall{height:40pt}
+.box{border:1.5px solid var(--ink);border-radius:5px;padding:6pt 8pt;margin:4pt 0 6pt}
+.box.soft{border:1px solid var(--line);background:var(--wash)}
+.circ{font-size:9pt;margin:0 0 3pt}
+.circ b{display:inline-block;min-width:46%}
+.circ span{border:1px solid var(--accent);border-radius:9pt;padding:1pt 7pt;margin-right:4pt;white-space:nowrap}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:9pt;line-height:1.45}
+.stem{border-left:3px solid var(--accent);padding-left:8pt;margin:4pt 0 5pt}
+.stem div{border-bottom:1px solid var(--soft);height:15pt;margin-bottom:3pt}
+.stem i{font-style:normal;font-size:8.5pt;color:#555}
+.foot{position:absolute;left:0.5in;right:0.5in;bottom:0.3in;font-size:8pt;color:#666;
+  border-top:1px solid var(--soft);padding-top:3pt;display:flex;justify-content:space-between}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7pt}
+@media print{
+  body{background:#fff}
+  .bar{display:none}
+  .sheet{margin:0;box-shadow:none;page-break-after:always;width:auto;height:auto;min-height:0}
+  @page{size:letter;margin:0.45in 0.5in}
+}
+
+.bookbot-sheet{font-size:9pt;line-height:1.27}.bookbot-sheet h2{margin-top:7pt}.bookbot-sheet table{font-size:8.5pt}.bookbot-sheet th,.bookbot-sheet td{padding:3pt 5pt}.bookbot-sheet .mono{font-size:8pt}
+.corpus-panel{max-width:900px;margin:24px auto;padding:28px;background:#f9f4ed;line-height:1.5}.corpus-panel h2{font-size:22px}.corpus-panel textarea{width:100%;height:330px;font:15px/1.5 ui-monospace,monospace;padding:15px;resize:vertical}.corpus-panel button,.bar button{font:inherit;padding:8px 14px;cursor:pointer}.bar{position:relative}.bar button{margin-left:16px}#copy-status{display:inline-block;margin-left:12px}a{color:#8c491a}
+@media print{@page{size:letter;margin:0}.corpus-panel{display:none}.sheet.bookbot-sheet{width:8.5in;height:11in;min-height:11in;padding:0.45in 0.5in;margin:0;break-after:page}.sheet.bookbot-sheet:last-of-type{break-after:auto;page-break-after:auto}.bookbot-sheet .foot{left:0.5in;right:0.5in;bottom:0.3in}}
+@media screen and (max-width:820px){.sheet{width:100%;height:auto;min-height:11in;padding:24px 20px 60px}.corpus-panel{margin:16px;padding:20px}.two{grid-template-columns:1fr}}
+</style></head><body>
+<div class="bar"><b>BookBot + the Toy model</b> · <a href="lesson-3-bookbot-slides.html">Slides</a> · <a href="#corpus">Shared corpus</a> · <a href="index.html">Unit 1</a><button id="print" type="button">Print the two-page activity</button><br>Complete on paper or in your own document. This page does not save answers. Print at 100%, headers/footers off.</div>
+<section class="sheet bookbot-sheet">
+<p class="meta">Working with Gen AI · Unit 1 · Day 3</p><h1>BookBot + the Toy language model</h1>
+<p>Name __________________________  Partner __________________________</p>
+<p class="small">Paper, pencil and a laptop per pair. Record here or in your own document. Observing a partner or teacher demonstration is full participation.</p>
+<h2>1 · BookBot: count, then generate</h2>
+<div class="two"><div class="box soft"><p class="mono">the robot paints a moon .<br>the robot paints a star .<br>the robot folds  a map .<br>the fox   paints a moon .<br>the fox   folds  a map .<br>the robot paints a moon .</p></div><div><p>Count repeats. The period is a token. Never count across lines.</p><table><tr><th>After a</th><th>Tally</th><th>Count</th></tr><tr><td>moon</td><td></td><td></td></tr><tr><td>map</td><td></td><td></td></tr><tr><td>star</td><td></td><td></td></tr></table></div></div>
+<table><tr><th>Current word</th><th>Next words, with repeats</th></tr><tr><td>the</td><td>robot, robot, robot, fox, fox, robot</td></tr><tr><td>robot</td><td>paints, paints, folds, paints</td></tr><tr><td>fox</td><td>paints, folds</td></tr><tr><td>paints</td><td>a, a, a, a</td></tr><tr><td>folds</td><td>a, a</td></tr><tr><td>a</td><td><i>use your tally above</i></td></tr><tr><td>moon · star · map</td><td>. (always)</td></tr></table>
+<p><b>Start at the. Always choose the most common next word. Stop at the period.</b></p>
+<p class="mono">the → __________ → __________ → __________ → __________ → .</p>
+<p>Why does the same run repeat? __________________________________________</p>
+<h2>2 · Prepare the Toy model</h2>
+<p>Open <b>machinelearningforkids.co.uk</b> using the route your teacher gives you (<b>Try it now</b> or the class login). Use a <b>generating text</b> project and choose <b>Toy</b>. Add the shared <b>Robot Garden</b> corpus from the activity page or <a href="bookbot-corpus.txt">bookbot-corpus.txt</a>. Keep the repeated lines.</p>
+<p><b>Smallest context · top-p at the high end · starting text: <span class="mono">the robot</span></b></p>
+<p class="small">This model continues the starting text. If it says the prompt needs more words, return to the smallest context and restore the start. Still stuck? Watch the teacher demonstration and record from that. Use the supplied fictional corpus; no private details.</p>
+<h2>3 · Predict, then change only temperature</h2>
+<p>I predict that higher temperature will ____________________________________</p>
+<p>because ______________________________________________________________</p>
+<p><b>A:</b> toward low, 3 runs. <b>B:</b> toward high, 3 runs. Keep corpus, start, context and top-p fixed. Restore <span class="mono">the robot</span> before <b>every</b> run.</p>
+<p class="small">No numbers on the slider? Slide it about ¼ of the way for A and about ¾ for B. Don’t move it between runs.</p>
+<p>Screenshot both settings. Values or screenshot names: A __________ B __________</p>
+<div class="foot"><span>Day 3 · page 1 of 2</span><span>Next: record outputs and make a creative choice</span></div></section>
+<section class="sheet bookbot-sheet">
+<p class="meta">Working with Gen AI · Unit 1 · Day 3 · page 2</p><h1>Evidence and a creative decision</h1>
+<h2>4 · Save every run</h2>
+<p><b>Screenshot every run.</b> For <b>A1</b> and <b>B1</b>, also copy the first <b>10 generated words</b> exactly (not the starting text). For other runs, write the screenshot name. Identical outputs count. <b>A loop that repeats the same phrase is evidence, not a broken model.</b></p>
+<table><tr><th style="width:12%">Run</th><th>A1 and B1: first 10 words · other runs: screenshot name</th></tr><tr><td>A1</td><td style="height:29pt"></td></tr><tr><td>A2</td><td style="height:29pt"></td></tr><tr><td>A3</td><td style="height:29pt"></td></tr><tr><td>B1</td><td style="height:29pt"></td></tr><tr><td>B2</td><td style="height:29pt"></td></tr><tr><td>B3</td><td style="height:29pt"></td></tr></table>
+<p>One repetition I noticed: __________________________________________________</p>
+<p>One surprising or usable combination: ______________________________________</p>
+<h2>5 · A title for a robot’s nighttime garden</h2>
+<p>Choose a generated phrase as a title for this imaginary artwork. Circle: <b>KEEP / EDIT / REPLACE.</b> You may reject the wording and write your own title.</p>
+<p>Original phrase (run ____): ________________________________________________</p>
+<div class="rule"></div><p>My final title: __________________________________________________________</p>
+<p>My choice serves the artwork because ______________________________________</p><div class="rule"></div>
+<h2>6 · One claim, with a limit</h2>
+<p>I changed ____________________ and kept __________________________ fixed.</p>
+<p>I observed _____________________________________________________________</p><div class="rule"></div>
+<p>My evidence is _________________________________________________________</p><div class="rule"></div>
+<p>This does not establish __________________________________________________</p>
+<h2>7 · Classroom: capture before leaving</h2>
+<p class="small"><b>Turn in:</b> a photo of both pages of this sheet, your A and B settings screenshots, and your run screenshots. In Classroom, type your final title and your claim. Filename <b>Lastname-U1D3</b>.</p>
+<p class="small"><b>If you used the paper fallback:</b> label A “most common” and B “word draws”; record three choices for each. State that you did not test temperature on the website. For an observer, name the route: partner or teacher demonstration.</p>
+<div class="foot"><span>Day 3 · page 2 of 2</span><span>Next: same task, different models</span></div></section>
+<section class="corpus-panel" id="corpus"><h2>Robot Garden · shared corpus</h2><p>Fictional text authored for this activity with AI assistance. Everyone starts with the same text. The repeated line is intentional. Press <b>Copy corpus</b> and paste it into your Toy model. If Copy does nothing, open <a href="bookbot-corpus.txt">the text file</a>, select all and copy.</p><button id="copy" type="button">Copy corpus</button><span id="copy-status" role="status" aria-live="polite"></span><p><label for="corpus-text">Ready-to-paste text</label></p><textarea id="corpus-text" readonly spellcheck="false">the robot paints a silver moon above the quiet garden .
+the robot paints a silver moon above the quiet garden .
+the robot paints a blue moon beside the sleeping river .
+the robot paints a small star above the quiet garden .
+the robot paints a bright star beside the sleeping river .
+the robot paints a paper sun inside the empty museum .
+the robot folds a paper moon beside the open window .
+the robot folds a paper map inside the empty museum .
+the robot folds a silver bird above the quiet garden .
+the robot carries a blue lantern beside the sleeping river .
+the robot carries a small lantern inside the empty museum .
+the robot dreams of a paper moon above the quiet garden .
+the fox paints a silver moon beside the open window .
+the fox paints a blue river inside the empty museum .
+the fox folds a paper star above the quiet garden .
+the fox folds a small map beside the sleeping river .
+the fox carries a silver lantern beside the open window .
+the fox dreams of a quiet garden under the paper sun .
+the garden holds a small river under the silver moon .
+the garden holds a bright lantern beside the open window .
+the river carries a paper bird under the silver moon .
+the river carries a small star beside the quiet garden .
+the museum holds a blue lantern under the paper sun .
+the museum holds a silver bird beside the open window .
+</textarea><h2>After the required experiment · optional</h2><p>Keep temperature and top-p fixed and change context size only. Use a long enough starting phrase from the corpus, such as <b>the robot paints a silver moon</b>. Keep that phrase identical in your comparison. Save these results separately. Look for phrases copied directly from the source as well as new combinations.</p></section>
+<script>document.getElementById('print').addEventListener('click',()=>window.print());document.getElementById('copy').addEventListener('click',async()=>{const t=document.getElementById('corpus-text'),s=document.getElementById('copy-status');try{await navigator.clipboard.writeText(t.value);s.textContent='Corpus copied.'}catch(e){t.focus();t.select();s.textContent='Text selected. Press Command+C (Mac) or Ctrl+C (Windows).'}});</script></body></html>

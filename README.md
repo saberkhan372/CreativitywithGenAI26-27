@@ -24,7 +24,7 @@ Each lesson hands the next one its question.
 |---|---|---|---|
 | 1 | **Who writes the rules?** | Cat problem · Bletchley Park · ELIZA · Teachable Machine | If rules can look like understanding, what counts as evidence? |
 | 2 | **Why did ELIZA ever work?** | Reply rules a person wrote | If rules fool people but not you, what fools *you*? |
-| 3 | **BookBot** | Counted continuations + one rule for choosing | It can only make one sentence. What is missing? |
+| 3 | **BookBot + Toy model** | Counted continuations, greedy selection and temperature comparison | Which generated phrase serves your creative purpose? |
 | 4 | **Explore LLMs** | Learned prediction at scale | Which differences are real, and how would we know? |
 | 5 | **Project + Poster** | Student-designed investigation | — |
 
@@ -130,19 +130,23 @@ The 2025–26 course handouts were the starting point, not discarded:
 - `Gen AI - First Project - Explore LLMs (Day 1).docx`
 - `Gen AI Project 1 — Local LLM Lab Poster (Day 2/Day 3).docx`
 
-### One deliberate fix
+### Lesson 3 adaptation · September 14, 2026
 
-`FINDINGS-2026-08-12.md` §4.3 flagged that BookBot's dice rule — *"give the most
-common option 2–3 numbers … adjust so it still totals 6"* — substitutes an arbitrary
-distribution for the counted one, quietly destroying the concept the activity exists
-to teach. Lesson 3 now avoids the problem differently: there is **no randomiser at all.** The rule
-is "always take the word that appears most often," which needs nothing but paper and a
-pencil and is deterministic — every student gets `the robot paints a moon .`, so it is
-checkable in ten seconds. Sampling returns in Unit 2 as temperature, set up by Lesson 3's
-closing question: the machine can produce exactly one sentence, so what is missing?
+BookBot now leads directly into Machine Learning for Kids' **Toy** language model.
+The greedy hand exercise remains; sampling is introduced in the same lesson.
+Students compare three generations at each of two temperature settings while keeping
+corpus, start, context and top-p fixed, then choose or revise an artwork title.
 
-An optional slips exercise for early finishers turns the `a` row into a real sampling
-demo without adding a required step.
+Use [the student activity](lesson-3-bookbot-activity.html) for the two-page record and
+copyable [Robot Garden corpus](bookbot-corpus.txt). Day 3 in `handouts.html` contains
+the same record. The [lesson guide](lesson-3-bookbot-handout.md) contains setup,
+answer keys, a paper fallback and the proposed 70-minute timing. Its shorter BookBot
+block replaces the generic timing above for this lesson. Laptops are needed after
+the paper activity. The shared corpus is fictional text authored with AI assistance.
+
+Website operation and print layout need a classroom-browser check. Both browser
+launch routes failed in the adaptation session; source checks do not establish
+live rendering. Nothing has been published.
 
 ### One caution that must be said aloud, not just known
 
@@ -164,5 +168,5 @@ Concepts from the old sequence that are preserved here: next-token prediction
 (Lesson 3), controlled comparison (Lessons 4–5), the seven-step investigation cycle
 (Lesson 5), and the lightweight reflection stem (all five).
 
-Concepts deferred: tokenization and temperature as a formal one-variable
-investigation. Both now land in Unit 2 with more grounding behind them.
+Concepts deferred: detailed tokenization and a fuller study of sampling. Lesson 3 now
+introduces a controlled temperature comparison; Unit 2 can deepen that investigation.
